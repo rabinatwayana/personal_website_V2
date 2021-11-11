@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<!-- For IE -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<!-- For Resposive Device -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Rabina Twayana || Web</title>
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" sizes="56x56" href="images/fav-icon/icon.png">
+
+
+		<!-- Main style sheet -->
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<!-- responsive style sheet -->
+		<link rel="stylesheet" type="text/css" href="css/responsive.css">
+
+		<link rel="stylesheet" href="https://openlayers.org/en/v5.3.0/css/ol.css" />
+		<link rel="stylesheet" href="css/ol.css" />
+		<link rel="stylesheet" href="css/ol3-layerswitcher.css" />
+		
+		
+		<style>
+		#mainMap {
+        background: lightblue;
+        justify-content: center;
+        height: 650px;
+        width: 95%;
+        border: 1px solid black; 
+        margin: 5px;
+        float: left;
+        padding: 20px;
+        box-shadow: 1px 1px 20px black;}
+		body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #070707;
+  }
+			table,TH,TD{
+			border: 1px solid black;}
+			
+			ul.a{
+				list-style-type:square;
+				color:black;
+				margin-left:2em,
+				
+			}
+			.bg-grey {
+      background-color: #f6f6ff;}
+/* } */
+			
+		</style>	
+			
+	</head>
+
+	<body>
+		<div class="main-page-wrapper">
+
+
+
+			<!-- 
+			=============================================
+				Theme Header
+			============================================== 
+			-->
+			<header class="theme-main-header">
+				<div class="container">
+					<!-- <a href="index.html" class="logo float-left tran4s"><img src="images/logo/logo.png" alt="Logo"></a> -->
+					
+					<!-- ========================= Theme Feature Page Menu ======================= -->
+					<nav class="navbar float-right theme-main-menu one-page-menu">
+					   <!-- Brand and toggle get grouped for better mobile display -->
+					   <div class="navbar-header">
+					     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+					       <span class="sr-only">Toggle navigation</span>
+					       Menu
+					       <i class="fa fa-bars" aria-hidden="true"></i>
+					     </button>
+					   </div>
+					   <!-- Collect the nav links, forms, and other content for toggling -->
+					   <div class="collapse navbar-collapse" id="navbar-collapse-1">
+					     <ul class="nav navbar-nav">
+					       	<li class="active"><a href="#home">HOME</a></li>
+							<li><a href="#about-me">ABOUT ME</a></li>
+							<!-- <li><a href="#KU-section">ABOUT KU</a></li> -->
+							<!-- <li><a href="#KUstudy-section">STUDY AT KU</a></li> -->
+							<li><a href="#GEcouse-section">GEOMATICS ENGINEERING</a></li>
+							<li><a href="#WebGISmodule-section">WEBGIS MODULE</a></li>
+							<li><a href="#Report-section">REPORT</a></li>
+							<!-- <li><a href="#Map-section">MAP</a></li> -->
+							
+							<li><a href="#contact-section">CONTACT</a></li>
+					     </ul>
+					   </div><!-- /.navbar-collapse -->
+					</nav> <!-- /.theme-feature-menu -->
+				</div>
+			</header> <!-- /.theme-main-header -->
+
+
+			<!--
+			=====================================================
+				Theme Main SLider
+			=====================================================
+			-->
+			<div id="home" class="banner">
+	        	<div class="rev_slider_wrapper">
+					<!-- START REVOLUTION SLIDER 5.0.7 auto mode -->
+						<div id="main-banner-slider" class="rev_slider video-slider" data-version="5.0.7">
+							<ul>
+
+								<!-- SLIDE1  -->
+								<li data-index="rs-280" data-transition="fade" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default"  data-title="Title Goes Here" data-description="">
+									<!-- MAIN IMAGE -->
+									<img src="images/home/slide-1.jpg"  alt="image" class="rev-slidebg" data-bgparallax="3" data-bgposition="center center" data-duration="20000" data-ease="Linear.easeNone" data-kenburns="on" data-no-retina="" data-offsetend="0 0" data-offsetstart="0 0" data-rotateend="0" data-rotatestart="0" data-scaleend="100" data-scalestart="140">
+									<!-- LAYERS -->
+
+									<!-- LAYER NR. 1 -->
+									<div class="tp-caption" 
+										data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+										data-y="['middle','middle','middle','middle']" data-voffset="['-58','-58','0','-50']" 
+										data-width="none"
+										data-height="none"
+										data-whitespace="nowrap"
+										data-transform_idle="o:1;"
+							 
+										data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
+										data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+										data-mask_in="x:0px;y:[100%];" 
+										data-mask_out="x:inherit;y:inherit;" 
+										data-start="1000" 
+										data-splitin="none" 
+										data-splitout="none" 
+										data-responsive_offset="on" 
+										style="z-index: 6; white-space: nowrap;">
+										<h1>HELLO I'M RABINA TWAYANA</h1>
+									</div>
+									
+									<div class="tp-caption" 
+										data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+										data-y="['middle','middle','middle','middle']" data-voffset="['-05','-05','63','0']"
+										data-width="none"
+										data-height="none"
+										data-whitespace="nowrap"
+										data-transform_idle="o:1;"
+							 
+										data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
+										data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+										data-mask_in="x:0px;y:[100%];" 
+										data-mask_out="x:inherit;y:inherit;" 
+										data-start="2000" 
+										data-splitin="none" 
+										data-splitout="none" 
+										data-responsive_offset="on" 
+										style="z-index: 6; white-space: nowrap;">
+										<h6>Lets get started</h6>
+									</div>
+								<!-- SLIDE2  -->
+								
+							</ul>	
+						</div>
+					</div>
+	        </div> 
+	        <!--
+			=====================================================
+				About me Section
+			=====================================================
+			-->
+			<section id="about-me">
+				<div class="container">
+					
+						<div class="row">
+							<div class="theme-title">
+							
+									<h2>ABOUT MYSELF</h2>
+									
+							<div class="col-sm-8">
+								
+									
+									<p>Heartily Welcome to the website! I am Rabina Twayana, and I'm undergraduate bachleor student 
+									studying Geomatics Engineering at Kathmandu University.
+										
+										I am from Banepa-8,Kavre, Nepal.By 2020, I will have received my Bachelors in Geomatics Engineering. 
+										I'm the creator of this site and through this site, I share ideas and techniques from my personal experience of Study
+										in WebGIS module studied during the 4th year in the program. 
+									</p>
+									<p>Email:rabinatwayana123@gmail</p>
+									<br>
+									<h5 style=text-align:left><a href="#" class="tran3s">EDUCATION</a></h5>	
+									<br>
+											<table style="Width:50%">
+												<TR>
+													<TH>S.N.</TH>
+													<TH>Tittle of Qualification </TH>
+													<TH>Name of Institution</TH>
+													<TH>Year </TH>
+													<TH>Percentage</TH>
+													</TR>
+													<TR>
+														<TD>1</TD>
+														<TD>B.E.in Geomatics Engineering</TD>
+														<TD>Kathmandu University, Dhulikhel, Kavre </TD>
+														<TD>2016*In progress</TD>
+														<TD>-</TD>
+														<!-- <TD align=Center>1</TD>
+														<TD align=Center>B.E.in Geomatics Engineering</TD>
+														<TD align=Center>Kathmandu University, Dhulikhel, Kavre </TD>
+														<TD align=Center>2016*In progress</TD>
+														<TD align=Center>-</TD> -->
+														
+													<TR>
+														<TD>2</TD>
+														<TD>10+2 in Science </TD>
+														<TD>Siddhartha Higher Secondary Boarding School, Banepa</TD>
+														<TD>2014-2016 </TD>
+														<TD>77%</TD>
+														<!-- <TD align=Center>2</TD>
+														<TD align=Center>10+2 in Science </TD>
+														<TD align=Center>Siddhartha Higher Secondary Boarding School, Banepa</TD>
+														<TD align=Center>2014-2016 </TD>
+														<TD align=Center>77%</TD> -->
+													</TR>	
+													<TR>
+														<TD>3</TD>
+														<TD>SLC </TD>
+														<TD>Lin International Secondary School, Banepa</TD>
+														<TD>Till 2014</TD>
+														<TD>86%</TD>
+														<!-- <TD align=Center>3</TD>
+														<TD align=Center>SLC </TD>
+														<TD align=Center>Lin International Secondary School, Banepa</TD>
+														<TD align=Center>Till 2014</TD>
+														<TD align=Center>86%</TD> -->
+													</TR>
+												</table>	
+													<br>
+													
+													<h5 style=text-align:left><a href="#" class="tran3s">LEADERSHIP AND INVOLVEMENT</a></h5><br>	
+														<ul class="a" >
+															<li style=text-align:left>School House Vice-Captain for one year </li>
+															<li style=text-align:justify>Involved as volunteer in 2 day’s leadership program organized by GPYC (Global Peace Youth Corps), Nepal at Banepa </li>
+															<li style=text-align:justify>Worked as Manager in Basketball Team during GE Cup 2018</li>	
+															<li style=text-align:justify> 15-hour Arc-GIS Training organized by GES (Geomatics Engineering Society) </li>	
+												
+														</ul>
+														<br>
+														
+														<h5 style=text-align:left><a href="#" class="tran3s">SKILLS </a></h5><br>	
+														<ul class="a">
+															<li style=text-align:justify>Matlab </li>
+															<li style=text-align:justify> Image Processing Software (Pix4D Mapper)  </li>
+															<li style=text-align:justify>GIS Software’s (ArcGIS, QGIS) </li>	
+															<li style=text-align:justify>AutoCAD Land Desktop</li>
+															<li style=text-align:justify> Spatial Database Management (PostgreSQL, PostGIS) </li>	
+															<li style=text-align:justify> Drone Piloting </li>
+															<li style=text-align:justify>Data Processing (GNSS Solution)</li>	
+															<li style=text-align:justify>Microsoft-Word, Microsoft-Excel, Microsoft-PowerPoint, Microsoft-Access</li>
+														</ul>
+														<br>
+														
+														
+														<h5 style=text-align:left><a href="#" class="tran3s">Programming Language</a></h5><br>
+														<ul class="a">
+															<li style=text-align:justify> C and C++</li>
+															<li style=text-align:justify>Java</li>
+															<li style=text-align:justify>Python</li>		
+														</ul>
+														<br>
+														
+														<h5 style=text-align:left><a href="#" class="tran3s">PROJECTS</a></h5><br>
+														<ul class="a">
+															<li style=text-align:justify> “3D Model Preparation of Khopasi Intake Site”, 2nd Semester Undergraduate Project,2016</li>
+															<li style=text-align:justify> “Topographical Map Preparation  of Kathmandu University Warehouse Area”,3rd Semester Undergraduate Project,2017 </li>
+															<li style=text-align:justify>“Project on Monitoring  Growth Pattern through Multi-Temporal UAV Datasets: A Case Study of Potato Plant”, 5th Semester Undergraduate Project,2018</li>	
+									
+															
+												
+														</ul>
+														<br>
+														
+														<h5 style=text-align:left><a href="#" class="tran3s">SWRVICES</a></h5>	
+														<ul class="a" >
+															<li style=text-align:justify>Volunteered in International Map Year 2015-2016 organized by Geomatics Engineering Society(GES) at Kathmandu University  </li>
+															<li style=text-align:justify> Volunteered in WORLD GIS DAY 2017 organized by GES at Kathmandu University  </li>
+															<li style=text-align:justify>General Member of Geomatics Engineering Society, Departmental Club of Geomatics Engineering in Kathmandu University </li>	
+														</ul>
+														<br>
+														
+														<h5 style=text-align:left><a href="#" class="tran3s">AWARDS</a></h5><br>	
+														<ul class="a">
+															<li style=text-align:justify> 100% tuition fee provided by Kathmandu University for being a class topper  </li>
+															<li style=text-align:justify>Scholarship for Undergraduate course (33% of total fee) supported by Government of Nepal through Land Management Training Center (LMTC)  </li>
+															<li style=text-align:justify>SLC Batch 2070 Topper in Lin International Academy</li>	
+														</ul>
+														
+														<br>
+														</div>
+																	
+																	<div class="col-sm-4">
+																	<img src="images/profilephoto/profile.jpg" alt="Image"style="width:400px:height:300px:">
+																	</div>
+
+												</div> <!-- /.theme-title -->
+					
+					</div>
+	
+				</div> <!-- /.container -->
+			</section> <!-- /#about-us -->
+
+
+			<!--
+			=====================================================
+				KU-section 
+			=====================================================
+			-->
+			<!-- <div id="KU-section">
+				<div class="container">
+					<div class="theme-title">
+						<h2>ABOUT KU</h2>
+						<p>Kathmandu University is third oldest university in Nepal, located in Dhulikhel of Kavrepalanchowk District,
+about 30km east of Kathmandu. It was established in 1991 with the motto "Quality Education for Leadership".
+KU operates through its seven schools, and from campuses in Dhulikhel, Lalitpur and Bhaktapur.The university offers undergraduate, graduate and postgraduate courses in 
+variety of fields.Kathmandu University is an autonomous, not-for-profit, non - government institution dedicated to maintain high standards of academic excellence. 
+It is committed to develop leaders in professional areas through quality education. It is located in a mountainous landscape in Dhulikhel Municipality about
+ 30 kilometers east of Kathmandu (KTM) having round-the-year pleasant climate and panoramic Himalayan Views. KU had a very modest start from a rented building
+ at Tangal, Kathmandu. Now, it has been able to create a built up space of 46,846 square meters.</p><br>
+		
+		<h5><a href="#" class="tran3s">VISION</a></h5><br>	
+				<ul>
+				<li>"To become a world-class university devoted to bringing knowledge and technology to the service of mankind" </li>
+				</ul>
+				<br>
+		
+	    <h5><a href="#" class="tran3s">MISSION</a></h5><br>
+		<ul>
+		<li>"To provide quality education for leadership."</li>
+		</ul><br>
+		<img src="images/KUwall.png" alt="KU" style="width:1000px;height:400px;">
+		<h6><a href="#" class="tran3s">For more about KU</a></h6><br>
+		
+		<button class="btn btn-default btn-lg"><a href="http://ku.edu.np/">Click here</a></button><br><br>
+					</div> 					
+				</div> 
+			</div>  -->
+		
+			<!-- <div id="KUstudy-section">
+				<div class="container">
+					<div class="theme-title">
+						<h2>STUDY AT KU</h2>
+						<p>KU has always emphasized on being highly student friendly university. Therefore a high level of mutual respect is 
+						expected among all the members of the community. There exists an amicable relation between faculties, staffs, and students.
+						Students shall not hesitate to contact concerned department, faculties and staffs for consultation regarding academics and student life.
+						A counseling cell exists at the premises of CV Raman auditorium for counseling purpose.<br>
+<br>
+<h5>Campus Environment</h5>
+<br>
+KU is located beautifully with excellent surroundings and views. 
+The campus is quite and is an ideal place for study and research. Campus has various 
+soothing spaces for breaks and socialization.<br>
+<br>
+<h5>Extracurricular and Events</h5>
+<br>
+The School of Science organizes various extracurricular activities in various departments. 
+These include seminars, work-shops, trainings, project exhibitions, magazine publications, etc. 
+School of Science and students clubs in the central campus also organizes blood-donation program, sport events,
+ tree-plantations, awareness programs, trainings, seminars, etc. Welcome and farewell programs are organized at various levels.
+ Overall, there are numerous events organized all around the year in the campus.</p>
+					</div> 
+
+					</div> 
+				</div> 
+			</div>  -->
+		<!--
+			=====================================================
+				GEcouse-section 
+			=====================================================
+			-->
+			<div id="GEcouse-section">
+				<div class="container">
+					<div class="theme-title">
+						<h2>ABOUT GEOMATICS ENGINEERING COURSE</h2>					
+						<p>Geomatics is a systemic, multidisciplinary, integrated approach to selecting the Instruments and the appropriate
+						techniques for collecting, storing, integrating, modelling, analysing, retrieving at will, transforming,
+						displaying and distributing spatially geo referenced data from different sources with well-defined accuracy
+						characteristics, continuity and in a digital format.
+						<br>
+						The subject is found upon scientific framework of geodesy, it uses terrestrial, marine, airborne, and 
+						satellite-based sensors to acquire spatial and other data. 
+						<br>
+
+						Besides collection of Spatial data, some initiatives are presently being developed worldwide using 
+						Geomatics disciplines and techniques for the regulation of Geospatial Information or simply Geo Information(GI)
+						and for the adequate use of Earth Observation (EO) data for studying and managing environmental hazards and risks.</p>
+						<br>
+						<h4> objectives of course </h4>
+						<br>
+						
+						<ul class="a">
+							
+							<li style=text-align:left >To produse qualified academic manpower in the field of Surveying, Mapping, Land Administration abd Geo Information to satisfy needs of various institution 
+								with in the country abd abroad.  </li>
+							<li style=text-align:left>To establish the collaborative relationship with foreign institutions of the similar function for mutual benefit by student exchange and sharing of knowledge 
+								and technology for the benefits of mankind. </li>
+							<li style=text-align:left>To conduct and promote research and development activities in the field of Geo Information and Land Admiinistration.  </li>
+						</ul>
+						<br>
+				
+						<h4>CAREER OPPORTUNITIES</h4><br>
+						
+						</div>
+					
+							
+						
+						<div class="row slideanim">
+							<div class="col-sm-4">
+								  
+								  <img src="images/inner-page/1.png" alt="Logo for Government">
+								 <h6>Government, Ministries and Departments</h6>
+								</div>
+								<div class="col-sm-4">
+								
+								  <img src="images/inner-page/2.png" alt="Logo for Nepal army">
+								  <h6>Nepal Army/ Nepal Police</h6>
+								  
+								</div>
+								<div class="col-sm-4"> 
+								 <img src="images/inner-page/3.png" alt="Logo for Development Activities">
+								 <h6>Private Sector in Infrastructure Development Activities</h6>
+								</div>
+								</div>
+							  
+							  <br>
+							  
+							<div class="row slideanim">
+							<div class="col-sm-4">  
+								<img src="images/inner-page/4.png" alt="Logo for Job Market">
+								<h6>International Job Market(Universities,Private and Public Companies</h6>
+							</div>
+								<div class="col-sm-4">
+								  <img src="images/inner-page/5.png" alt="Logo for NEA">
+								  <h6>Nepal Electricity Authority</h6>
+								  
+								</div>
+								<div class="col-sm-4">
+								 <img src="images/inner-page/6.png" alt="Logo for NGO">
+								 <h6>NGO/INGO</h6>
+								</div>
+							  </div> 
+							  
+					  <br><br><br>
+					  <img src="images/geom.jpg" alt="Image"style="width:400px:height:300px:" ><br>
+					<h6>For more Information</h6>
+					<button class="btn btn-default btn-lg"><a href="http://ku.edu.np/dcge/">Click here</a></button><br><br>
+			
+
+						
+				</div> <!-- /.conatiner -->
+			</div> 
+
+			<!--
+			=====================================================
+				Page middle banner
+			=====================================================
+			-->
+
+			<div class="page-middle-banner">
+				<div class="opacity">
+					<h3>We support WEBGIS MODULE<span class="p-color">&amp;</span> WEB DEVELOPMENT</h3>
+					
+				</div> <!-- /.opacity -->
+			</div> <!-- /.page-middle-banner -->
+
+
+			<!--
+			=====================================================
+				WebGISmodule-section
+			=====================================================
+			-->
+			<div id="WebGISmodule-section" class="container-fluid bg-grey">
+				<div class="container-fluid text-center bg-grey">
+					<div class="theme-title">
+						<h2>WORKDONE IN WEBGIS MODULE</h2>
+						</div><!-- /.theme-title -->
+	<div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        
+        <p><strong>WORKING WITH DATABASE</strong></p>
+        <p>PostgreSQL Overview:<p>
+		<p><strong> Operations:</strong> 
+			<ul>
+				<li><p style=text-align:left>-Creating spatial database<p style=text-align:left>
+				<p style=text-align:left>-Spatial table<p style=text-align:left>
+				 <li><p style=text-align:left>-Importing shapefileinto spatial table<p style=text-align:left>
+				<li><p style=text-align:left>-PostGISfunctions and its use<p style=text-align:left>
+				<li><p style=text-align:left>-Querying on spatial table<p style=text-align:left>		 
+				<li><p style=text-align:left>-Creating a view from a spatial and non-spatial table<p style=text-align:left>
+				 <li><p style=text-align:left>-Visualizing database layer into QGIS or ArcMap<p style=text-align:left>
+				<li><p style=text-align:left>-Connecting spatial database<p style=text-align:left>
+				 <li><p style=text-align:left>-Adding spatial layer from spatial database<p style=text-align:left>
+			</ul>		
+			</p>
+	  </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <p><strong>WORKING WITH GEOSERVER</strong></p>
+        <p><strong> Operations:</strong> <br>
+			<ul>
+				<p>Browsing geoserver </p>
+				<p>Setting GeoServerEnvironments components: </p>
+					<ul>
+						<p style=text-align:left>-Workspace<p style=text-align:left>
+						<p style=text-align:left>-Stores<p style=text-align:left>
+						<p style=text-align:left>-Layers<p style=text-align:left>
+						<p style=text-align:left>-Styles layer preview<p style=text-align:left>
+					</ul>
+				
+			</ul>		
+			</p><br>
+		</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        
+        <p><strong>OPERATION AND PUBLISHING</strong></p>
+        <p><strong>Web Map Service(WMS)</strong></p>
+			<ul>
+				<p style=text-align:left>-GetCapabilities()</p>
+				<p style=text-align:left>-GetMap()</p>
+				<p style=text-align:left>-GetFeatureInfo()</p>
+				
+			</ul>
+		<p><strong>Web Feature Service(WFS)</strong></p>
+			<ul>
+				<p style=text-align:left>-GetCapabilities<p style=text-align:left>
+				<p style=text-align:left>-GetFeature<p style=text-align:left>
+				<p style=text-align:left>-DescribeFeatureType<p style=text-align:left>
+			</ul>
+		<p><strong>Web Coverage Service(WCS)</strong></p>
+		
+		<p><strong>Publishing spatial layers through geoserver:</strong><p>
+			<ul>
+				<p style=text-align:left>-Creating workspace and stores<p style=text-align:left>
+				<p style=text-align:left>-Working as a namespace<p style=text-align:left>
+				<p style=text-align:left>-Store as a group of layers<p style=text-align:left>
+				<p style=text-align:left>-Publishing shapefile and database layers<p style=text-align:left>
+				<p style=text-align:left>-From shapefile<p style=text-align:left>
+				<p style=text-align:left>-Previewing and styling published layers<p style=text-align:left>
+			<ul>
+			</p>
+      </div>
+    </div>
+  </div><br>
+  
+  
+				</div> <!-- /.container -->
+			</div> 
+
+			
+
+			<!--
+			=====================================================
+				Report Section
+			=====================================================
+			-->
+			<div id="Report-section" class="container-fluid bg-grey">
+				<div class="container">
+					<div class="theme-title">
+						<h2>REPORT</h2><br>
+					</div>	<!-- /.theme-title -->
+					<div class="row text-center slideanim">
+					<div class="col-sm-4">
+      <div class="thumbnail">
+        
+        <h6><strong>WEB MAP SERVICES</strong></h6>
+		<img src="images/wms.png" alt="Image"style="width:400px:height:300px:" ><br>
+        <p>A Web Map Service (WMS) is a standard protocol for serving (over the Internet) georeferenced map images which a map server generates using data from a GIS database.The Open Geospatial Consortium developed the specification and first published it in 1999</p>
+		<p><strong> Operations</strong> </p>
+			<ul>
+				<p>-GetCapabilities:</p>
+				 <p>-GetMap:</p>
+				 <p>-GetFeatureInfo:</p>
+			</ul>		
+			
+	  </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <h6><strong>WEB FEATURE SERVICES</strong></h6><br>
+		<img src="images/wfs.png" alt="Image"style="width:400px:height:300px:" ><br>
+        <p>The Open Geospatial Consortium Web Feature Service (WFS) Interface Standard provides an interface allowing requests for geographical features across the web using platform-independent calls
+		    <br><p><strong> Operations</strong> <br>
+			<ul>
+				<p>-Describe Capabilities </p>
+				<p>-Get a Feature</p>
+				<p>-Insert a Feature</p>
+				<p>-Update a Feature</p>
+				<p>-Delete a Feature</p>
+				<p>-Create a new feature</p>
+			</ul>		
+			</p><br>
+		</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        
+        <h6><strong>WEB COVERAGE SERVICE</strong></h6><br>
+		<img src="images/wcs.png" alt="Image"style="width:400px:height:300px:" ><br>
+        <p>A WCS provides access to coverage data in forms that are useful for client-side rendering, as input into scientific models, and for other clients. The WCS may be compared to the OGC Web Feature Service (WFS) and the Web Map Service (WMS). As with WMS and WFS service instances, a WCS allows clients to choose portions of a server's information holdings based on spatial constraints and other query criteria.</p>
+		
+		<br>
+		<p>	WCS uses the coverage model of the OGC GML Application Schema for Coverages. Thus, WCS supports all coverage types supported by said Application Schema; it is not constrained to quadrilateral grid coverages like previous WCS versions.		
+		</p>
+      </div>
+    </div>
+					
+					</div>
+			
+				</div> <!-- /.container -->
+			</div> 
+
+<!--
+=====================================================
+	Map Section
+=====================================================
+			-->
+			<!-- <div id="Map-section" class="container-fluid bg-grey">
+					<div class="theme-title">
+						<h1>MAP OF NEPAL</h1>
+						</div> -->
+	
+    <!-- maps section -->
+    <!-- <section id="maps">
+    	<div class="row">
+	        <div class="col-sm-12">
+	            
+	        </div>
+	    </div>
+    	<div class="row no-gutters">
+			<div class="col-sm-3">
+				<div class="map-side-box">
+					<br>
+					
+					<h4>Layers</h4> 
+					    
+						<label><input class="layerCheckBox" type="checkbox" checked="" data-legend="administrativeLayerLegend">Administrative</label><br>
+						<img id="administrativeLayerLegend" alt="adminLegend" src="http://localhost:8080/geoserver/miniProject/wms?REQUEST=GetLegendGraphic&version=1.1.0&LAYER=miniProject:Nepal_Country&&width=32&height=32&FORMAT=image/png">
+						<label><input class="layerCheckBox" type="checkbox" unchecked="" data-legend="districtLayerLegend">District</label><br>
+						<img id="districtLayerLegend" alt="DistrictLegend" src="http://localhost:8080/geoserver/miniProject/wms?REQUEST=GetLegendGraphic&version=1.1.0&LAYER=miniProject:Nepal_District&&width=32&height=32&FORMAT=image/png">
+						<label><input class="layerCheckBox" type="checkbox" unchecked="" data-legend="totalPopulationLayerLegend">Total Population</label><br>
+						<img class="widerImg" id="totalPopulationLayerLegend" alt="PopulationLegend" src="http://localhost:8080/geoserver/miniProject/wms?REQUEST=GetLegendGraphic&version=1.1.0&LAYER=miniProject:Nepal_District&&width=32&height=32&FORMAT=image/png">
+					    <label><input class="layerCheckBox" type="checkbox" unchecked="" data-legend="landCoverLayerLegend">Land Cover</label><br>
+						<img id="landCoverLayerLegend" alt="landCoverLegend" src="http://localhost:8080/geoserver/miniProject/wms?REQUEST=GetLegendGraphic&version=1.1.0&LAYER=miniProject:geotiff_coverage_LULC&&width=32&height=32&FORMAT=image/png">
+						 <label><input class="layerCheckBox" type="checkbox" unchecked="" data-legend="DEMLayerLegend">DEM</label><br>
+						 <img id="DEMLayerLegend" alt="DEMLegend" src="http://localhost:8080/geoserver/miniProject/wms?REQUEST=GetLegendGraphic&version=1.1.0&LAYER=miniProject:geotiff_coverage&&width=32&height=32&FORMAT=image/png">
+						 <label><input class="layerCheckBox" type="checkbox" unchecked="" data-legend="roadsLayerLegend">Roads</label><br>
+						<img id="roadsLayerLegend" alt="RoadsLegend" src="http://localhost:8080/geoserver/miniProject/wms?REQUEST=GetLegendGraphic&version=1.1.0&LAYER=miniProject:Roads&&width=32&height=32&FORMAT=image/png">
+	               
+	            </div>
+			</div>
+    		<div class="col-sm-9">
+    			<div class="mainMap" id="mainMap">
+					map goes here
+				</div>
+    		</div>
+			<script src="js/jquery-3.3.1.js" type="text/javascript"></script>
+			<script src="js/ol.js" type="text/javascript"></script>
+			<script src="js/webMaps.js" type="text/javascript"></script>
+    	</div>
+    </section> -->
+ 	
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    
+  
+			<!--	</div>  /.container -->
+			</div> <!-- /#our-client -->
+
+			<!--
+			=====================================================
+				Contact Section
+			=====================================================
+			-->
+			<div id="contact-section">
+				<div class="container" >
+					<div class="clear-fix contact-address-content">
+						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+							<div class="left-side">
+								<h2>Contact Info</h2>
+
+								<ul>
+									<li>
+										<div class="icon tran3s round-border p-color-bg"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+										<h6>Address</h6>
+										<p>Punyamati Mahadev Marga, Banepa-8, Kavre, Nepal</p>
+									</li>
+									<li>
+										<div class="icon tran3s round-border p-color-bg"><i class="fa fa-phone" aria-hidden="true"></i></div>
+										<h6>Phone</h6>
+										<p>+977 9862258534</p>
+									</li>
+									<li>
+										<div class="icon tran3s round-border p-color-bg"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+										<h6>Email</h6>
+										<p>rabinatwayana123@gmail.com</p>
+									</li>
+								</ul>
+							</div> <!-- /.left-side -->
+						</div> <!-- /.col- -->
+
+
+						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+							<div class="map-area">
+								<h2>Location Map</h2>
+								<div id="googleMap" style="height:400px;width:100%;"></div>
+		<script>
+function myMap() {
+var myCenter = new google.maps.LatLng(27.3747,85.3116);
+var mapProp = {center:myCenter, zoom:12, scrollwheel:true, draggable:true, mapTypeId:google.maps.MapTypeId.ROADMAP};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var marker = new google.maps.Marker({position:myCenter});
+marker.setMap(map);
+}
+</script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2a8QtzSaEPLeybBaPZpudLLxZq56hcCo&callback=myMap"></script> <!-- Gmap Helper -->
+		
+		<script src="vendor/gmaps.min.js"></script>
+		
+		
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+								
+							</div> <!-- /.map-area -->
+						</div> <!-- /.col- -->
+					</div> <!-- /.contact-address-content -->
+
+
+
+					<!-- Contact Form -->
+					<!-- <div class="send-message">
+						<h2>Send Message</h2>
+
+						<form action="inc/sendemail.php" class="form-validation" autocomplete="off" method="post">
+							<div class="row">
+								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+									<div class="single-input">
+										<input type="text" placeholder="First Name*" name="Fname">
+									</div> 
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+									<div class="single-input">
+										<input type="text" placeholder="Last Name*" name="Lname">
+									</div> 
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+									<div class="single-input">
+										<input type="email" placeholder="Your Email*" name="email">
+									</div> 
+								</div>
+							</div> 
+							<div class="single-input">
+								<input type="text" placeholder="Subject" name="sub">
+							</div> 
+							<textarea placeholder="Write Message" name="message"></textarea>
+
+
+							<button class="tran3s p-color-bg">Send Message</button>
+						</form> -->
+
+
+						<!-- Contact Form Validation Markup -->
+						<!-- Contact alert -->
+						<div class="alert-wrapper" id="alert-success">
+							<div id="success">
+								<button class="closeAlert"><i class="fa fa-times" aria-hidden="true"></i></button>
+								<div class="wrapper">
+					               	<p>Your message was sent successfully.</p>
+					             </div>
+					        </div>
+					    </div> <!-- End of .alert_wrapper -->
+					    <div class="alert-wrapper" id="alert-error">
+					        <div id="error">
+					           	<button class="closeAlert"><i class="fa fa-times" aria-hidden="true"></i></button>
+					           	<div class="wrapper">
+					               	<p>Sorry!Something Went Wrong.</p>
+					            </div>
+					        </div>
+					    </div> <!-- End of .alert_wrapper -->
+					</div> <!-- /.send-message -->
+				</div> <!-- /.container -->
+			</div> <!-- /#contact-section -->
+			
+
+			<!--
+			=====================================================
+				Footer
+			=====================================================
+			-->
+			<footer>
+				<div class="container">
+					<!-- <a href="index.html" class="logo"><img src="images/logo/logo.png" alt="Logo"></a> -->
+
+					<ul>
+						<li><a href="#" class="tran3s round-border"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li><a href="#" class="tran3s round-border"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						
+					</ul>
+					<p>Copyright @2018 All rights reserved | This template is made  by <a href="https://colorlib.com" target="_blank">Rabina Twayana</a></p>
+				</div>
+			</footer>	
+
+			<!-- =============================================
+				Loading Transition
+			============================================== -->
+			<div id="loader-wrapper">
+				<div id="preloader_1">
+	                <span></span>
+	                <span></span>
+	                <span></span>
+	                <span></span>
+	                <span></span>
+	            </div>
+			</div>
+
+			
+	        <!-- Scroll Top Button -->
+			<button class="scroll-top tran3s p-color-bg">
+				<i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+			</button>
+
+
+
+
+		<!-- Js File_________________________________ -->
+
+		<!-- j Query -->
+		<script type="text/javascript" src="vendor/jquery.2.2.3.min.js"></script>
+
+		<!-- Bootstrap JS -->
+		<script type="text/javascript" src="vendor/bootstrap/bootstrap.min.js"></script>
+
+		<!-- Vendor js _________ -->
+		
+		<!-- revolution -->
+		<script src="vendor/revolution/jquery.themepunch.tools.min.js"></script>
+		<script src="vendor/revolution/jquery.themepunch.revolution.min.js"></script>
+		<script type="text/javascript" src="vendor/revolution/revolution.extension.slideanims.min.js"></script>
+		<script type="text/javascript" src="vendor/revolution/revolution.extension.layeranimation.min.js"></script>
+		<script type="text/javascript" src="vendor/revolution/revolution.extension.navigation.min.js"></script>
+		<script type="text/javascript" src="vendor/revolution/revolution.extension.kenburn.min.js"></script>
+		<script type="text/javascript" src="vendor/revolution/revolution.extension.actions.min.js"></script>
+		<script type="text/javascript" src="vendor/revolution/revolution.extension.video.min.js"></script>
+
+		<!-- Google map js -->
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZ8VrXgGZ3QSC-0XubNhuB2uKKCwqVaD0&callback=goMap" type="text/javascript"></script> <!-- Gmap Helper -->
+		<script src="vendor/gmaps.min.js"></script>
+		<!-- owl.carousel -->
+		<script type="text/javascript" src="vendor/owl-carousel/owl.carousel.min.js"></script>
+		<!-- mixitUp -->
+		<script type="text/javascript" src="vendor/jquery.mixitup.min.js"></script>
+		<!-- Progress Bar js -->
+		<script type="text/javascript" src="vendor/skills-master/jquery.skills.js"></script>
+		<!-- Validation -->
+		<script type="text/javascript" src="vendor/contact-form/validate.js"></script>
+		<script type="text/javascript" src="vendor/contact-form/jquery.form.js"></script>
+
+
+		<!-- Theme js -->
+		<script type="text/javascript" src="js/theme.js"></script>
+		<script type="text/javascript" src="js/map-script.js"></script>
+    
+		</div> <!-- /.main-page-wrapper -->
+	</body>
+</html>
