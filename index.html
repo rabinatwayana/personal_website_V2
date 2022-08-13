@@ -8,10 +8,11 @@
 		<!-- For Resposive Device -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>Rabina Twayana || Web</title>
+		<title>Rabina Twayana</title>
 
 		<!-- Favicon -->
-		<link rel="icon" type="image/png" sizes="56x56" href="images/fav-icon/icon.png">
+		<link rel="icon" type="image/png" sizes="200x200" href="images/fav-icon/pp_c.png">
+		<!-- <link rel="icon" type = "image/x-icon" sizes="56x56" href="images/fav-icon/pp.png"> -->
 
 
 		<!-- Main style sheet -->
@@ -26,20 +27,23 @@
 		
 		<style>
 		#mainMap {
-        background: lightblue;
-        justify-content: center;
-        height: 650px;
-        width: 95%;
-        border: 1px solid black; 
-        margin: 5px;
-        float: left;
-        padding: 20px;
-        box-shadow: 1px 1px 20px black;}
+			background: lightblue;
+			justify-content: center;
+			height: 650px;
+			/* width: 95%;  */
+			width: 100%; 
+			border: 1px solid black; 
+			margin: 5px;
+			float: left;
+			padding: 20px;
+			box-shadow: 1px 1px 20px black;
+		}
+
 		body {
-      font: 400 15px Lato, sans-serif;
-      line-height: 1.8;
-      color: #070707;
-  }
+			font: 400 15px Lato, sans-serif;
+			line-height: 1.8;
+			color: #070707;
+  		}
 			table,TH,TD{
 			border: 1px solid black;}
 			
@@ -51,7 +55,76 @@
 			}
 			.bg-grey {
       background-color: #f6f6ff;}
+	  .middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  /* top: 5%; */
+  bottom: 5%;
+  left: 7%;
+  transform: translate(-5%, -5%);
+  -ms-transform: translate(-5%, -5%);
+  /* text-align: center; */
+}
+.card {
+  position: relative;
+  width: 100%;
+}
+
+.card:hover .image {
+  opacity: 0.2;
+}
+.rounded {
+  border-radius: 15px !important;
+}
+
+.card:hover .middle {
+  opacity: 1;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+.text {
+  /* background-color: #04AA6D; */
+  color: rgb(36, 35, 131);
+  font-size: 14px;
+  font-weight: 550;
+  font-family: "Nunito", sans-serif;
+  letter-spacing: normal;
+  word-spacing: normal;
+  /* padding: 16px 32px; */
+}
+			/* .container{
+				width: 1820px;
+			} */
 /* } */
+
+
+/* element {
+}
+.work-container.work-modern .tag {
+  font-size: 15px !important;
+}
+.text-light {
+  color: #f8f9fa !important;
+}
+.text-light {
+  color: #f8f9fa !important;
+}
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "Nunito", sans-serif;
+  line-height: 1.5;
+  font-weight: 600;
+} */
 			
 		</style>	
 			
@@ -89,7 +162,7 @@
 							<!-- <li><a href="#KU-section">ABOUT KU</a></li> -->
 							<!-- <li><a href="#KUstudy-section">STUDY AT KU</a></li> -->
 							<li><a href="#GEcouse-section">GEOMATICS ENGINEERING</a></li>
-							<li><a href="#WebGISmodule-section">WEBGIS MODULE</a></li>
+							<li><a href="#WebGISmodule-section">PROJECTS</a></li>
 							<li><a href="#Report-section">REPORT</a></li>
 							<!-- <li><a href="#Map-section">MAP</a></li> -->
 							
@@ -416,18 +489,24 @@ School of Science and students clubs in the central campus also organizes blood-
 						
 						<div class="row slideanim">
 							<div class="col-sm-4">
-								  
-								  <img src="images/inner-page/1.png" alt="Logo for Government">
-								 <h6>Government, Ministries and Departments</h6>
+								  <div class="card rounded">
+								  <img class="image rounded" src="images/projects/GWA.png" alt="Logo for Government" width="500" height="200">
+								  <div class="middle">
+								 <h6>Geodetic Web Application</h6>
+
+									<div class="text">Development of a Web Based Application to manage Survey campaigns being managed by the Geodetic department of Survey Department, Nepal</div>
+								  </div>
+								 <!-- <h6>Government, Ministries and Departments</h6> -->
 								</div>
+							</div>
 								<div class="col-sm-4">
 								
-								  <img src="images/inner-page/2.png" alt="Logo for Nepal army">
+								  <img src="images/projects/CHANGU.png" alt="Logo for Nepal army"  width="500" height="200">
 								  <h6>Nepal Army/ Nepal Police</h6>
 								  
 								</div>
 								<div class="col-sm-4"> 
-								 <img src="images/inner-page/3.png" alt="Logo for Development Activities">
+								 <img src="images/projects/BIM.png" alt="Logo for Development Activities"  width="500" height="200">
 								 <h6>Private Sector in Infrastructure Development Activities</h6>
 								</div>
 								</div>
@@ -436,16 +515,16 @@ School of Science and students clubs in the central campus also organizes blood-
 							  
 							<div class="row slideanim">
 							<div class="col-sm-4">  
-								<img src="images/inner-page/4.png" alt="Logo for Job Market">
+								<img src="images/inner-page/4.png" alt="Logo for Job Market"  width="500" height="200">
 								<h6>International Job Market(Universities,Private and Public Companies</h6>
 							</div>
 								<div class="col-sm-4">
-								  <img src="images/inner-page/5.png" alt="Logo for NEA">
+								  <img src="images/inner-page/5.png" alt="Logo for NEA"  width="500" height="200">
 								  <h6>Nepal Electricity Authority</h6>
 								  
 								</div>
 								<div class="col-sm-4">
-								 <img src="images/inner-page/6.png" alt="Logo for NGO">
+								 <img src="images/inner-page/6.png" alt="Logo for NGO"  width="500" height="200">
 								 <h6>NGO/INGO</h6>
 								</div>
 							  </div> 
