@@ -67,7 +67,7 @@ function BannerVideoSlider () {
                     enable: true,
                     hide_onmobile: false,
                     hide_onleave: false,
-                    tmp: '<div class="tp-arr-allwrapper"> <div class="tp-arr-imgholder"></div>  <div class="tp-arr-titleholder">{{title}}</div> </div>',
+                    // tmp: '<div class="tp-arr-allwrapper"> <div class="tp-arr-imgholder"></div>  <div class="tp-arr-titleholder">{{title}}</div> </div>',
                     left: {
                         h_align: "left",
                         v_align: "center",
