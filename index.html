@@ -114,6 +114,112 @@
 	font-size: 20px;
   	font-weight: 600;
 }
+
+.accordion {
+  background-color: #eee;
+  margin-bottom: 10px;
+  color: #444;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+
+.explore {
+  background-color:  rgb(77, 94, 167);
+  color: #fff;
+  padding: 4px 10px 4px 10px;
+  font-weight: 600; 
+  border-radius: 5px;
+}
+
+/* .accordionWrapper{padding:30px;background:#fff;float:left;width:80%;box-sizing:border-box;margin:10%;    box-shadow: 0 1.5em 85px 0 rgba(0, 0, 0, 0.2);} */
+
+
+/* 
+.accordionItem{
+    float:left;
+    display:block;
+    width:100%;
+    box-sizing: border-box;
+    font-family:'Open-sans',Arial,sans-serif;
+}
+.accordionItemHeading{
+    cursor:pointer;
+    margin:0px 0px 10px 0px;
+    padding:10px;
+    background:#dfdfdf;
+	color: #000000;
+    width:100%;
+    -webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+        box-sizing: border-box;
+}
+.close .accordionItemContent{
+    height:0px;
+    transition:height 1s ease-out;
+    -webkit-transform: scaleY(0);
+	-o-transform: scaleY(0);
+	-ms-transform: scaleY(0);
+	transform: scaleY(0);
+    float:left;
+    display:block;
+}
+.open .accordionItemContent{
+        padding: 20px;
+    width: 100%;
+    margin: 0px 0px 10px 0px;
+    display:block;
+    -webkit-transform: scaleY(1);
+	-o-transform: scaleY(1);
+	-ms-transform: scaleY(1);
+	transform: scaleY(1);
+    -webkit-transform-origin: top;
+	-o-transform-origin: top;
+	-ms-transform-origin: top;
+	transform-origin: top;
+
+	-webkit-transition: -webkit-transform 0.4s ease-out;
+	-o-transition: -o-transform 0.4s ease;
+	-ms-transition: -ms-transform 0.4s ease;
+	transition: transform 0.4s ease;
+        box-sizing: border-box;
+}
+
+.open .accordionItemHeading{
+    margin:0px;
+        -webkit-border-top-left-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-topright: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 0px;
+    -webkit-border-bottom-left-radius: 0px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: #bdc3c7;
+	color: #000000;
+} */
+
 			/* .container{
 				width: 1820px;
 			} */
@@ -482,7 +588,7 @@ Despite all, I had very good academic track records and holds numerous academic 
 														</ul>
 														<br>
 														<h5 style=text-align:left><a href="#" class="tran3s">PUBLICATIONS IN ACADEMIA</a></h5><br>	
-														<ul class="a">
+														<!-- <ul class="a">
 															<li><a href="https://www.academia.edu/44218761/Geopy_Python_Module_Slideshare" target="_blank" class="tran3s round-border">Geopy Python Module</a></li>
 															<li><a href="https://www.academia.edu/44154608/Land_Law_in_Nepal" target="_blank" class="tran3s round-border">Land Law in Nepal </a></li>
 															<li><a href="https://www.academia.edu/44218744/A_REPORT_ON_SPATIAL_DATA_VISULIZATION_IN_SDI_ONLINE_MAPPING_" target="_blank" class="tran3s round-border">Spatial Data Visualization in SDI:Online Mapping</a></li>
@@ -491,7 +597,125 @@ Despite all, I had very good academic track records and holds numerous academic 
 															<li><a href="https://www.academia.edu/44218733/A_MINI_PROJECT_REPORT_ON_CHANGE_DETECTION_OF_BUILT_UP_AREAS_APPLYING_BUILT_UP_INDEX_FOR_KATHMANDU_DISTRICT_" target="_blank" class="tran3s round-border">Change Detection of Built-up Areas Applyning Built-up Index for Kathmandu District </a></li>
 															<li><a href="https://www.academia.edu/44154506/_SPACE_AS_A_TOOL_TO_ADDRESS_CLIMATE_CHALLENGES_EXAMPLES_FROM_LOCAL_COMMUNITIES_" target="_blank" class="tran3s round-border">Space as a Tool to Address Climate Challenges: Examples from Local Communities </a></li>
 
-														</ul>
+														</ul> -->
+
+														<!-- <div class="accordionWrapper"> 
+															<div class="accordionItem close">
+																  <h6 class="accordionItemHeading">Geopy Python Module</h6>
+																  <div class="accordionItemContent">
+																	<p>JavaScript accordions let you squeeze a lot of content into a small space in a Web page.</p>
+																	<p>This simple accordion degrades gracefully in browsers that don't support JavaScript or CSS.</p>
+																  </div>
+																</div>
+															
+																<div class="accordionItem close">
+																  <h6 class="accordionItemHeading">Land Law in Nepal</h6>
+																  <div class="accordionItemContent">
+																	<p>A JavaScript accordion is made up of a number of expandable/collapsible items. Only one item is ever shown at a time.</p>
+																	<p>You can include any content you want inside an accordion item. Here's a bullet list:</p>
+																	<ul>
+																	  <li>List item #1</li>
+																	  <li>List item #2</li>
+																	  <li>List item #3</li>
+																	</ul>
+																  </div>
+																</div>
+															
+																<div class="accordionItem close">
+																  <h6 class="accordionItemHeading">Spatial Data Visualization in SDI:Online Mapping</h6>
+																  <div class="accordionItemContent">
+																	<p>Click an accordion item's heading to expand it. To collapse the item, click it again, or click another item heading.</p>
+																  </div>
+																</div>
+																<div class="accordionItem close">
+																  <h6 class="accordionItemHeading"> Land Tenure System in Ethiopia: Issues, Challenges and Opportunities</h6>
+																  <div class="accordionItemContent">
+																	<p>Click an accordion item's heading to expand it. To collapse the item, click it again, or click another item heading.</p>
+																  </div>
+																</div>
+																<div class="accordionItem close">
+																  <h6 class="accordionItemHeading">Importance of Project Control and its Possible Issues, Challenges and Opportunities</h6>
+																  <div class="accordionItemContent">
+																	<p>Click an accordion item's heading to expand it. To collapse the item, click it again, or click another item heading.</p>
+																  </div>
+																</div>
+																<div class="accordionItem close">
+																  <h6 class="accordionItemHeading">Change Detection of Built-up Areas Applyning Built-up Index for Kathmandu District</h6>
+																  <div class="accordionItemContent">
+																	<p>Click an accordion item's heading to expand it. To collapse the item, click it again, or click another item heading.</p>
+																  </div>
+																</div>
+																<div class="accordionItem close">
+																  <h6 class="accordionItemHeading">Space as a Tool to Address Climate Challenges: Examples from Local Communities</h6>
+																  <div class="accordionItemContent">
+																	<p>Click an accordion item's heading to expand it. To collapse the item, click it again, or click another item heading.</p>
+																  </div>
+																</div>
+															</div> -->
+	
+
+															<button class="accordion">Geopy Python Module<span style="float:right">+</span></button>
+																<div class="panel">
+																<p> Geopy is a python module that includes geocoders class for calling several geocoding web services such as:
+																	Open StreetMap Nominatim,
+																	ESRI ArcGIS.
+																	Google Geocoding API(V3),
+																	Bing Maps API,
+																	Yandex,
+																	OpenMapQuest,
+																	 NaviData,
+																	GeoNames etc which  Makes easy to locate 
+																	Co-ordinate,
+																	Address,
+																	Geographic location(Mountains, rivers etc),
+																	Landmarks,
+																	Cities,
+																	Countries across the globe.
+																	</p>
+																	<button ><a class="explore" href="https://www.academia.edu/44218761/Geopy_Python_Module_Slideshare" target="_blank">explore</a></button>
+																	<!-- <button style="background-color:rgb(77, 94, 167); color: #fff; padding: 5px; font-weight: 600; border-radius: 5px; justify-content: center;">explore</button> -->
+																</div>
+
+																<button class="accordion">Land Law in Nepal<span style="float:right">+</span></button>
+																<div class="panel">
+																<p> Since Nepal is an agricultural country, common people of the country have excessive reliance on land. It is the crucial and vital factor of production in country like Nepal which indicates the socio economic and socio political status of the society. There are numbers of acts, regulations, directives and other decrees with adequate legal and regulatory framework for the smooth land governance and equitable land access among the people. This paper aims on exploring existing land law and policy in Nepal. Nepal Law commission reviews prevailing laws and recommends reform where necessary. There has been weak implementation due to elite nexus, lack of knowledge of policies and laws and centralized land administration system. The legislative body in the parliament, law commission of Nepal and are responsible for endorsement of bill and drafting the acts respectively. The Ministry of Land Management, Co-operatives and Poverty Alleviation and line agency under it are responsible for evaluation and implementation of the land related acts. The land measurement act, land revenue act, land related act, land acquisition act are the governing acts regarding land governance in Nepal. These acts have modernized, managed, the systematic land governance in the country.
+ 
+																	The planned national policy has limited access to landless and the destitute groups, unable to update information related to land and other geographical information, not to be fully utilized the contemporary technology in the field of land administration. Thus, if these laws are implemented well and unified, the land governance in Nepal can be ascertained.</p>
+																	<button ><a class="explore" href="https://www.academia.edu/44154608/Land_Law_in_Nepal" target="_blank">explore </a></button>
+																
+																</div>
+
+																<button class="accordion">Spatial Data Visualization in SDI:Online Mapping<span style="float:right">+</span></button>
+																<div class="panel">
+																<p>Online mapping is the compilation and publication of Web sites that provide exhaustive graphical and text information in the form of maps and databases. The first well known online mapping service is MapQuest which was launched in 1996 and is still popular. In addition to interactive maps with zooming function, some services offer topographical maps, satellite images, weather and climate maps, demographic maps and traffic information. Geospatial data visualization refers to a set of tools and techniques supporting the analysis of geospatial data through the use of interactive visualization</p>
+																<button ><a class="explore" href="https://www.academia.edu/44218744/A_REPORT_ON_SPATIAL_DATA_VISULIZATION_IN_SDI_ONLINE_MAPPING_" target="_blank">explore</a></button>
+																
+															</div>
+																<button class="accordion">Land Tenure System in Ethiopia: Issues, Challenges and Opportunities<span style="float:right">+</span></button>
+																<div class="panel">
+																<p>Ethiopia is an agrarian country where land has been the major means of production and livelihood. Tenure rules help to define how property rights to land are allocated within societies. Our paper aims on discovering the issues of land tenure system in Ethiopia along with its challenges and opportunities. Ethiopia has complex land tenure system. Land had been controlled by elite king until Derg Regime came in power in 1975 with slogan &amp;quot;Land to the Tiller&amp;quot; but ended up owning the land itself rather giving it to the people. The existing government that controlled power in 1991 maintained the Derg&amp;#39;s state ownership and new constitution 1995 approved the state ownership of land in Ethiopia. Farmers have only usufruct right to land which raise issue on food sovereignty. Food insecurity has a disproportionate impact&amp;#39;s on Ethiopia&amp;#39;s economy. There have been lots of people and dozens of parties arguing for private landowner ship, the debate on this issue continues till this day, as ratification of 1995 constitution could not conclude the controversial and throny issue. As a result, farmers who are interested in agriculture sometimes face credit constraint as banks find it more risky to lend to such business, which affects the level of production since agaric inputs are expensive Thus, a policy has to be drawn to facilitate more efficient transactions of land between farmers and to minimize inefficiencies associated with these tenure systems.</p>
+																<button ><a class="explore" href="https://www.academia.edu/44154644/LAND_TENURE_SYSTEM_IN_ETHIOPIA_ISSUES_CHALLENGES_AND_OPPORTUNITIES" target="_blank"> explore</a></button>
+																
+															</div>
+																<button class="accordion">Importance of Project Control and its Possible Issues, Challenges and Opportunities<span style="float:right">+</span></button>
+																<div class="panel">
+																<p>Project Control is key to success. Nowadays projects dynamicity and complexity make the control process highly critical. Project operates under some constrains such as time, cost and quality. During Project Control, project managers need to adjust schedules or do what is needed to keep the project on track. Effective project controls process  begins early in the project with planning and ends late with post-implementation review. This  paper deals with importance of project control and major issues, challenges and opportunity regarding project control. Ultimately, project controls are iterative processes for measuring  project status, forecasting likely outcomes based on proposed goals, and then improving project  performance if projected outcomes are unacceptable. Every project goes through certain degree of turbulence and therefore required monitoring and controlling to controls the activities within the project and applies necessary correction in case of deviations found in performance. In this article, importance, purpose, types, process, approaches and benefits of project control are examined. Project control is considered very important as it determine the success of the  project and also determine whether the inputs in project are properly utilized. It also helps to  provide accurate and timely information to project management team to make informed decision. Thus, Project control is a professional function which is essential for achieving  perfect project outcome by controlling the time, resources and performance to get unique  product, service or information.</p>
+																<button ><a class="explore" href="https://www.academia.edu/44154576/IMPORTANCE_OF_PROJECT_CONTROL_AND_ITS_POSSIBLE_ISSUES_CHALLENGES_AND_OPPORTUNITIES" target="_blank">explore</a></button>
+																
+															</div>
+																<button class="accordion">Change Detection of Built-up Areas Applyning Built-up Index for Kathmandu District<span style="float:right">+</span></button>
+																<div class="panel">
+																<p>The Kathmandu District incorporates a number of built up area that are post-2000 features detected with application of modern tools. These built up areas are actually the altered forms of either wet lands or previously vegetated areas. This alteration is directly effective upon the ecological aspects of an urban area which puts questions upon the environmental quality of the Kathmandu district and in turn effective upon the health of the city dwellers. This type of work seems to be useful for the urban planners and the dwellers for future decision on monitoring of the extension of built up areas. urban planners and the dwellers for future decision on monitoring of the extension of built up areas</p>
+																<button ><a class="explore" href="https://www.academia.edu/44218733/A_MINI_PROJECT_REPORT_ON_CHANGE_DETECTION_OF_BUILT_UP_AREAS_APPLYING_BUILT_UP_INDEX_FOR_KATHMANDU_DISTRICT_" target="_blank">explore</a></button>
+																
+															</div>
+																<button class="accordion">Space as a Tool to Address Climate Challenges: Examples from Local Communities<span style="float:right">+</span></button>
+																<div class="panel">
+																<p>Climate change has become a world long term challenges. It has severe impacts on the ecosystem, ecology, and all humankind development. This essay deals with monitoring the challenges that are encountered due to climate change using space-based technology and policy as a tool and thus concluding ways to mitigate them from local communities. Thus, investing and spending on space technology is worthwhile because the capability to collect data at global, regional, and local scales rapidly and repetitively efficiently and more cheaply. Nowadays, Climate change has become a world long term challenge since temperatures have been increasing day by day around the world over many decades. Catastrophic storms, greater floods, extreme sea level rises, increasing temperature, shift in rainfall patterns, droughts, and wildfires are happening much faster than many of us thought possible. If the same rates continue in up-coming years, we are going to witness some next-level natural disasters. Climate change has severe impacts on the ecosystem, ecology, and all humankind development. Due to this, a variety of species and plants are vanishing day by day. Food security, shelter, and the health of many countries has been already impacted. It is now clear that urgent action against climate change is crucial and it's time to step up towards the mitigation of climate challenges for which relevant information is essential in real-time.</p>
+																<button ><a class="explore" href="https://www.academia.edu/44154506/_SPACE_AS_A_TOOL_TO_ADDRESS_CLIMATE_CHALLENGES_EXAMPLES_FROM_LOCAL_COMMUNITIES_" target="_blank">explore</a></button>
+																
+															</div>
+
 														<!-- <div class="accordion" id="accordionExample">
 															<div class="accordion-item">
 															  <h2 class="accordion-header" id="headingOne">
@@ -1236,6 +1460,7 @@ $(document).ready(function(){
 		<!-- Theme js -->
 		<script type="text/javascript" src="js/theme.js"></script>
 		<script type="text/javascript" src="js/map-script.js"></script>
+		<script type="text/javascript" src="js/accrodion.js"></script>
 		<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
 
     
