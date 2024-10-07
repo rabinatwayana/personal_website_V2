@@ -238,7 +238,7 @@
     let cdeMastersContainer = select(".cde-masters-container");
     if (cdeMastersContainer) {
       let skillsIsotope = new Isotope(cdeMastersContainer, {
-        itemSelector: ".cde-masters-item",
+        itemSelector: ".portfolio-item",
       });
 
       let cdeMastersFilters = select("#cde-masters-filters li", true);
