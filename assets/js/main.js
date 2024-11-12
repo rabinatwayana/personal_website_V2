@@ -232,9 +232,63 @@
   });
 
    /**
-   * Skills isotope and filter
+   * cde masters isotope and filter
    */
    window.addEventListener("load", () => {
+    let cdeMastersContainer = select(".cde-masters-container");
+    if (cdeMastersContainer) {
+      let skillsIsotope = new Isotope(cdeMastersContainer, {
+        itemSelector: ".portfolio-item",
+      });
+
+      let cdeMastersFilters = select("#cde-masters-filters li", true);
+
+      // Function to activate the 'Projects' filter by default
+      function activateProjectsFilter() {
+        cdeMastersFilters.forEach(function (el) {
+          el.classList.remove("filter-active");
+        });
+
+        let defaultFilter = select('[data-filter=".filter-cde-sem1"]');
+        defaultFilter.classList.add("filter-active");
+
+        skillsIsotope.arrange({
+          filter: defaultFilter.getAttribute("data-filter"),
+        });
+        skillsIsotope.on("arrangeComplete", function () {
+          AOS.refresh();
+        });
+      }
+
+      // Triggering click event on 'Projects' filter to activate it by default
+      activateProjectsFilter();
+
+      on(
+        "click",
+        "#cde-masters-filters li",
+        function (e) {
+          e.preventDefault();
+          cdeMastersFilters.forEach(function (el) {
+            el.classList.remove("filter-active");
+          });
+          this.classList.add("filter-active");
+
+          skillsIsotope.arrange({
+            filter: this.getAttribute("data-filter"),
+          });
+          skillsIsotope.on("arrangeComplete", function () {
+            AOS.refresh();
+          });
+        },
+        true
+      );
+    }
+  });
+
+  /**
+   * Skills isotope and filter
+   */
+  window.addEventListener("load", () => {
     let skillsContainer = select(".skills-container");
     if (skillsContainer) {
       let skillsIsotope = new Isotope(skillsContainer, {
