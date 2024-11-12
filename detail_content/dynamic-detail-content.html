@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Portfolio Details - Personal Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: MyResume
+  * Updated: Nov 17 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <main id="main">
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center" id="slider-images">
+                <!-- Images will be dynamically loaded here -->
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3 id="project-title"></h3>
+              <ul>
+                <li><strong>Project URL</strong>: <a target="_blank" id="project-url"></a></li>
+                <li><strong>Documentation</strong>: <a target="_blank" id="project-doc"></a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/js/main.js"></script>
+
+  <!-- Project Details JS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const projectId = urlParams.get("id");
+
+      const projects = {
+        riskchanges1: {
+          title: "RiskChanges",
+          images: [
+            "../assets/img/projects/riskchanges.png",
+            "../assets/img/projects/riskchanges_2.png",
+            "../assets/img/projects/riskchanges_1.png",
+            "../assets/img/projects/riskchanges_3.png"
+          ],
+          url: "https://riskchanges.org/",
+          documentation: "https://sdss-documentation.readthedocs.io/en/latest/"
+        },
+        riskchanges2: {
+          title: "RiskChanges 2",
+          images: [
+            "../assets/img/projects/riskchanges.png",
+            "../assets/img/projects/riskchanges_2.png"
+          ],
+          url: "https://riskchanges2.org/",
+          documentation: "https://sdss-documentation.readthedocs.io/en/latest/"
+        }
+      };
+
+      const project = projects[projectId];
+      if (project) {
+        // Set project title
+        document.getElementById("project-title").innerText = project.title;
+
+        // Set project URL and Documentation links
+        document.getElementById("project-url").href = project.url;
+        document.getElementById("project-url").innerText = project.url;
+        document.getElementById("project-doc").href = project.documentation;
+        document.getElementById("project-doc").innerText = project.documentation;
+
+        // Load images into the slider
+        const sliderImagesContainer = document.getElementById("slider-images");
+        project.images.forEach(image => {
+          const slide = document.createElement("div");
+          slide.classList.add("swiper-slide");
+          slide.innerHTML = `<img src="${image}" alt="">`;
+          sliderImagesContainer.appendChild(slide);
+        });
+      } else {
+        document.getElementById("portfolio-details").innerHTML = "<p>Project not found.</p>";
+      }
+    });
+  </script>
+</body>
+</html>
