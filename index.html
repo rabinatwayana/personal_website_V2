@@ -1,1575 +1,1605 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<!-- For IE -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<!-- For Resposive Device -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-		<title>Rabina Twayana</title>
-
-		<!-- Favicon -->
-		<link rel="icon" type="image/png" sizes="200x200" href="images/fav-icon/pp_c.png">
-		<!-- <link rel="icon" type = "image/x-icon" sizes="56x56" href="images/fav-icon/pp.png"> -->
-
-
-		<!-- Main style sheet -->
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<!-- responsive style sheet -->
-		<link rel="stylesheet" type="text/css" href="css/responsive.css">
-
-		<link rel="stylesheet" href="https://openlayers.org/en/v5.3.0/css/ol.css" />
-		<link rel="stylesheet" href="css/ol.css" />
-		<link rel="stylesheet" href="css/ol3-layerswitcher.css" />
-		
-		<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-
-		<style>
-		#mainMap {
-			background: lightblue;
-			justify-content: center;
-			height: 650px;
-			/* width: 95%;  */
-			width: 100%; 
-			border: 1px solid black; 
-			margin: 5px;
-			float: left;
-			padding: 20px;
-			box-shadow: 1px 1px 20px black;
-		}
-
-		body {
-			font: 400 15px Lato, sans-serif;
-			line-height: 1.8;
-			color: #070707;
-  		}
-			table,TH,TD{
-			border: 1px solid black;}
-			
-			ul.a{
-				list-style-type:square;
-				color:black;
-				margin-left:2em,
-				
-			}
-			.bg-grey {
-      background-color: #f6f6ff;}
-	  .middle {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  /* top: 5%; */
-  bottom: 5%;
-  left: 7%;
-  transform: translate(-5%, -5%);
-  -ms-transform: translate(-5%, -5%);
-  /* text-align: center; */
-}
-.card {
-  position: relative;
-  width: 100%;
-}
-
-.card:hover .image {
-  opacity: 0.2;
-}
-.rounded {
-  border-radius: 15px !important;
-}
-
-.card:hover .middle {
-  opacity: 1;
-}
-
-.image {
-  opacity: 1;
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: .5s ease;
-  backface-visibility: hidden;
-}
-.text {
-  /* background-color: #04AA6D; */
-  color: rgb(36, 35, 131);
-  font-size: 14px;
-  font-weight: 550;
-  font-family: "Nunito", sans-serif;
-  letter-spacing: normal;
-  word-spacing: normal;
-  /* padding: 16px 32px; */
-}
-
-.custom-heading7{
-	/* color: rgb(36, 35, 131); */
-
-	font-size: 18px;
-  font-weight: 600;
-}
-.custom-project-heading7{
-	/* color: rgb(36, 35, 131); */
-	margin-top: 7px;
-	font-size: 20px;
-  	font-weight: 600;
-}
-
-.accordion {
-  background-color: #eee;
-  margin-bottom: 10px;
-  color: #444;
-  cursor: pointer;
-  padding: 10px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  transition: 0.4s;
-}
-
-.active, .accordion:hover {
-  background-color: #ccc; 
-}
-
-.panel {
-  padding: 0 18px;
-  display: none;
-  background-color: white;
-  overflow: hidden;
-}
-
-.explore {
-  background-color:  rgb(77, 94, 167);
-  color: #fff;
-  padding: 4px 10px 4px 10px;
-  font-weight: 600; 
-  border-radius: 5px;
-}
-
-/* .accordionWrapper{padding:30px;background:#fff;float:left;width:80%;box-sizing:border-box;margin:10%;    box-shadow: 0 1.5em 85px 0 rgba(0, 0, 0, 0.2);} */
-
-
-/* 
-.accordionItem{
-    float:left;
-    display:block;
-    width:100%;
-    box-sizing: border-box;
-    font-family:'Open-sans',Arial,sans-serif;
-}
-.accordionItemHeading{
-    cursor:pointer;
-    margin:0px 0px 10px 0px;
-    padding:10px;
-    background:#dfdfdf;
-	color: #000000;
-    width:100%;
-    -webkit-border-radius: 3px;
--moz-border-radius: 3px;
-border-radius: 3px;
-        box-sizing: border-box;
-}
-.close .accordionItemContent{
-    height:0px;
-    transition:height 1s ease-out;
-    -webkit-transform: scaleY(0);
-	-o-transform: scaleY(0);
-	-ms-transform: scaleY(0);
-	transform: scaleY(0);
-    float:left;
-    display:block;
-}
-.open .accordionItemContent{
-        padding: 20px;
-    width: 100%;
-    margin: 0px 0px 10px 0px;
-    display:block;
-    -webkit-transform: scaleY(1);
-	-o-transform: scaleY(1);
-	-ms-transform: scaleY(1);
-	transform: scaleY(1);
-    -webkit-transform-origin: top;
-	-o-transform-origin: top;
-	-ms-transform-origin: top;
-	transform-origin: top;
-
-	-webkit-transition: -webkit-transform 0.4s ease-out;
-	-o-transition: -o-transform 0.4s ease;
-	-ms-transition: -ms-transform 0.4s ease;
-	transition: transform 0.4s ease;
-        box-sizing: border-box;
-}
-
-.open .accordionItemHeading{
-    margin:0px;
-        -webkit-border-top-left-radius: 3px;
-    -webkit-border-top-right-radius: 3px;
-    -moz-border-radius-topleft: 3px;
-    -moz-border-radius-topright: 3px;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    -webkit-border-bottom-right-radius: 0px;
-    -webkit-border-bottom-left-radius: 0px;
-    -moz-border-radius-bottomright: 0px;
-    -moz-border-radius-bottomleft: 0px;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    background-color: #bdc3c7;
-	color: #000000;
-} */
-
-			/* .container{
-				width: 1820px;
-			} */
-/* } */
-
-
-/* element {
-}
-.work-container.work-modern .tag {
-  font-size: 15px !important;
-}
-.text-light {
-  color: #f8f9fa !important;
-}
-.text-light {
-  color: #f8f9fa !important;
-}
-.mb-0 {
-  margin-bottom: 0 !important;
-}
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Nunito", sans-serif;
-  line-height: 1.5;
-  font-weight: 600;
-} */
-			
-		</style>	
-			
-	</head>
-
-	<body>
-		<div class="main-page-wrapper">
-
-
-
-			<!-- 
-			=============================================
-				Theme Header
-			============================================== 
-			-->
-			<header class="theme-main-header">
-				<div class="container">
-					<!-- <a href="index.html" class="logo float-left tran4s"><img src="images/logo/logo.png" alt="Logo"></a> -->
-					
-					<!-- ========================= Theme Feature Page Menu ======================= -->
-					<nav class="navbar float-right theme-main-menu one-page-menu">
-					   <!-- Brand and toggle get grouped for better mobile display -->
-					   <div class="navbar-header">
-					     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-					       <span class="sr-only">Toggle navigation</span>
-					       Menu
-					       <i class="fa fa-bars" aria-hidden="true"></i>
-					     </button>
-					   </div>
-					   <!-- Collect the nav links, forms, and other content for toggling -->
-					   <div class="collapse navbar-collapse" id="navbar-collapse-1">
-					     <ul class="nav navbar-nav">
-					       	<li class="active"><a href="#home">HOME</a></li>
-							<li><a href="#about-me">ABOUT ME</a></li>
-							<!-- <li><a href="#KU-section">ABOUT KU</a></li> -->
-							<!-- <li><a href="#KUstudy-section">STUDY AT KU</a></li> -->
-							<!-- <li><a href="#GEcouse-section">GEOMATICS ENGINEERING</a></li> -->
-							<li><a href="#WebGISmodule-section">PROJECTS</a></li>
-							<!-- <li><a href="#Report-section">REPORT</a></li> -->
-							<!-- <li><a href="#Map-section">MAP</a></li> -->
-							
-							<li><a href="#contact-section">CONTACT</a></li>
-					     </ul>
-					   </div><!-- /.navbar-collapse -->
-					</nav> <!-- /.theme-feature-menu -->
-				</div>
-			</header> <!-- /.theme-main-header -->
-
-
-			<!--
-			=====================================================
-				Theme Main SLider
-			=====================================================
-			-->
-			<div id="home" class="banner">
-	        	<!-- <div class="rev_slider_wrapper"> -->
-					<div>
-
-					<!-- START REVOLUTION SLIDER 5.0.7 auto mode -->
-						<div id="main-banner-slider" class="rev_slider video-slider" data-version="5.0.7">
-							<ul>
-
-								<!-- SLIDE1  -->
-								<li data-index="rs-280" data-transition="fade" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default"  data-title="Title Goes Here" data-description="">
-									<!-- MAIN IMAGE -->
-									<img src="images/home/slide-1.jpg"  alt="image" class="rev-slidebg" data-bgparallax="3" data-bgposition="center center" data-duration="20000" data-ease="Linear.easeNone" data-kenburns="on" data-no-retina="" data-offsetend="0 0" data-offsetstart="0 0" data-rotateend="0" data-rotatestart="0" data-scaleend="100" data-scalestart="140">
-									<!-- LAYERS -->
-
-									<!-- LAYER NR. 1 -->
-									<div class="tp-caption" 
-										data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-										data-y="['middle','middle','middle','middle']" data-voffset="['-58','-58','0','-50']" 
-										data-width="none"
-										data-height="none"
-										data-whitespace="nowrap"
-										data-transform_idle="o:1;"
-							 
-										data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-										data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-										data-mask_in="x:0px;y:[100%];" 
-										data-mask_out="x:inherit;y:inherit;" 
-										data-start="100" 
-										data-splitin="none" 
-										data-splitout="none" 
-										data-responsive_offset="on" 
-										style="z-index: 6; white-space: nowrap;">
-										<!-- <img src="images/profilephoto/profile.jpg" style=border-radius:50% width:20px height: 20px alt="Avatar">  -->
-										<img src="images/fav-icon/pp_c.png" alt="Avatar"> 
-
-										<!-- <h1>HELLO I'M RABINA TWAYANA</h1> -->
-									</div>
-									
-									<div class="tp-caption" 
-										data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-										data-y="['middle','middle','middle','middle']" data-voffset="['-05','-05','63','0']"
-										data-width="none"
-										data-height="none"
-										data-whitespace="nowrap"
-										data-transform_idle="o:1;"
-							 
-										data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-										data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-										data-mask_in="x:0px;y:[100%];" 
-										data-mask_out="x:inherit;y:inherit;" 
-										data-start="200" 
-										data-splitin="none" 
-										data-splitout="none" 
-										data-responsive_offset="on" 
-										style="z-index: 6; white-space: nowrap;">
-										<!-- <img src="images/fav-icon/pp_c.png" alt="Avatar">  -->
-										<br>
-										<h1 style="margin-top: 400px;">RABINA TWAYANA</h1>
-										<!-- <h6>WEBGIS DEVELOPER</h6> -->
-										<!-- <p>rabinatwayana123@gmail.com</p> -->
-					<!-- <div class="container">
-
-						<ul style="display:inline-block">
-							<li><a href="https://www.facebook.com/profile.php?id=100008143213677" target="_blank" class="tran3s round-border"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-							<li><a href="https://www.instagram.com/rabina_twayana/" target="_blank" class="tran3s round-border"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-							<li><a href="https://www.linkedin.com/in/rabina-twayana-0a9420189/" target="_blank" class="tran3s round-border"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-							<li><a href="https://github.com/rabinatwayana" target="_blank" class="tran3s round-border"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-							<li><a href="https://gitlab.com/rabinatwayana" target="_blank" class="tran3s round-border"><i class="fa fa-gitlab" aria-hidden="true"></i></a></li>
-							
-						</ul>
-					</div> -->
-									</div>
-								<!-- SLIDE2  -->
-								
-							</ul>	
-						</div>
-					</div>
-	        </div> 
-	        <!--
-			=====================================================
-				About me Section
-			=====================================================
-			-->
-			<section id="about-me">
-				<div class="container">
-					
-						<div class="row">
-							<div class="theme-title">
-							
-									<h2>ABOUT MYSELF</h2>
-							</div>
-							<br>
-									
-							<!-- <div class="col-sm-12"> -->
-								
-									
-									<p style=text-align:justify>
-										I am a geomatics engineering graduate from Kathmandu University,Nepal. Presently, I am working as a Research Associate at Geoinformatics Center(GIC), AIT, Thailand. I am currently gathering professional experience in the WebGIS sector. Whilst, I also have sound knowledge in the geoinformatics areas such as; RS, UAV technology, GIS, FOSS, Geospatial Programming, etc. 
-I am enthusiast about the integration of Web GIS technologies along with other geoinformatics tools for the improvement of critical aspects of environment and society. I also actively involved in publishing papers in journals and conference proceedings in the sector of WebGIS and geoinformatics. 
-
-Despite all, I had very good academic track records and holds numerous academic excellence awards.
-										
-										
-										<!-- Heartily Welcome to the website! I am Rabina Twayana, and I'm undergraduate bachleor student 
-									studying Geomatics Engineering at Kathmandu University.
-										
-										I am from Banepa-8,Kavre, Nepal.By 2020, I will have received my Bachelors in Geomatics Engineering. 
-										I'm the creator of this site and through this site, I share ideas and techniques from my personal experience of Study
-										in WebGIS module studied during the 4th year in the program.  -->
-									</p>
-									<!-- <p>Email:rabinatwayana123@gmail</p> -->
-									<br>
-									<h5><a href="#" class="tran3s">EDUCATION</a></h5>	
-									<!-- <h5 style=text-align:center><a href="#" class="tran3s">EDUCATION</a></h5>	 -->
-											<!-- <table style="Width:50%">
-												<TR>
-													<TH>S.N.</TH>
-													<TH>Tittle of Qualification </TH>
-													<TH>Name of Institution</TH>
-													<TH>Year </TH>
-													<TH>Percentage</TH>
-													</TR>
-													<TR>
-														<TD>1</TD>
-														<TD>B.E.in Geomatics Engineering</TD>
-														<TD>Kathmandu University, Dhulikhel, Kavre </TD>
-														<TD>2016-2020</TD>
-														<TD>3.86 CGPA</TD>
-														
-													<TR>
-														<TD>2</TD>
-														<TD>10+2 in Science </TD>
-														<TD>Siddhartha Higher Secondary Boarding School, Banepa</TD>
-														<TD>2014-2016 </TD>
-														<TD>77%</TD>
-														
-													</TR>	
-													<TR>
-														<TD>3</TD>
-														<TD>SLC </TD>
-														<TD>Lin International Secondary School, Banepa</TD>
-														<TD>Till 2014</TD>
-														<TD>86%</TD>
-														
-													</TR>
-												</table>	 -->
-												<div class="row">
-													<div class="col-sm-3">  
-														<p class="custom-heading7">2016-2020</p>
-													</div>
-													<div class="col-sm-9">  
-														<p class="custom-heading7">Bachelors of Engineering in Geomatics</p>
-														<p>Kathmandu University</p>
-														<p>Dhulikhel,Nepal</p>
-														<p>Grade: 3.86 CGPA out of 4</p>
-														<p>Batch Topper</p>
-
-													</div>
-												</div>
-												<br>
-												<div class="row">
-													<div class="col-sm-3">  
-														<p class="custom-heading7">2014-2016</p>
-													</div>
-													<div class="col-sm-9">  
-														<p class="custom-heading7">10+2 Science Stream</p>
-														<p>Siddhartha Higher Secondary Boarding School, Banepa</p>
-														<p>Kavre, Nepal</p>
-														<p>Grade:77%</p>
-
-													</div>
-											</div>
-											<br>
-											<div class="row">
-												<div class="col-sm-3">  
-													<p class="custom-heading7">2014</p>
-												</div>
-												<div class="col-sm-9">  
-													<p class="custom-heading7">SLC</p>
-													<p>Lin International Secondary School</p>
-													<p>Kavre, Nepal</p>
-													<p>Grade:86.38%</p>
-													<p>Batch Topper</p>
-												</div>
-											</div>
-
-											<br>
-											<h5><a href="#" class="tran3s">EXPERIENCE</a></h5>	
-									<br>
-									<div class="row">
-										<div class="col-sm-3">  
-											<p class="custom-heading7">Nov 2022 - Present</p>
-										</div>
-										<div class="col-sm-9">  
-											<p class="custom-heading7">Research Associate</p>
-											<p>Geoinformatica Center, AIT</p>
-											<p>Pathumthani, Thailand</p>
-											<p>Full-time</p>
-
-										</div>
-									</div>
-												<div class="row">
-													<div class="col-sm-3">  
-														<p class="custom-heading7">Dec 2020 - Nov 2022</p>
-													</div>
-													<div class="col-sm-9">  
-														<p class="custom-heading7">WebGIS Developer</p>
-														<p>Naxa Pvt. Ltd.</p>
-														<p>Kathmandu,Nepal</p>
-														<p>Full-time</p>
-
-													</div>
-												</div>
-												<br>
-												<div class="row">
-													<div class="col-sm-3">  
-														<p class="custom-heading7">March 2022 - present</p>
-													</div>
-													<div class="col-sm-9">  
-														<p class="custom-heading7">GIS Analyst</p>
-														<p>Airlift Company</p>
-														<p>Kathmandu,Nepal</p>
-														<p>Part-time</p>
-
-													</div>
-												</div>
-												<br>
-												<div class="row">
-													<div class="col-sm-3">  
-														<p class="custom-heading7">June 2020 - August 2020</p>
-													</div>
-													<div class="col-sm-9">  
-														<p class="custom-heading7">WebGIS Developer Intern</p>
-														<p>Naxa Pvt. Ltd.</p>
-														<p>Kathmandu, Nepal</p>
-													</div>
-											</div>
-										
-
-													<br>
-													
-													<h5 style=text-align:left><a href="#" class="tran3s">LEADERSHIP AND INVOLVEMENT</a></h5>	
-														<ul class="a" >
-															<li style=text-align:left>School House Vice-Captain for one year </li>
-															<li style=text-align:justify>Involved as volunteer in 2 day’s leadership program organized by GPYC (Global Peace Youth Corps), Nepal at Banepa </li>
-															<li style=text-align:justify>Worked as Manager in Basketball Team during GE Cup 2018</li>	
-															<li style=text-align:justify> 15-hour Arc-GIS Training organized by GES (Geomatics Engineering Society) </li>	
-												
-														</ul>
-														<br>
-														
-														<h5 style=text-align:left><a href="#" class="tran3s">SKILLS </a></h5>	
-														<ul class="a">
-															<li style=text-align:justify>Matlab </li>
-															<li style=text-align:justify> Image Processing Software (Pix4D Mapper)  </li>
-															<li style=text-align:justify>GIS Software’s (ArcGIS, QGIS) </li>	
-															<li style=text-align:justify>AutoCAD Land Desktop</li>
-															<li style=text-align:justify> Spatial Database Management (PostgreSQL, PostGIS) </li>	
-															<li style=text-align:justify> Drone Piloting </li>
-															<li style=text-align:justify>Data Processing (GNSS Solution)</li>	
-															<li style=text-align:justify>Microsoft-Word, Microsoft-Excel, Microsoft-PowerPoint, Microsoft-Access</li>
-														</ul>
-														<br>
-														
-														
-														<h5 style=text-align:left><a href="#" class="tran3s">Programming Language</a></h5>
-														<ul class="a">
-															<li style=text-align:justify> C and C++</li>
-															<li style=text-align:justify>Java</li>
-															<li style=text-align:justify>Python</li>		
-														</ul>
-														<br>
-														
-														<h5 style=text-align:left><a href="#" class="tran3s">PROJECTS</a></h5>
-														<ul class="a">
-															<li style=text-align:justify> “3D Model Preparation of Khopasi Intake Site”, 2nd Semester Undergraduate Project,2016</li>
-															<!-- <li style=text-align:justify> “Topographical Map Preparation  of Kathmandu University Warehouse Area”,3rd Semester Undergraduate Project,2017 </li> -->
-															<li style=text-align:justify>“Monitoring  Growth Pattern through Multi-Temporal UAV Datasets: A Case Study of Potato Plant”, 5th Semester Undergraduate Project,2018</li>	
-									
-															
-												
-														</ul>
-														<br>
-														
-														<h5 style=text-align:left><a href="#" class="tran3s">SERVICES</a></h5>	
-														<ul class="a" >
-															<li style=text-align:justify>Volunteered in International Map Year 2015-2016 organized by Geomatics Engineering Society(GES) at Kathmandu University  </li>
-															<li style=text-align:justify> Volunteered in WORLD GIS DAY 2017 organized by GES at Kathmandu University  </li>
-															<li style=text-align:justify>General Member of Geomatics Engineering Society, Departmental Club of Geomatics Engineering in Kathmandu University </li>	
-														</ul>
-														<br>
-														
-														<h5 style=text-align:left><a href="#" class="tran3s">AWARDS</a></h5>
-														<ul class="a">
-															<li style=text-align:justify> 100% tuition fee provided by Kathmandu University for being a class topper  </li>
-															<li style=text-align:justify>Scholarship for Undergraduate course (33% of total fee) supported by Government of Nepal through Land Management Training Center (LMTC)  </li>
-															<li style=text-align:justify>SLC Batch 2070 Topper in Lin International Academy</li>	
-														</ul>
-														<br>
-														<h5 style=text-align:left><a href="#" class="tran3s">PUBLICATIONS IN JOURNALS</a></h5><br>	
-														<button class="accordion">Future Land Use Land Cover Scenario Simulation Using Open-Source GIS for the City of Banepa and Dhulikhel Municipality, Nepal<span style="float:right">+</span></button>
-																<div class="panel">
-																<p> 
-																	ABSTRACT
-																	<br>
-																	Free and Open-Source Software (FOSS) is making revolutionary in the present era of Information, communication and
-																	technology. Considering the availability of open source software, this study primarily aims to apply CA-ANN model
-																	available in MOLUSCE plugin of QGIS to predict the future scenario of LULC. Similarly, it also examines the
-																	responsible driving factors for the LULC changes throughout the study period (1992-2020) using desk study. In order
-																	to accomplish the objective of this study initially necessary datasets were extracted, then drives were selected for impact
-																	analysis, finally modelling and prediction was done. The future scenario of Banepa and Dhulikhel municipalities was
-																	generated using CA-ANN model via MOLUSCE plugin bbgavailable in QGIS. It reveals that agriculture and forest
-																	land are expected to decrease by 2.56 % and 2.62 % respectively by 2032 since 2020.Similarly, the barren land is
-																	predicted to decrease by 0.57 % whereas the builtup expected to increase by 5.73 % in 2032 since 2020.Moreover,
-																	results generated from this study reveals that agriculture and forest land are expected to decrease by 2.56 % and 2.62
-																	% respectively in 2032 from 2020.Similarly, the barren land is predicted to decreas by 0.57 % whereas the builtup will
-																	be increased by 5.73 % in 2032 from 2020. Future prediction of LULC classes is crucial in Land Use Planning of every
-																	government/state. The prediction done by model is corrected up to 81.66%. In addition, this study reveals that during
-																	study period major drivers such as; internal migration, commercialization, real estate business are major drivers for
-																	LULC changes whereas establishment of Kathmandu university and dhulikhel hospital, climatic conditions, population
-																	growth, accessibility of Araniko and BP highways are the major drivers of LULC changes in Dhulikhel municipality.
-																	Thus, the methodology adopted and results generated from this study can be the basis or reference materials for the
-																	technical members of the council of the respective municipal offices; Banepa and Dhulikhel to develop their land use
-																	planning/land management related project.
-																	<br>
-																	Keywords: LULC, CA-ANN, MOLUSCE, QGIS
-																	</p>
-																	<button ><a class="explore" href="https://www.foss4g-asia.org/2020/wp-content/uploads/Papers/Theme%203_%20Spatial%20Landuse%20Planning%20and%20Decision%20Support%20System%20(SPDSS)/%5BPaper%20ID-11%5D%20Future%20land%20use%20land%20cover%20scenario%20simulation%20using%20Open%20Source%20GIS%20for%20the%20City%20of%20Banepa%20and%20Dhulikhel%20Municipality,%20Nepal.pdf" target="_blank">Read full paper</a></button>
-																	<!-- <button style="background-color:rgb(77, 94, 167); color: #fff; padding: 5px; font-weight: 600; border-radius: 5px; justify-content: center;">explore</button> -->
-																</div>
-																<button class="accordion">Analyzing Urban Growth Pattern and Driving Factors Using Remote Sensing and GIS: A Case Study of Banepa Municipality, Nepal<span style="float:right">+</span></button>
-																<div class="panel">
-																<p> 
-																	ABSTRACT
-																	<br>
-																	Nepal is considered one of the rapidly urbanizing countries in south Asia. Most of the urbanization is dominated in large and medium cities i.e., metropolitan, sub-metropolitan, and municipalities. Remote Sensing and Geographic Information System (GIS) technologies in the sector of urban land governance are growing day by day due to their capability of mapping, analyzing, detecting changes, etc. The main aim of this paper is to analyze the urban growth pattern in Banepa Municipality during three decades (1992-2020) using freely available Landsat imageries and explore driving factors for change in the urban landscape using the AHP model. The Banepa municipality is taken as a study area as it is one of the growing urban municipalities in the context of Nepal. The supervised image classification was applied to classify the acquired satellite image data. The generated results from this study illustrate that urbanization is gradually increasing from 1992 to 2012 while, majority of the urban expansion happened during 2012-2020, and it is still growing rapidly along the major roads in a concentric pattern. This study also demonstrates the responsible driving factors for continuous urban growth during the study period. Analytical Hierarchy Process (AHP) was adopted to analyze the impact of drivers which reveals that, Internal migration (57%) is major drivers for change in urban dynamics whereas, commercialization (25%), population density (16%), and real estate business (5%) are other respective drivers for alteration of urban land inside the municipality. To prevent rapid urbanization in this municipality, the concerned authorities must take initiative for proper land use planning and its implementation on time. Recently, Nepal Government has endorsed Land Use Act 2019 for preventing the conversion of agricultural land into haphazard urban growth.
-																	<br>
-																	Keywords: Urban Growth, Driving factors, Analytical Hierarchy Process (AHP)	
-																</p>
-																	<button ><a class="explore" href="https://www.nepjol.info/index.php/NJG/article/view/39471" target="_blank">Read full paper</a></button>
-																	<!-- <button style="background-color:rgb(77, 94, 167); color: #fff; padding: 5px; font-weight: 600; border-radius: 5px; justify-content: center;">explore</button> -->
-																</div>
-																
-																<button class="accordion">Monitoring Land Cover/Land Use Change Using Remote Sensing and GIS Technique at Dhulikhel and Banepa Municipality, Nepal<span style="float:right">+</span></button>
-																<div class="panel">
-																<p> 
-																	ABSTRACT
-																	<br>
-																	This study illustrates the land cover/ land use (LULC) (Agriculture, Forest, Built-up, Barren) and its changes
-																	using geo-spatial technology like Remote Sensing and GIS. The land cover has been detected for the years 1992,
-																	2002, 2012, and 2020 using freely available Landsat Images. In addition, land cover change analysis within a
-																	decade and also overall from 1992 to 2020 has been carried out. The approaches like Maximum Likelihood
-																	Classification (MLC) have been applied in ENVI for supervised classification. Observing the statistics generated
-																	from this study, over the time frame of 38 years (1992-2020), forest and agricultural land were decreased by
-																	8.27 sq. km (7.57%) and 8.12 sq. km (7.44 %) respectively, whereas built-up and barren areas were increased
-																	by 12.39 sq. km (11.3 6%) and 3.99 sq. km (3.66 %) respectively. To prevent the haphazard conversion of
-																	agricultural land in other land use, the implementation of the land use policy 2015, which has recently been
-																	enacted in Nepal, is important.
-																	<br>
-																	Keywords: Land Use, Land Cover, GIS, Remote Sensing, Agriculture
-																	</p>
-																	<button ><a class="explore" href="https://www.irjmets.com/uploadedfiles/paper/volume3/issue_5_may_2021/9793/1628083392.pdf" target="_blank">Read full paper</a></button>
-																	<!-- <button style="background-color:rgb(77, 94, 167); color: #fff; padding: 5px; font-weight: 600; border-radius: 5px; justify-content: center;">explore</button> -->
-																</div>
-																<button class="accordion">Problems and Its Possible Solutions For Conversion of 2D Cadastre to 3D Cadastre in Context of Nepal<span style="float:right">+</span></button>
-																<div class="panel">
-																<!-- <p> Geopy is a python module that includes geocoders class for calling several geocoding web services such as:
-																	Open StreetMap Nominatim,
-																	ESRI ArcGIS.
-																	Google Geocoding API(V3),
-																	Bing Maps API,
-																	Yandex,
-																	OpenMapQuest,
-																	 NaviData,
-																	GeoNames etc which  Makes easy to locate 
-																	Co-ordinate,
-																	Address,
-																	Geographic location(Mountains, rivers etc),
-																	Landmarks,
-																	Cities,
-																	Countries across the globe.
-																	</p>
-																	<button ><a class="explore" href="https://www.academia.edu/44218761/Geopy_Python_Module_Slideshare" target="_blank">explore</a></button> -->
-																	<!-- <button style="background-color:rgb(77, 94, 167); color: #fff; padding: 5px; font-weight: 600; border-radius: 5px; justify-content: center;">explore</button> -->
-																</div>
-																<br>
-														<h5 style=text-align:left><a href="#" class="tran3s">PUBLICATIONS IN ACADEMIA</a></h5><br>	
-														
-														<!-- <ul class="a">
-															<li><a href="https://www.academia.edu/44218761/Geopy_Python_Module_Slideshare" target="_blank" class="tran3s round-border">Geopy Python Module</a></li>
-															<li><a href="https://www.academia.edu/44154608/Land_Law_in_Nepal" target="_blank" class="tran3s round-border">Land Law in Nepal </a></li>
-															<li><a href="https://www.academia.edu/44218744/A_REPORT_ON_SPATIAL_DATA_VISULIZATION_IN_SDI_ONLINE_MAPPING_" target="_blank" class="tran3s round-border">Spatial Data Visualization in SDI:Online Mapping</a></li>
-															<li><a href="https://www.academia.edu/44154644/LAND_TENURE_SYSTEM_IN_ETHIOPIA_ISSUES_CHALLENGES_AND_OPPORTUNITIES" target="_blank" class="tran3s round-border"> Land Tenure System in Ethiopia: Issues, Challenges and Opportunities </a></li>
-															<li><a href="https://www.academia.edu/44154576/IMPORTANCE_OF_PROJECT_CONTROL_AND_ITS_POSSIBLE_ISSUES_CHALLENGES_AND_OPPORTUNITIES" target="_blank" class="tran3s round-border">Importance of Project Control and its Possible Issues, Challenges and Opportunities </a></li>
-															<li><a href="https://www.academia.edu/44218733/A_MINI_PROJECT_REPORT_ON_CHANGE_DETECTION_OF_BUILT_UP_AREAS_APPLYING_BUILT_UP_INDEX_FOR_KATHMANDU_DISTRICT_" target="_blank" class="tran3s round-border">Change Detection of Built-up Areas Applyning Built-up Index for Kathmandu District </a></li>
-															<li><a href="https://www.academia.edu/44154506/_SPACE_AS_A_TOOL_TO_ADDRESS_CLIMATE_CHALLENGES_EXAMPLES_FROM_LOCAL_COMMUNITIES_" target="_blank" class="tran3s round-border">Space as a Tool to Address Climate Challenges: Examples from Local Communities </a></li>
-
-														</ul> -->
-
-														<!-- <div class="accordionWrapper"> 
-															<div class="accordionItem close">
-																  <h6 class="accordionItemHeading">Geopy Python Module</h6>
-																  <div class="accordionItemContent">
-																	<p>JavaScript accordions let you squeeze a lot of content into a small space in a Web page.</p>
-																	<p>This simple accordion degrades gracefully in browsers that don't support JavaScript or CSS.</p>
-																  </div>
-																</div>
-															
-																<div class="accordionItem close">
-																  <h6 class="accordionItemHeading">Land Law in Nepal</h6>
-																  <div class="accordionItemContent">
-																	<p>A JavaScript accordion is made up of a number of expandable/collapsible items. Only one item is ever shown at a time.</p>
-																	<p>You can include any content you want inside an accordion item. Here's a bullet list:</p>
-																	<ul>
-																	  <li>List item #1</li>
-																	  <li>List item #2</li>
-																	  <li>List item #3</li>
-																	</ul>
-																  </div>
-																</div>
-															
-																<div class="accordionItem close">
-																  <h6 class="accordionItemHeading">Spatial Data Visualization in SDI:Online Mapping</h6>
-																  <div class="accordionItemContent">
-																	<p>Click an accordion item's heading to expand it. To collapse the item, click it again, or click another item heading.</p>
-																  </div>
-																</div>
-																<div class="accordionItem close">
-																  <h6 class="accordionItemHeading"> Land Tenure System in Ethiopia: Issues, Challenges and Opportunities</h6>
-																  <div class="accordionItemContent">
-																	<p>Click an accordion item's heading to expand it. To collapse the item, click it again, or click another item heading.</p>
-																  </div>
-																</div>
-																<div class="accordionItem close">
-																  <h6 class="accordionItemHeading">Importance of Project Control and its Possible Issues, Challenges and Opportunities</h6>
-																  <div class="accordionItemContent">
-																	<p>Click an accordion item's heading to expand it. To collapse the item, click it again, or click another item heading.</p>
-																  </div>
-																</div>
-																<div class="accordionItem close">
-																  <h6 class="accordionItemHeading">Change Detection of Built-up Areas Applyning Built-up Index for Kathmandu District</h6>
-																  <div class="accordionItemContent">
-																	<p>Click an accordion item's heading to expand it. To collapse the item, click it again, or click another item heading.</p>
-																  </div>
-																</div>
-																<div class="accordionItem close">
-																  <h6 class="accordionItemHeading">Space as a Tool to Address Climate Challenges: Examples from Local Communities</h6>
-																  <div class="accordionItemContent">
-																	<p>Click an accordion item's heading to expand it. To collapse the item, click it again, or click another item heading.</p>
-																  </div>
-																</div>
-															</div> -->
-	
-
-															<button class="accordion">Geopy Python Module<span style="float:right">+</span></button>
-																<div class="panel">
-																<p> Geopy is a python module that includes geocoders class for calling several geocoding web services such as:
-																	Open StreetMap Nominatim,
-																	ESRI ArcGIS.
-																	Google Geocoding API(V3),
-																	Bing Maps API,
-																	Yandex,
-																	OpenMapQuest,
-																	 NaviData,
-																	GeoNames etc which  Makes easy to locate 
-																	Co-ordinate,
-																	Address,
-																	Geographic location(Mountains, rivers etc),
-																	Landmarks,
-																	Cities,
-																	Countries across the globe.
-																	</p>
-																	<button ><a class="explore" href="https://www.academia.edu/44218761/Geopy_Python_Module_Slideshare" target="_blank">explore</a></button>
-																	<!-- <button style="background-color:rgb(77, 94, 167); color: #fff; padding: 5px; font-weight: 600; border-radius: 5px; justify-content: center;">explore</button> -->
-																</div>
-
-																<button class="accordion">Land Law in Nepal<span style="float:right">+</span></button>
-																<div class="panel">
-																<p> Since Nepal is an agricultural country, common people of the country have excessive reliance on land. It is the crucial and vital factor of production in country like Nepal which indicates the socio economic and socio political status of the society. There are numbers of acts, regulations, directives and other decrees with adequate legal and regulatory framework for the smooth land governance and equitable land access among the people. This paper aims on exploring existing land law and policy in Nepal. Nepal Law commission reviews prevailing laws and recommends reform where necessary. There has been weak implementation due to elite nexus, lack of knowledge of policies and laws and centralized land administration system. The legislative body in the parliament, law commission of Nepal and are responsible for endorsement of bill and drafting the acts respectively. The Ministry of Land Management, Co-operatives and Poverty Alleviation and line agency under it are responsible for evaluation and implementation of the land related acts. The land measurement act, land revenue act, land related act, land acquisition act are the governing acts regarding land governance in Nepal. These acts have modernized, managed, the systematic land governance in the country.
- 
-																	The planned national policy has limited access to landless and the destitute groups, unable to update information related to land and other geographical information, not to be fully utilized the contemporary technology in the field of land administration. Thus, if these laws are implemented well and unified, the land governance in Nepal can be ascertained.</p>
-																	<button ><a class="explore" href="https://www.academia.edu/44154608/Land_Law_in_Nepal" target="_blank">explore </a></button>
-																
-																</div>
-
-																<button class="accordion">Spatial Data Visualization in SDI:Online Mapping<span style="float:right">+</span></button>
-																<div class="panel">
-																<p>Online mapping is the compilation and publication of Web sites that provide exhaustive graphical and text information in the form of maps and databases. The first well known online mapping service is MapQuest which was launched in 1996 and is still popular. In addition to interactive maps with zooming function, some services offer topographical maps, satellite images, weather and climate maps, demographic maps and traffic information. Geospatial data visualization refers to a set of tools and techniques supporting the analysis of geospatial data through the use of interactive visualization</p>
-																<button ><a class="explore" href="https://www.academia.edu/44218744/A_REPORT_ON_SPATIAL_DATA_VISULIZATION_IN_SDI_ONLINE_MAPPING_" target="_blank">explore</a></button>
-																
-															</div>
-																<button class="accordion">Land Tenure System in Ethiopia: Issues, Challenges and Opportunities<span style="float:right">+</span></button>
-																<div class="panel">
-																<p>Ethiopia is an agrarian country where land has been the major means of production and livelihood. Tenure rules help to define how property rights to land are allocated within societies. Our paper aims on discovering the issues of land tenure system in Ethiopia along with its challenges and opportunities. Ethiopia has complex land tenure system. Land had been controlled by elite king until Derg Regime came in power in 1975 with slogan &amp;quot;Land to the Tiller&amp;quot; but ended up owning the land itself rather giving it to the people. The existing government that controlled power in 1991 maintained the Derg&amp;#39;s state ownership and new constitution 1995 approved the state ownership of land in Ethiopia. Farmers have only usufruct right to land which raise issue on food sovereignty. Food insecurity has a disproportionate impact&amp;#39;s on Ethiopia&amp;#39;s economy. There have been lots of people and dozens of parties arguing for private landowner ship, the debate on this issue continues till this day, as ratification of 1995 constitution could not conclude the controversial and throny issue. As a result, farmers who are interested in agriculture sometimes face credit constraint as banks find it more risky to lend to such business, which affects the level of production since agaric inputs are expensive Thus, a policy has to be drawn to facilitate more efficient transactions of land between farmers and to minimize inefficiencies associated with these tenure systems.</p>
-																<button ><a class="explore" href="https://www.academia.edu/44154644/LAND_TENURE_SYSTEM_IN_ETHIOPIA_ISSUES_CHALLENGES_AND_OPPORTUNITIES" target="_blank"> explore</a></button>
-																
-															</div>
-																<button class="accordion">Importance of Project Control and its Possible Issues, Challenges and Opportunities<span style="float:right">+</span></button>
-																<div class="panel">
-																<p>Project Control is key to success. Nowadays projects dynamicity and complexity make the control process highly critical. Project operates under some constrains such as time, cost and quality. During Project Control, project managers need to adjust schedules or do what is needed to keep the project on track. Effective project controls process  begins early in the project with planning and ends late with post-implementation review. This  paper deals with importance of project control and major issues, challenges and opportunity regarding project control. Ultimately, project controls are iterative processes for measuring  project status, forecasting likely outcomes based on proposed goals, and then improving project  performance if projected outcomes are unacceptable. Every project goes through certain degree of turbulence and therefore required monitoring and controlling to controls the activities within the project and applies necessary correction in case of deviations found in performance. In this article, importance, purpose, types, process, approaches and benefits of project control are examined. Project control is considered very important as it determine the success of the  project and also determine whether the inputs in project are properly utilized. It also helps to  provide accurate and timely information to project management team to make informed decision. Thus, Project control is a professional function which is essential for achieving  perfect project outcome by controlling the time, resources and performance to get unique  product, service or information.</p>
-																<button ><a class="explore" href="https://www.academia.edu/44154576/IMPORTANCE_OF_PROJECT_CONTROL_AND_ITS_POSSIBLE_ISSUES_CHALLENGES_AND_OPPORTUNITIES" target="_blank">explore</a></button>
-																
-															</div>
-																<button class="accordion">Change Detection of Built-up Areas Applyning Built-up Index for Kathmandu District<span style="float:right">+</span></button>
-																<div class="panel">
-																<p>The Kathmandu District incorporates a number of built up area that are post-2000 features detected with application of modern tools. These built up areas are actually the altered forms of either wet lands or previously vegetated areas. This alteration is directly effective upon the ecological aspects of an urban area which puts questions upon the environmental quality of the Kathmandu district and in turn effective upon the health of the city dwellers. This type of work seems to be useful for the urban planners and the dwellers for future decision on monitoring of the extension of built up areas. urban planners and the dwellers for future decision on monitoring of the extension of built up areas</p>
-																<button ><a class="explore" href="https://www.academia.edu/44218733/A_MINI_PROJECT_REPORT_ON_CHANGE_DETECTION_OF_BUILT_UP_AREAS_APPLYING_BUILT_UP_INDEX_FOR_KATHMANDU_DISTRICT_" target="_blank">explore</a></button>
-																
-															</div>
-																<button class="accordion">Space as a Tool to Address Climate Challenges: Examples from Local Communities<span style="float:right">+</span></button>
-																<div class="panel">
-																<p>Climate change has become a world long term challenges. It has severe impacts on the ecosystem, ecology, and all humankind development. This essay deals with monitoring the challenges that are encountered due to climate change using space-based technology and policy as a tool and thus concluding ways to mitigate them from local communities. Thus, investing and spending on space technology is worthwhile because the capability to collect data at global, regional, and local scales rapidly and repetitively efficiently and more cheaply. Nowadays, Climate change has become a world long term challenge since temperatures have been increasing day by day around the world over many decades. Catastrophic storms, greater floods, extreme sea level rises, increasing temperature, shift in rainfall patterns, droughts, and wildfires are happening much faster than many of us thought possible. If the same rates continue in up-coming years, we are going to witness some next-level natural disasters. Climate change has severe impacts on the ecosystem, ecology, and all humankind development. Due to this, a variety of species and plants are vanishing day by day. Food security, shelter, and the health of many countries has been already impacted. It is now clear that urgent action against climate change is crucial and it's time to step up towards the mitigation of climate challenges for which relevant information is essential in real-time.</p>
-																<button ><a class="explore" href="https://www.academia.edu/44154506/_SPACE_AS_A_TOOL_TO_ADDRESS_CLIMATE_CHALLENGES_EXAMPLES_FROM_LOCAL_COMMUNITIES_" target="_blank">explore</a></button>
-																
-															</div>
-
-														<!-- <div class="accordion" id="accordionExample">
-															<div class="accordion-item">
-															  <h2 class="accordion-header" id="headingOne">
-																<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-																	Geopy Python Module
-																</button>
-															  </h2>
-															  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-																<div class="accordion-body">
-																  <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-																</div>
-															  </div>
-															</div>
-															<div class="accordion-item">
-															  <h2 class="accordion-header" id="headingTwo">
-																<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-																	Land Law in Nepal
-																</button>
-															  </h2>
-															  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-																<div class="accordion-body">
-																  <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-																</div>
-															  </div>
-															</div>
-															<div class="accordion-item">
-															  <h2 class="accordion-header" id="headingThree">
-																<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-																	Spatial Data Visualization in SFI:Online Mapping
-																</button>
-															  </h2>
-															  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-																<div class="accordion-body">
-																  <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-																</div>
-															  </div>
-															</div>
-														  </div> -->
-														
-														<br>
-
-														<!-- </div> -->
-																	
-																	<!-- <div class="col-sm-4">
-																	<img src="images/profilephoto/profile.jpg" alt="Image"style="width:400px:height:300px:">
-																	</div> -->
-
-												<!-- </div> /.theme-title -->
-					
-					</div>
-	
-				</div> <!-- /.container -->
-			</section> <!-- /#about-us -->
-
-
-			<!--
-			=====================================================
-				KU-section 
-			=====================================================
-			-->
-			<!-- <div id="KU-section">
-				<div class="container">
-					<div class="theme-title">
-						<h2>ABOUT KU</h2>
-						<p>Kathmandu University is third oldest university in Nepal, located in Dhulikhel of Kavrepalanchowk District,
-about 30km east of Kathmandu. It was established in 1991 with the motto "Quality Education for Leadership".
-KU operates through its seven schools, and from campuses in Dhulikhel, Lalitpur and Bhaktapur.The university offers undergraduate, graduate and postgraduate courses in 
-variety of fields.Kathmandu University is an autonomous, not-for-profit, non - government institution dedicated to maintain high standards of academic excellence. 
-It is committed to develop leaders in professional areas through quality education. It is located in a mountainous landscape in Dhulikhel Municipality about
- 30 kilometers east of Kathmandu (KTM) having round-the-year pleasant climate and panoramic Himalayan Views. KU had a very modest start from a rented building
- at Tangal, Kathmandu. Now, it has been able to create a built up space of 46,846 square meters.</p><br>
-		
-		<h5><a href="#" class="tran3s">VISION</a></h5><br>	
-				<ul>
-				<li>"To become a world-class university devoted to bringing knowledge and technology to the service of mankind" </li>
-				</ul>
-				<br>
-		
-	    <h5><a href="#" class="tran3s">MISSION</a></h5><br>
-		<ul>
-		<li>"To provide quality education for leadership."</li>
-		</ul><br>
-		<img src="images/KUwall.png" alt="KU" style="width:1000px;height:400px;">
-		<h6><a href="#" class="tran3s">For more about KU</a></h6><br>
-		
-		<button class="btn btn-default btn-lg"><a href="http://ku.edu.np/">Click here</a></button><br><br>
-					</div> 					
-				</div> 
-			</div>  -->
-		
-			<!-- <div id="KUstudy-section">
-				<div class="container">
-					<div class="theme-title">
-						<h2>STUDY AT KU</h2>
-						<p>KU has always emphasized on being highly student friendly university. Therefore a high level of mutual respect is 
-						expected among all the members of the community. There exists an amicable relation between faculties, staffs, and students.
-						Students shall not hesitate to contact concerned department, faculties and staffs for consultation regarding academics and student life.
-						A counseling cell exists at the premises of CV Raman auditorium for counseling purpose.<br>
-<br>
-<h5>Campus Environment</h5>
-<br>
-KU is located beautifully with excellent surroundings and views. 
-The campus is quite and is an ideal place for study and research. Campus has various 
-soothing spaces for breaks and socialization.<br>
-<br>
-<h5>Extracurricular and Events</h5>
-<br>
-The School of Science organizes various extracurricular activities in various departments. 
-These include seminars, work-shops, trainings, project exhibitions, magazine publications, etc. 
-School of Science and students clubs in the central campus also organizes blood-donation program, sport events,
- tree-plantations, awareness programs, trainings, seminars, etc. Welcome and farewell programs are organized at various levels.
- Overall, there are numerous events organized all around the year in the campus.</p>
-					</div> 
-
-					</div> 
-				</div> 
-			</div>  -->
-		<!--
-			=====================================================
-				GEcouse-section 
-			=====================================================
-			-->
-			<!-- <div id="GEcouse-section"> -->
-				<!-- <div class="container"> -->
-					<!-- <div class="theme-title">
-						<h2>ABOUT GEOMATICS ENGINEERING COURSE</h2>					
-						<p>Geomatics is a systemic, multidisciplinary, integrated approach to selecting the Instruments and the appropriate
-						techniques for collecting, storing, integrating, modelling, analysing, retrieving at will, transforming,
-						displaying and distributing spatially geo referenced data from different sources with well-defined accuracy
-						characteristics, continuity and in a digital format.
-						<br>
-						The subject is found upon scientific framework of geodesy, it uses terrestrial, marine, airborne, and 
-						satellite-based sensors to acquire spatial and other data. 
-						<br>
-
-						Besides collection of Spatial data, some initiatives are presently being developed worldwide using 
-						Geomatics disciplines and techniques for the regulation of Geospatial Information or simply Geo Information(GI)
-						and for the adequate use of Earth Observation (EO) data for studying and managing environmental hazards and risks.</p>
-						<br>
-						<h4> objectives of course </h4>
-						<br>
-						
-						<ul class="a">
-							
-							<li style=text-align:left >To produse qualified academic manpower in the field of Surveying, Mapping, Land Administration abd Geo Information to satisfy needs of various institution 
-								with in the country abd abroad.  </li>
-							<li style=text-align:left>To establish the collaborative relationship with foreign institutions of the similar function for mutual benefit by student exchange and sharing of knowledge 
-								and technology for the benefits of mankind. </li>
-							<li style=text-align:left>To conduct and promote research and development activities in the field of Geo Information and Land Admiinistration.  </li>
-						</ul>
-						<br>
-				
-						
-					</div> -->
-					
-					
-					<!-- <h4>CAREER OPPORTUNITIES</h4><br> -->
-						
-						<!-- <div class="row slideanim">
-							<div class="col-sm-4">  
-								<img src="images/projects/pgis_1.png" alt="Logo for Job Market"  width="500" height="200">
-								<h6>Participatory GIS Mapping Toolkit</h6>
-							</div>
-							<div class="col-sm-4">  
-								<img src="images/projects/pccmis.png" alt="Logo for Job Market"  width="500" height="200">
-								<h6>Provincial Climate Change Management Information System</h6>
-							</div>
-							<div class="col-sm-4">  
-								<img src="images/projects/GWA.png" alt="Logo for Job Market"  width="500" height="200">
-								<h6>Geodetic Web Application</h6>
-							</div>
-
-								</div>
-							   -->
-							  <!-- <br>
-							  
-							<div class="row slideanim">
-							
-								<div class="col-sm-4">
-								  <img src="images/projects/changu_metric.png" alt="Logo for NEA"  width="500" height="200">
-								  <h6>Changu Metric Addressing System</h6>
-								  
-								</div>
-								<div class="col-sm-4">
-								
-									<img src="images/projects/CHANGU.png" alt="Logo for Nepal army"  width="500" height="200">
-									<h6>Changunarayan Open Data Portal</h6>
-									
-								  </div>
-								  <div class="col-sm-4"> 
-									<img src="images/projects/BIM.png" alt="Logo for Development Activities"  width="500" height="200">
-									<h6>Blue Infrastructure Mapping</h6>
-								   </div>
-								
-							  </div> 
-							  <br>
-							<div class="row slideanim">
-								<div class="col-sm-4">
-									<img src="images/projects/hq_mapping.png" alt="Logo for NGO"  width="500" height="200">
-									<h6>Municipal Headquarter Mapping Initiative</h6>
-								   </div>
-								
-							  </div>  -->
-							  
-					  <!-- <br><br><br> -->
-					  <!-- <img src="images/projects/pgis.jpg" alt="Image"style="width:400px:height:300px:" ><br>
-					<h6>For more Information</h6>
-					<button class="btn btn-default btn-lg"><a href="http://ku.edu.np/dcge/">Click here</a></button><br><br> -->
-			
-
-						
-				<!-- </div> -->
-			<!-- </div>  -->
-
-			<!--
-			=====================================================
-				Page middle banner
-			=====================================================
-			-->
-<!-- 
-			<div class="page-middle-banner">
-				<div class="opacity">
-					<h3>We support WEBGIS MODULE<span class="p-color">&amp;</span> WEB DEVELOPMENT</h3>
-					
-				</div> 
-			</div> 
- -->
-
-			<!--
-			=====================================================
-				WebGISmodule-section
-			=====================================================
-			-->
-			<div id="WebGISmodule-section" class="container-fluid bg-grey">
-				<div class="container">
-					<div class="theme-title">
-						<h2>PROJECTS</h2>
-						</div>
-						<br>
-						<div class="row slideanim">
-							<div class="col-sm-4">  
-								<img src="images/projects/cleanup_nepal.jpeg" alt="Logo for Job Market"  width="500" height="200">
-								<p class="custom-project-heading7">Cleanup Nepal</p>
-							</div>
-							<div class="col-sm-4">  
-								<img src="images/projects/pgis_1.png" alt="Logo for Job Market"  width="500" height="200">
-								<p class="custom-project-heading7">Participatory GIS Mapping Toolkit</p>
-							</div>
-							<div class="col-sm-4">  
-								<img src="images/projects/pccmis.png" alt="Logo for Job Market"  width="500" height="200">
-								<p class="custom-project-heading7">Provincial Climate Change Management Information System</p>
-							</div>
-							
-
-							<!-- <div class="col-sm-4">
-								<div class="card rounded">
-								<img class="image rounded" src="images/projects/GWA.png" alt="Logo for Government" width="500" height="200">
-								<div class="middle">
-							   <h6>Geodetic Web Application</h6>
-
-								  <div class="text">Development of a Web Based Application to manage Survey campaigns being managed by the Geodetic department of Survey Department, Nepal</div>
-								</div>
-							   <h6>Geodetic Web Application</h6>
-							  </div>
-
-						  </div> -->
-
-							
-								
-								
-								</div>
-							  
-							  <br>
-							  
-							<div class="row slideanim">
-								<div class="col-sm-4">  
-									<img src="images/projects/GWA.png" alt="Logo for Job Market"  width="500" height="200">
-									<p class="custom-project-heading7">Geodetic Web Application</p>
-								</div>
-							
-								<div class="col-sm-4">
-								  <img src="images/projects/changu_metric.png" alt="Logo for NEA"  width="500" height="200">
-								  <p class="custom-project-heading7">Changu Metric Addressing System</p>
-								  
-								</div>
-								<div class="col-sm-4">
-								
-									<img src="images/projects/CHANGU.png" alt="Logo for Nepal army"  width="500" height="200">
-									<p class="custom-project-heading7">Changunarayan Open Data Portal</p>
-									
-								  </div>
-								  
-								
-							  </div> 
-							  <br>
-							<div class="row slideanim">
-								<div class="col-sm-4"> 
-									<img src="images/projects/BIM.png" alt="Logo for Development Activities"  width="500" height="200">
-									<p class="custom-project-heading7">Blue Infrastructure Mapping</p>
-								   </div>
-								<div class="col-sm-4">
-									<img src="images/projects/hq_mapping.png" alt="Logo for NGO"  width="500" height="200">
-									<p class="custom-project-heading7">Municipal Headquarter Mapping Initiative</p>
-								   </div>
-								
-								<!-- <div class="col-sm-4">
-								  <img src="images/projects/changu_metric.png" alt="Logo for NEA"  width="500" height="200">
-								  <h6>Changu Metric Addressing System</h6>
-								  
-								</div>
-								<div class="col-sm-4">
-								 <img src="images/projects/hq_mapping.png" alt="Logo for NGO"  width="500" height="200">
-								 <h6>Municipal Headquarter Mapping Initiative</h6>
-								</div> -->
-							  </div> 
-
-						
-						<!-- /.theme-title -->
-	<!-- <div class="row text-center slideanim">
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        
-        <p><strong>WORKING WITH DATABASE</strong></p>
-        <p>PostgreSQL Overview:<p>
-		<p><strong> Operations:</strong> 
-			<ul>
-				<li><p style=text-align:left>-Creating spatial database<p style=text-align:left>
-				<p style=text-align:left>-Spatial table<p style=text-align:left>
-				 <li><p style=text-align:left>-Importing shapefileinto spatial table<p style=text-align:left>
-				<li><p style=text-align:left>-PostGISfunctions and its use<p style=text-align:left>
-				<li><p style=text-align:left>-Querying on spatial table<p style=text-align:left>		 
-				<li><p style=text-align:left>-Creating a view from a spatial and non-spatial table<p style=text-align:left>
-				 <li><p style=text-align:left>-Visualizing database layer into QGIS or ArcMap<p style=text-align:left>
-				<li><p style=text-align:left>-Connecting spatial database<p style=text-align:left>
-				 <li><p style=text-align:left>-Adding spatial layer from spatial database<p style=text-align:left>
-			</ul>		
-			</p>
-	  </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <p><strong>WORKING WITH GEOSERVER</strong></p>
-        <p><strong> Operations:</strong> <br>
-			<ul>
-				<p>Browsing geoserver </p>
-				<p>Setting GeoServerEnvironments components: </p>
-					<ul>
-						<p style=text-align:left>-Workspace<p style=text-align:left>
-						<p style=text-align:left>-Stores<p style=text-align:left>
-						<p style=text-align:left>-Layers<p style=text-align:left>
-						<p style=text-align:left>-Styles layer preview<p style=text-align:left>
-					</ul>
-				
-			</ul>		
-			</p><br>
-		</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        
-        <p><strong>OPERATION AND PUBLISHING</strong></p>
-        <p><strong>Web Map Service(WMS)</strong></p>
-			<ul>
-				<p style=text-align:left>-GetCapabilities()</p>
-				<p style=text-align:left>-GetMap()</p>
-				<p style=text-align:left>-GetFeatureInfo()</p>
-				
-			</ul>
-		<p><strong>Web Feature Service(WFS)</strong></p>
-			<ul>
-				<p style=text-align:left>-GetCapabilities<p style=text-align:left>
-				<p style=text-align:left>-GetFeature<p style=text-align:left>
-				<p style=text-align:left>-DescribeFeatureType<p style=text-align:left>
-			</ul>
-		<p><strong>Web Coverage Service(WCS)</strong></p>
-		
-		<p><strong>Publishing spatial layers through geoserver:</strong><p>
-			<ul>
-				<p style=text-align:left>-Creating workspace and stores<p style=text-align:left>
-				<p style=text-align:left>-Working as a namespace<p style=text-align:left>
-				<p style=text-align:left>-Store as a group of layers<p style=text-align:left>
-				<p style=text-align:left>-Publishing shapefile and database layers<p style=text-align:left>
-				<p style=text-align:left>-From shapefile<p style=text-align:left>
-				<p style=text-align:left>-Previewing and styling published layers<p style=text-align:left>
-			<ul>
-			</p>
-      </div>
-    </div>
-  </div><br> -->
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Rabina Twayana</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@vscode/codicons@0.0.28/dist/codicon.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vscode-icons@1.0.0/dist/vscode-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   
-  
-				</div> <!-- /.container -->
-			</div> 
 
-			
 
-			<!--
-			=====================================================
-				Report Section
-			=====================================================
-			-->
-			<!-- <div id="Report-section" class="container-fluid bg-grey">
-				<div class="container">
-					<div class="theme-title">
-						<h2>REPORT</h2><br>
-					</div>
-					<div class="row text-center slideanim">
-					<div class="col-sm-4">
-      <div class="thumbnail">
-        
-        <h6><strong>WEB MAP SERVICES</strong></h6>
-		<img src="images/wms.png" alt="Image"style="width:400px:height:300px:" ><br>
-        <p>A Web Map Service (WMS) is a standard protocol for serving (over the Internet) georeferenced map images which a map server generates using data from a GIS database.The Open Geospatial Consortium developed the specification and first published it in 1999</p>
-		<p><strong> Operations</strong> </p>
-			<ul>
-				<p>-GetCapabilities:</p>
-				 <p>-GetMap:</p>
-				 <p>-GetFeatureInfo:</p>
-			</ul>		
-			
-	  </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <h6><strong>WEB FEATURE SERVICES</strong></h6><br>
-		<img src="images/wfs.png" alt="Image"style="width:400px:height:300px:" ><br>
-        <p>The Open Geospatial Consortium Web Feature Service (WFS) Interface Standard provides an interface allowing requests for geographical features across the web using platform-independent calls
-		    <br><p><strong> Operations</strong> <br>
-			<ul>
-				<p>-Describe Capabilities </p>
-				<p>-Get a Feature</p>
-				<p>-Insert a Feature</p>
-				<p>-Update a Feature</p>
-				<p>-Delete a Feature</p>
-				<p>-Create a new feature</p>
-			</ul>		
-			</p><br>
-		</p>
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: MyResume
+  * Updated: Nov 17 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
+  <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex flex-column justify-content-center">
+
+    <nav id="navbar" class="navbar nav-menu">
+      <ul>
+        <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+        <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Education and Experiences</span></a></li>
+        <li><a href="#cde-masters" class="nav-link scrollto"><i class="fas fa-graduation-cap"></i> <span>CDE</span></a></li>
+        <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+        <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Skills</span></a></li>
+        <!-- <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li> -->
+      </ul>
+    </nav><!-- .nav-menu -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center">
+    <div class="container" data-aos="zoom-in" data-aos-delay="100">
+      <h1>Rabina Twayana</h1>
+      <!-- <p><span>MSc Student (Copernicus Master in Digital Earth)</span></p> -->
+
+      <!-- Researcher, WebGIS Developer, Geomatics Engineer -->
+      <p>I'm a <span class="typed" data-typed-items="MSc Student (Copernicus Master in Digital Earth)"></span></p>
+
+      <!-- <p style="font-size: small;">Email: rabinatwayana123@gmail.com | rabina.twayana@stud.plus.ac.at</p> -->
+      <div class="social-links">
+      <a href="https://linktr.ee/rabinatwayana" target="_blank" class="linktree">
+        <img src="assets/img/icons/linktree.png" alt="Linktree" style="width: 18px; height: 18px; margin-bottom: 5px;">
+    </a>
+        <a href="https://www.linkedin.com/in/rabina-twayana-0a9420189/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100008143213677" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/rabina_twayana/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="https://github.com/rabinatwayana" target="_blank" class="google-plus"><i class="bx bxl-github"></i></a>
+        <a href="https://gitlab.com/rabinatwayana" target="_blank" class="google-plus"><i class="bx bxl-gitlab"></i></a>
+        <a href="https://twitter.com/RabinaTwayana" target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="mailto:rabinatwayana123@gmail.com" class="email-link"><i class="bx bx-envelope"></i></a>
+
+
       </div>
+      <br/>
+      <br/>
+      <div>
+        <img src="assets/img/footer/cde_1.png" width="250px" style="margin-left: -20px;">
+        <img src="assets/img/footer/eu.png" width="250px" style="margin-right: 20px;">
+        <img src="assets/img/footer/plus_1.png" width="125px" style="margin-right: 20px;">
+        <img src="assets/img/footer/ubs1.png" width="100px" style="margin-right: 20px;">
+        </div>
     </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        
-        <h6><strong>WEB COVERAGE SERVICE</strong></h6><br>
-		<img src="images/wcs.png" alt="Image"style="width:400px:height:300px:" ><br>
-        <p>A WCS provides access to coverage data in forms that are useful for client-side rendering, as input into scientific models, and for other clients. The WCS may be compared to the OGC Web Feature Service (WFS) and the Web Map Service (WMS). As with WMS and WFS service instances, a WCS allows clients to choose portions of a server's information holdings based on spatial constraints and other query criteria.</p>
-		
-		<br>
-		<p>	WCS uses the coverage model of the OGC GML Application Schema for Coverages. Thus, WCS supports all coverage types supported by said Application Schema; it is not constrained to quadrilateral grid coverages like previous WCS versions.		
-		</p>
-      </div>
-    </div>
-					
-					</div>
-			
-				</div>
-			</div>  -->
+    
+    <h6 style="position: absolute; bottom: 10px; right: 20px;">Updated on: 13 July 2024</h6>
 
-<!--
-=====================================================
-	Map Section
-=====================================================
-			-->
-			<!-- <div id="Map-section" class="container-fluid bg-grey">
-					<div class="theme-title">
-						<h1>MAP OF NEPAL</h1>
-						</div> -->
-	
-    <!-- maps section -->
-    <!-- <section id="maps">
-    	<div class="row">
-	        <div class="col-sm-12">
-	            
-	        </div>
-	    </div>
-    	<div class="row no-gutters">
-			<div class="col-sm-3">
-				<div class="map-side-box">
-					<br>
-					
-					<h4>Layers</h4> 
-					    
-						<label><input class="layerCheckBox" type="checkbox" checked="" data-legend="administrativeLayerLegend">Administrative</label><br>
-						<img id="administrativeLayerLegend" alt="adminLegend" src="http://localhost:8080/geoserver/miniProject/wms?REQUEST=GetLegendGraphic&version=1.1.0&LAYER=miniProject:Nepal_Country&&width=32&height=32&FORMAT=image/png">
-						<label><input class="layerCheckBox" type="checkbox" unchecked="" data-legend="districtLayerLegend">District</label><br>
-						<img id="districtLayerLegend" alt="DistrictLegend" src="http://localhost:8080/geoserver/miniProject/wms?REQUEST=GetLegendGraphic&version=1.1.0&LAYER=miniProject:Nepal_District&&width=32&height=32&FORMAT=image/png">
-						<label><input class="layerCheckBox" type="checkbox" unchecked="" data-legend="totalPopulationLayerLegend">Total Population</label><br>
-						<img class="widerImg" id="totalPopulationLayerLegend" alt="PopulationLegend" src="http://localhost:8080/geoserver/miniProject/wms?REQUEST=GetLegendGraphic&version=1.1.0&LAYER=miniProject:Nepal_District&&width=32&height=32&FORMAT=image/png">
-					    <label><input class="layerCheckBox" type="checkbox" unchecked="" data-legend="landCoverLayerLegend">Land Cover</label><br>
-						<img id="landCoverLayerLegend" alt="landCoverLegend" src="http://localhost:8080/geoserver/miniProject/wms?REQUEST=GetLegendGraphic&version=1.1.0&LAYER=miniProject:geotiff_coverage_LULC&&width=32&height=32&FORMAT=image/png">
-						 <label><input class="layerCheckBox" type="checkbox" unchecked="" data-legend="DEMLayerLegend">DEM</label><br>
-						 <img id="DEMLayerLegend" alt="DEMLegend" src="http://localhost:8080/geoserver/miniProject/wms?REQUEST=GetLegendGraphic&version=1.1.0&LAYER=miniProject:geotiff_coverage&&width=32&height=32&FORMAT=image/png">
-						 <label><input class="layerCheckBox" type="checkbox" unchecked="" data-legend="roadsLayerLegend">Roads</label><br>
-						<img id="roadsLayerLegend" alt="RoadsLegend" src="http://localhost:8080/geoserver/miniProject/wms?REQUEST=GetLegendGraphic&version=1.1.0&LAYER=miniProject:Roads&&width=32&height=32&FORMAT=image/png">
-	               
-	            </div>
-			</div>
-    		<div class="col-sm-9">
-    			<div class="mainMap" id="mainMap">
-					map goes here
-				</div>
-    		</div>
-			<script src="js/jquery-3.3.1.js" type="text/javascript"></script>
-			<script src="js/ol.js" type="text/javascript"></script>
-			<script src="js/webMaps.js" type="text/javascript"></script>
-    	</div>
+  </section><!-- End Hero -->
+
+  <!-- updated-on {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+    color: #fff; /* Adjust the color as needed */
+  } -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About</h2>
+          <!-- <p> I am a certified geomatics engineer registered in Nepal Engineering Council, holding a four-year
+            academic degree in Bachelor of Engineering in Geomatics from the Kathmandu University, Nepal.
+            With over three years of professional experience in the geospatial sector, currently I am working as a
+            Research Associate at GeoInformatics Center, Asian Institute of Technology, Thailand. Prior to this, I
+            worked two years as a WebGIS developer at Naxa Pvt. Ltd. and also worked as Geospatial Analyst at
+            Airlift Company both based in Kathmandu, Nepal. During my professional journey, I have contributed
+            to diverse projects for esteemed organizations like University of Twente (UT) in the Netherlands, World
+            Food Programme (WFP), World Bicycle Relief (WBF), Bhutan Construction and Transport Authority,
+            Geodetic Survey Division of the Survey Department in Nepal, Clean-up Nepal, Changunarayan
+            Municipality, and the Kathmandu Metropolitan City. This journey has equipped me with substantial
+            expertise in WebGIS, geospatial programming, GIS, UAV technologies, remote sensing, and disaster
+            management. I'm particularly driven by academic research and have published three articles in esteemed
+            journals, one conference proceedings and one academic blog. Currently, my research interest lies in
+            leveraging the potential of emerging geospatial technologies, including digital twin, 3DGIS, and
+            geospatial programming, within the field of urban infrastructure and disaster management.</p> -->
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4">
+            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content">
+            <!-- <h3 style="color: #0563bb;" >Research Associate &amp; WebGIS Developer</h3> -->
+            <!-- <h3 style="color: #0563bb;" >Copernicus Masters in Digital Earth Student</h3> -->
+
+            <!-- <p class="fst-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p> -->
+            <!-- <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>9 June 1998</span></li>
+                   <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.example.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+43 67762816148</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Salzburg, Austria</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>30</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>PLUS Email:</strong> <span>rabina.twayana@stud.plus.ac.at</span></li>
+                   <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor's</span></li>
+
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>rabinatwayana123@gmail.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
+                </ul>
+              </div>
+            </div> -->
+            <p style="text-align: justify;" > I am a certified geomatics engineer registered in Nepal Engineering Council, holding a four-year
+              academic degree in Bachelor of Engineering in Geomatics from the Kathmandu University, Nepal.
+			  Currently, I am pursuing my masters degree in Copernicus Masters in Digital Earth at Department of Geoinformatics (Z_GIS), 
+			  Paris-Lodron University Salzburg, Austria for the first year, after which I will specialize in GeoData Science at University of South Brittany (UBS), France.
+			  </p>
+			  <p style="text-align: justify;" > 
+			  Throughout my career, I have had the privilege of working with esteemed organizations such as the GeoInformatics 
+			   Center, Naxa Pvt. Ltd., and Airlift Company, participating in projects at local, provincial, national, 
+			   and international levels. My contributions span diverse initiatives for respected institutions, 
+			   including the University of Twente (UT) in the Netherlands, World Food Programme (WFP), 
+			   World Bicycle Relief (WBF), Bhutan Construction and Transport Authority, 
+			   Geodetic Survey Division of the Survey Department in Nepal, Clean-up Nepal, 
+			   Changunarayan Municipality, and Kathmandu Metropolitan City.
+
+			This journey has provided me with substantial expertise in WebGIS, geospatial programming, GIS, UAV technologies, 
+			remote sensing, and disaster management. I am particularly passionate about academic research and 
+			have published three articles in reputable journals, one conference proceeding, and one academic blog. 
+			My current research interests focus on leveraging the potential of emerging geospatial technologies, including digital twin, 3DGIS, and
+			geospatial programming, within the field of urban infrastructure and disaster management
+</p>
+          </div>
+        </div>
+
+
+		<!-- With over three years of professional experience in the geospatial sector, currently I am working as a
+              Research Associate at GeoInformatics Center, Asian Institute of Technology, Thailand. Prior to this, I
+              worked two years as a WebGIS developer at Naxa Pvt. Ltd. and also worked as Geospatial Analyst at
+              Airlift Company both based in Kathmandu, Nepal. During my professional journey, 
+			  
+			  During my professional journey, I got an opportunities to work with the esteemed organizations; GeoInformatics Center, Naxa Pvt. Ltd, and Airlift Company 
+			  and get involved in local, provincial, national and international level projects. I have contributed to diverse projects for esteemed organizations like University of Twente (UT) in the Netherlands, World
+              Food Programme (WFP), World Bicycle Relief (WBF), Bhutan Construction and Transport Authority,
+              Geodetic Survey Division of the Survey Department in Nepal, Clean-up Nepal, Changunarayan
+              Municipality, and the Kathmandu Metropolitan City. This journey has equipped me with substantial
+              expertise in WebGIS, geospatial programming, GIS, UAV technologies, remote sensing, and disaster
+              management. I'm particularly driven by academic research and have published three articles in esteemed
+              journals, one conference proceedings and one academic blog. Currently, my research interest lies in
+              leveraging the potential of emerging geospatial technologies, including digital twin, 3DGIS, and
+              geospatial programming, within the field of urban infrastructure and disaster management.
+			  -->
+
+
+    </section><!-- End About Section -->
+
+    <!-- ======= Facts Section ======= -->
+    <section id="facts" class="facts">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Achievements</h2>
+          <p>This section highlights the significant accomplishments that have defined my career and academic journey in the geospatial industry.</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="count-box">
+              <i class="bi bi-emoji-smile"></i>
+              <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1" class="purecounter"></span>
+              <!-- <p>Publications</p> -->
+              <h6>Publications</h6>
+
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+            <div class="count-box">
+              <i class="bi bi-journal-richtext"></i>
+              <span data-purecounter-start="0" data-purecounter-end="9" data-purecounter-duration="1" class="purecounter"></span>
+              <h6>Projects</h6>
+
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="count-box">
+              <i class="bi bi-headset"></i>
+              <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1" class="purecounter"></span>
+              <h6>Years of Experience</h6>
+
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="count-box">
+              <i class="bi bi-award"></i>
+              <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1" class="purecounter"></span>
+              <h6>Awards</h6>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- End Facts Section -->
+
+    <!-- ======= Skills Section ======= -->
+    <!-- <section id="skills" class="skills section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Skills</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row skills-content">
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill">HTML <i class="val">100%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">CSS <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">JavaScript <i class="val">75%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill">PHP <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">WordPress/CMS <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Photoshop <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
     </section> -->
- 	
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- End Skills Section -->
 
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <!-- <h2>Resume</h2> -->
+          <h2>Education and Experiences</h2>
+
+          <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <!-- <h3 class="resume-title">Summary</h3>
+            <div class="resume-item pb-0">
+              <h4>Brandon Johnson</h4>
+              <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p>
+              <ul>
+                <li>Portland par 127,Orlando, FL</li>
+                <li>(123) 456-7891</li>
+                <li>alice.barkley@example.com</li>
+              </ul>
+            </div> -->
+
+            <h3 class="resume-title">Education</h3>
+			<div class="resume-item">
+				<h4>Copernicus Masters in Digital Earth</h4>
+				<h5>Oct 2024 - Present</h5>
+				<p><em>Department of Geoinformatics (Z_GIS), Paris-Lodron University Salzburg, Austria</em></p>
+				<p><strong>Specialization</strong> (Second Year): GeoData Science</p>
+				<p><em>University of South Brittany (UBS), France</em></p>
+				
+			  </div>
+            <div class="resume-item">
+              <h4>Bachelor’s of Engineering in Geomatics Engineering</h4>
+              <h5>2016 - 2020</h5>
+              <p><em>Kathmandu University, Dhulikhel, Nepal</em></p>
+              <p>Grade: 3.86 CGPA out of 4 (Distinction) </p>
+              <p> Thesis: Land Cover Change Analysis and its Future Prediction: A Case Study of Banepa and Dhulikhel
+                Municipalities</p>
+            </div>
+            <div class="resume-item">
+              <h4>10+2 in Science</h4>
+              <h5>2014 - 2016</h5>
+              <p><em>Siddhartha English Higher Secondary School, Banepa, Kavrepalanchowk, Nepal</em></p>
+              <p>Grade: 77.30 % (Distinction)</p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              <h4>Research Associate</h4>
+              <h5>Nov 2022 - Sept 2024</h5>
+              <p><em>Geoinformatics Center, Asian Institute of Technology, Thailand </em></p>
+              <ul>
+                <li>Brainstorming, designing and integrating new features into project</li>
+                <li>Overseeing client-side, server-side, database handling and project server management </li>
+                <li>Writing technical documentation related to application</li>
+                <li>Contributing capacity building and training program</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Full stack/WebGIS Developer</h4>
+              <h5>Dec 2020 - Oct 2022</h5>
+              <p><em>Naxa Pvt. Ltd., Kathmandu, Nepal</em></p>
+              <ul>
+                <li>Participate in the overall application development lifecycle.</li>
+                <li>Develop the server-side logic as well as the development and maintenance of the central database ensuring high responsiveness and performance to requests from the frontend.</li>
+                <li>Engage in the development of high-quality frontend applications.</li>
+                <li>Implement security measures in the developed software systems.</li>
+                <li>Use proper version control tools and maintain standard release workflows for software system deployment.</li>
+                <li>Carry out preliminary testing and quality assurance of the developed system before forwarding to QA team.</li>
+                <li>Coordinate with business analysts, team members and client representatives in smooth development of the systems</li>
+                <li>Engage in knowledge sharing and co-learning among team members in the company.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Resume Section -->
+
+
+    <!-- ======= CDE Section ======= -->
+    <section id="cde-masters" class="portfolio section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Copernicus Masters in Digital Earth</h2>
+          <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            <ul id="cde-masters-filters">
+              <li data-filter=".filter-cde-sem1" >SEMESTER I</li>
+                  <li data-filter=".filter-cde-sem2">SEMESTER II</li>
+                  <li data-filter=".filter-cde-sem3">SEMESTER III</li>
+                  <li data-filter=".filter-cde-sem4">SEMESTER IV</li>
+                  <li data-filter=".filter-cde-summer-school">Summer School</li>
+                  <li data-filter=".filter-cde-internship">INTERNSHIP</li>
+                  <li data-filter=".filter-cde-thesis">THESIS</li>
+                  <li data-filter=".filter-cde-others">OTHERS</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row cde-masters-container" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-cde-sem1">
+            <div class="portfolio-wrap">
+              <img src="assets/img/projects/riskchanges.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <!-- <h4>RiskChanges</h4> -->
+                <!-- <p>App</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/projects/riskchanges.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="RiskChanges"><i class="bx bx-plus"></i></a>
+                  <a href="project-riskchanges.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+            <h6 class="card-title">Career development and eportfolio</h6>
+            <p class="card-description">A web map application for biking in Olomouc developed in Web Cartography course.</p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-cde-sem1">
+            <div class="portfolio-wrap">
+              <img src="assets/img/projects/cleanup_nepal.jpeg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <!-- <h4>RiskChanges</h4> -->
+                <!-- <p>App</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/projects/riskchanges.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="RiskChanges"><i class="bx bx-plus"></i></a>
+                  <a href="project-riskchanges.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+            <h6 class="card-title">Career development and eportfolio</h6>
+            <p class="card-description">A web map application for biking in Olomouc developed in Web Cartography course.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-cde-sem1">
+            <div class="portfolio-wrap">
+              <img src="assets/img/projects/riskchanges.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <!-- <h4>RiskChanges</h4> -->
+                <!-- <p>App</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/projects/riskchanges.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="RiskChanges"><i class="bx bx-plus"></i></a>
+                  <a href="project-riskchanges.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+            <h6 class="card-title">Career development and eportfolio</h6>
+            <p class="card-description">A web map application for biking in Olomouc developed in Web Cartography course.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-cde-sem1">
+            <div class="portfolio-wrap">
+              <img src="assets/img/projects/riskchanges.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <!-- <h4>RiskChanges</h4> -->
+                <!-- <p>App</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/projects/riskchanges.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="RiskChanges"><i class="bx bx-plus"></i></a>
+                  <a href="project-riskchanges.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+            <h6 class="card-title">Career development and eportfolio</h6>
+            <p class="card-description">A web map application for biking in Olomouc developed in Web Cartography course.</p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End CDE Section -->
+
+
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            <ul id="portfolio-flters">
+              <!-- <li data-filter="*" class="filter-active">All</li> -->
+              <li data-filter=".filter-project" >Projects</li>
+              <li data-filter=".filter-journal">Journals Publications</li>
+              <li data-filter=".filter-blog">Blogs</li>
+              <li data-filter=".filter-conference">Conference Proceedings</li>
+              <li data-filter=".filter-summer-school">Summer School</li>
+
+              <li data-filter=".filter-training">Trainings</li>
+              <li data-filter=".filter-volunteer">Volunteering</li>
+              <li data-filter=".filter-awards">Awards</li>
+              <li data-filter=".filter-course">Online Courses</li>
+              <li data-filter=".filter-others">Others</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-project">
+            <div class="portfolio-wrap">
+              <img src="assets/img/projects/riskchanges.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>RiskChanges</h4>
+                <!-- <p>App</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/projects/riskchanges.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="RiskChanges"><i class="bx bx-plus"></i></a>
+                  <a href="project-riskchanges.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-project">
+            <div class="portfolio-wrap">
+              <img src="assets/img/projects/cleanup_nepal.jpeg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Clean-up Nepal</h4>
+                <!-- <p>App</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/projects/cleanup_nepal.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Clean-up Nepal"><i class="bx bx-plus"></i></a>
+                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-project">
+            <div class="portfolio-wrap">
+              <img src="assets/img/projects/pgis_1.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Participatory GIS Mapping Toolkit</h4>
+                <!-- <p>App</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/projects/pgis_1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Participatory GIS Mapping Toolkit"><i class="bx bx-plus"></i></a>
+                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-project">
+            <div class="portfolio-wrap">
+              <img src="assets/img/projects/pccmis.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Provincial Climate Change Management Information System</h4>
+                <!-- <p>App</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/projects/pccmis.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Provincial Climate Change Management Information System"><i class="bx bx-plus"></i></a>
+                  <a href="project-pccis.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-project">
+            <div class="portfolio-wrap">
+              <img src="assets/img/projects/GWA.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Geodetic Web Application</h4>
+                <!-- <p>App</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/projects/GWA.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Geodetic Web Application"><i class="bx bx-plus"></i></a>
+                  <a href="project-geodetic.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-project">
+            <div class="portfolio-wrap">
+              <img src="assets/img/projects/changu_metric.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Changu Metric Addressing System</h4>
+                <!-- <p>App</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/projects/changu_metric.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Changu Metric Addressing System"><i class="bx bx-plus"></i></a>
+                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-project">
+            <div class="portfolio-wrap">
+              <img src="assets/img/projects/CHANGU.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Changunarayan Open Data Portal</h4>
+                <!-- <p>App</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/projects/CHANGU.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Changunarayan Open Data Portal"><i class="bx bx-plus"></i></a>
+                  <a href="project-changu.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-project">
+            <div class="portfolio-wrap">
+              <img src="assets/img/projects/BIM.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Blue Infrastructure Mapping</h4>
+                <!-- <p>App</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/projects/BIM.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Blue Infrastructure Mapping"><i class="bx bx-plus"></i></a>
+                  <a href="project-bgi.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-project">
+            <div class="portfolio-wrap">
+              <img src="assets/img/projects/hq_mapping.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Municipal Headquarter Mapping Initiative</h4>
+                <!-- <p>App</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/projects/hq_mapping.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Municipal Headquarter Mapping Initiative"><i class="bx bx-plus"></i></a>
+                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-journal">
+            <div class="portfolio-wrap">
+              <img src="assets/img/journal/journal1.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <!-- <h4>Card 2</h4> -->
+                <!-- <p>Card</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/journal/journal1.png" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                  <a href="journal-1.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-journal">
+            <div class="portfolio-wrap">
+              <img src="assets/img/journal/journal2.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <!-- <h4>Card 2</h4> -->
+                <!-- <p>Card</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/journal/journal2.png" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                  <a href="journal-2.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-journal">
+            <div class="portfolio-wrap">
+              <img src="assets/img/journal/journal3.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <!-- <h4>Card 2</h4> -->
+                <!-- <p>Card</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/journal/journal3.png" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                  <a href="journal-3.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-blog">
+            <div class="portfolio-wrap">
+              <img src="assets/img/blog/riskchanges.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>An Open-Source Tool to Assist in Multi-Hazard Risk Assessment</h4>
+                <!-- <p>Web</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/blog/riskchanges.png" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                  <a href="blog-riskchanges.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-blog">
+            <div class="portfolio-wrap">
+              <img src="assets/img/blog/server_security.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <!-- <h4>Enhance Server Security: Configuring SSH to Listen on a Non-Default Port and Enabling Public-Key Authentication</h4> -->
+                <!-- <p>Web</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/blog/server_security.png" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                  <a href="blog-server-security.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-conference">
+            <div class="portfolio-wrap">
+              <img src="assets/img/conference/drsd2023.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <!-- <h4>Card 1</h4> -->
+                <!-- <p>Card</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/conference/drsd2023.png" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                  <a href="conference-drsd.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Card 3</h4>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <div class="col-lg-4 col-md-6 portfolio-item filter-training">
+            <div class="portfolio-wrap">
+              <img src="assets/img/training/wig.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Women in Geospatial Mentorship </h4>
+                <!-- <p>6 Dec 2023</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/training/wig.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Women in Geospatial Mentorship Programme 2023/2024"><i class="bx bx-plus"></i></a>
+                  <a href="training-wig.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-training">
+            <div class="portfolio-wrap">
+              <img src="assets/img/training/apn-ecap.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>First Regional Workshop for Asia Pacific Network of Early Career Professionals (APN-ECAP) </h4>
+                <p>6 Dec 2023</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/training/apn-ecap.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="First Regional Workshop for Asia Pacific Network of Early Career Professionals (APN-ECAP), 6 Dec 2023, Asian Institute of Technology, Thailand"><i class="bx bx-plus"></i></a>
+                  <a href="training-apn-2023.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-training">
+            <div class="portfolio-wrap">
+              <img src="assets/img/training/disability_disaster.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <div class="portfolio-links">
+                  <a href="assets/img/training/disability_disaster.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-training">
+            <div class="portfolio-wrap">
+              <img src="assets/img/training/planet_on_road.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Planet on the Road</h4>
+                <p>26 Sept 2023</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/training/planet_on_road.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Planet on the Road, 23 Sept 2023, Bangkok, Thailand"><i class="bx bx-plus"></i></a>
+                  <a href="training-planet-road-2023.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-summer-school">
+            <div class="portfolio-wrap">
+              <img src="assets/img/training/summerschool-vienna.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Summer School <br> Analysing Changing Impact of Compounding and Multi-Hazard Events</h4>
+                <p>10-14 July</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/training/summerschool-vienna.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Summer School: Analysing Changing Impact of Compounding and Multi-Hazard Events, 10-14 July 2023, Vienna, Austria"><i class="bx bx-plus"></i></a>
+                  <a href="training-summer-school.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-training">
+            <div class="portfolio-wrap">
+              <img src="assets/img/training/ICT_for_climate.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>South-East Asia Sub-Regional Training on ICT for Climate Resillient Development</h4>
+                <p>15-17 May 2023</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/training/ICT_for_climate.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="South-East Asia Sub-Regional Training on ICT for Climate Resillient Development, 15-17 May 2023, Bangkok, Thailand"><i class="bx bx-plus"></i></a>
+                  <a href="training-climate-2023.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-training">
+            <div class="portfolio-wrap">
+              <img src="assets/img/training/gic-unspider.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Training on Dynamic Multi-hazard Risk Assessment for Risk Reduction Planning</h4>
+                <p>10-15 Dec 2022</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/training/gic-unspider.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Training on Dynamic Multi-hazard Risk Assessment for Risk Reduction Planning, 10-15 Dec 2022, GeoInformatics Center, AIT, Thailand"><i class="bx bx-plus"></i></a>
+                  <a href="training-mhra-dec-2022.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-training">
+            <div class="portfolio-wrap">
+              <img src="assets/img/training/arcgis.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>ArcGIS Training</h4>
+                <!-- <p>Web</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/training/arcgis.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-volunteer">
+            <div class="portfolio-wrap">
+              <img src="assets/img/volunteer/sustainability_expo.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Sustainability Expo</h4>
+                <p>23-25 Aug 2023</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/volunteer/sustainability_expo.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Sustainability Expo, 23-25 August 2023, Asian Institute of Technology, Thailand"><i class="bx bx-plus"></i></a>
+                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-volunteer">
+            <div class="portfolio-wrap">
+              <img src="assets/img/volunteer/bhutan.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Flood Risk Assessment Training for Bhutan’s National Center for Hydrology and Meteorology</h4>
+                <p>21 Aug - 1 Sept 2023</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/volunteer/bhutan.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Flood Risk Assessment Training for Bhutan’s National Center for Hydrology and Meteorology, 21 Aug - 1 Sept 2023, GeoInformatics Center, AIT, Thailand"><i class="bx bx-plus"></i></a>
+                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-volunteer">
+            <div class="portfolio-wrap">
+              <img src="assets/img/volunteer/geospace_editor.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <!-- <h4>Web 3</h4> -->
+                <!-- <p>Web</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/volunteer/geospace_editor.png" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-awards">
+            <div class="portfolio-wrap">
+              <img src="assets/img/awards/nics.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <!-- <h4>Web 3</h4> -->
+                <!-- <p>Web</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/awards/nics.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Certificate of Honor by Nepal Instiution of Chartered Surveyors (NICS), Kathmandu, Nepal"><i class="bx bx-plus"></i></a>
+                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-awards">
+            <div class="portfolio-wrap">
+              <img src="assets/img/awards/kdc.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <!-- <h4>Web 3</h4> -->
+                <!-- <p>Web</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/awards/kdc.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Letter of Honor by All Nepal National Free Student's Union (ANNFSU), Banepa, Nepal"><i class="bx bx-plus"></i></a>
+                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-awards">
+            <div class="portfolio-wrap">
+              <img src="assets/img/awards/pabson.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <!-- <h4>Web 3</h4> -->
+                <!-- <p>Web</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/awards/pabson.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Letter of Appretiation by Private and Boarding School's organization Nepal (PABSON), Kavrepalanchowk, Nepal"><i class="bx bx-plus"></i></a>
+                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-course">
+            <div class="portfolio-wrap">
+              <img src="assets/img/course/python_hackerrank.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Python Basic Skill Assessment</h4>
+                <p>13 Apr 2023</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/course/python_hackerrank.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-course">
+            <div class="portfolio-wrap">
+              <img src="assets/img/course/supervised_ML.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Supervised Machine Learning: Regression and Classification</h4>
+                <p>6 Jul 2023</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/course/supervised_ML.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-others">
+            <div class="portfolio-wrap">
+              <img src="assets/img/others/geopy.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>GeoPy Python Module</h4>
+                <!-- <p>Web</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/others/geopy.png" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                  <a href="others-geopy.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-others">
+            <div class="portfolio-wrap">
+              <img src="assets/img/others/land_tenure_system.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Land Tenure System in Ethiopia</h4>
+                <!-- <p>Web</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/others/land_tenure_system.png" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                  <a href="others-land-tenure.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-others">
+            <div class="portfolio-wrap">
+              <img src="assets/img/others/spatial_data_vizn.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Spatial Data Visualization in SDI</h4>
+                <!-- <p>Web</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/others/spatial_data_vizn.png" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                  <a href="others-spatial-data-viz.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-others">
+            <div class="portfolio-wrap">
+              <img src="assets/img/others/builtup_index.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Change Detection of Built-up Areas Applying Built-up Index for Kathmandu District </h4>
+                <!-- <p>Web</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/others/builtup_index.png" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                  <a href="others_builtup.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-others">
+            <div class="portfolio-wrap">
+              <img src="assets/img/others/landlaw.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Land Law in Nepal </h4>
+                <!-- <p>Web</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/others/landlaw.png" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                  <a href="others-land-law.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-others">
+            <div class="portfolio-wrap">
+              <img src="assets/img/others/project_control.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Importance of Project Control and its Possible Issues, Challenges and Opportunities</h4>
+                <!-- <p>Web</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/others/project_control.png" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                  <a href="others-project-control.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-others">
+            <div class="portfolio-wrap">
+              <img src="assets/img/others/space.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Space as a Tool to Address Climate Challenges: Examples from Local Communities</h4>
+                <!-- <p>Web</p> -->
+                <div class="portfolio-links">
+                  <a href="assets/img/others/space.png" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                  <a href="othes-space.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+    <!-- ======= Services Section ======= -->
+    <!-- <section id="services" class="services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Services</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box iconbox-blue">
+              <div class="icon">
+                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174"></path>
+                </svg>
+                <i class="bx bxl-dribbble"></i>
+              </div>
+              <h4><a href="">Lorem Ipsum</a></h4>
+              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box iconbox-orange ">
+              <div class="icon">
+                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,582.0697525312426C382.5290701553225,586.8405444964366,449.9789794690241,525.3245884688669,502.5850820975895,461.55621195738473C556.606425686781,396.0723002908107,615.8543463187945,314.28637112970534,586.6730223649479,234.56875336149918C558.9533121215079,158.8439757836574,454.9685369536778,164.00468322053177,381.49747125262974,130.76875717737553C312.15926192815925,99.40240125094834,248.97055460311594,18.661163978235184,179.8680185752513,50.54337015887873C110.5421016452524,82.52863877960104,119.82277516462835,180.83849132639028,109.12597500060166,256.43424936330496C100.08760227029461,320.3096726198365,92.17705696193138,384.0621239912766,124.79988738764834,439.7174275375508C164.83382741302287,508.01625554203684,220.96474134820875,577.5009287672846,300,582.0697525312426"></path>
+                </svg>
+                <i class="bx bx-file"></i>
+              </div>
+              <h4><a href="">Sed Perspiciatis</a></h4>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box iconbox-pink">
+              <div class="icon">
+                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,541.5067337569781C382.14930387511276,545.0595476570109,479.8736841581634,548.3450877840088,526.4010558755058,480.5488172755941C571.5218469581645,414.80211281144784,517.5187510058486,332.0715597781072,496.52539010469104,255.14436215662573C477.37192572678356,184.95920475031193,473.57363656557914,105.61284051026155,413.0603344069578,65.22779650032875C343.27470386102294,18.654635553484475,251.2091493199835,5.337323636656869,175.0934190732945,40.62881213300186C97.87086631185822,76.43348514350839,51.98124368387456,156.15599469081315,36.44837278890362,239.84606092416172C21.716077023791087,319.22268207091537,43.775223500013084,401.1760424656574,96.891909868211,461.97329694683043C147.22146801428983,519.5804099606455,223.5754009179313,538.201503339737,300,541.5067337569781"></path>
+                </svg>
+                <i class="bx bx-tachometer"></i>
+              </div>
+              <h4><a href="">Magni Dolores</a></h4>
+              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box iconbox-yellow">
+              <div class="icon">
+                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,503.46388370962813C374.79870501325706,506.71871716319447,464.8034551963731,527.1746412648533,510.4981551193396,467.86667711651364C555.9287308511215,408.9015244558933,512.6030010748507,327.5744911775523,490.211057578863,256.5855673507754C471.097692560561,195.9906835881958,447.69079081568157,138.11976852964426,395.19560036434837,102.3242989838813C329.3053358748298,57.3949838291264,248.02791733380457,8.279543830951368,175.87071277845988,42.242879143198664C103.41431057327972,76.34704239035025,93.79494320519305,170.9812938413882,81.28167332365135,250.07896920659033C70.17666984294237,320.27484674793965,64.84698225790005,396.69656628748305,111.28512138212992,450.4950937839243C156.20124167950087,502.5303643271138,231.32542653798444,500.4755392045468,300,503.46388370962813"></path>
+                </svg>
+                <i class="bx bx-layer"></i>
+              </div>
+              <h4><a href="">Nemo Enim</a></h4>
+              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box iconbox-red">
+              <div class="icon">
+                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,532.3542879108572C369.38199826031484,532.3153073249985,429.10787420159085,491.63046689027357,474.5244479745417,439.17860296908856C522.8885846962883,383.3225815378663,569.1668002868075,314.3205725914397,550.7432151929288,242.7694973846089C532.6665558377875,172.5657663291529,456.2379748765914,142.6223662098291,390.3689995646985,112.34683881706744C326.66090330228417,83.06452184765237,258.84405631176094,53.51806209861945,193.32584062364296,78.48882559362697C121.61183558270385,105.82097193414197,62.805066853699245,167.19869350419734,48.57481801355237,242.6138429142374C34.843463184063346,315.3850353017275,76.69343916112496,383.4422959591041,125.22947124332185,439.3748458443577C170.7312796277747,491.8107796887764,230.57421082200815,532.3932930995766,300,532.3542879108572"></path>
+                </svg>
+                <i class="bx bx-slideshow"></i>
+              </div>
+              <h4><a href="">Dele Cardo</a></h4>
+              <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box iconbox-teal">
+              <div class="icon">
+                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,566.797414625762C385.7384707136149,576.1784315230908,478.7894351017131,552.8928747891023,531.9192734346935,484.94944893311C584.6109503024035,417.5663521118492,582.489472248146,322.67544863468447,553.9536738515405,242.03673114598146C529.1557734026468,171.96086150256528,465.24506316201064,127.66468636344209,395.9583748389544,100.7403814666027C334.2173773831606,76.7482773500951,269.4350130405921,84.62216499799875,207.1952322260088,107.2889140133804C132.92018162631612,134.33871894543012,41.79353780512637,160.00259165414826,22.644507872594943,236.69541883565114C3.319112789854554,314.0945973066697,72.72355303640163,379.243833228382,124.04198916343866,440.3218312028393C172.9286146004772,498.5055451809895,224.45579914871206,558.5317968840102,300,566.797414625762"></path>
+                </svg>
+                <i class="bx bx-arch"></i>
+              </div>
+              <h4><a href="">Divera Don</a></h4>
+              <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section> -->
     
+    <!-- End Services Section -->
+
+    <!-- ======= Skills Section ======= -->
+    <section id="skills" class="skills section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>skills</h2>
+          <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            <ul id="skills-flters">
+              <!-- <li data-filter="*" class="filter-active">All</li> -->
+              <li data-filter=".filter-tech" >Geospatial Technologies</li>
+              <li data-filter=".filter-soft">Software</li>
+              <li data-filter=".filter-pro">Programming</li>
+              <li data-filter=".filter-lib">Libraries and package</li>
+              <li data-filter=".filter-others">Others</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="row skills-container" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="skills-container" id="skillsContainer">
+            <!-- <div class="col-lg-2 col-md-2 skills-item filter-tech">
+              <div class="icon-box iconbox-blue">
+                <div class="icon">
+                  <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174"></path>
+                  </svg>
+                  <i class="bx bxl-dribbble"></i> 
+                 <img width="70" height="70" src="assets/img/icons/gis.png"/>
   
-			<!--	</div>  /.container -->
-			</div> <!-- /#our-client -->
+                </div>
+                <h4><a href="">GIS</a></h4>
+                <h6>GIS</h6>
+              </div>
+            </div> -->
+            <!-- Skills will be appended here -->
+        </div>
+</div>
 
-			<!--
-			=====================================================
-				Contact Section
-			=====================================================
-			-->
-			<div id="contact-section">
-				<div class="container" >
-					<div class="clear-fix contact-address-content">
-						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-							<div class="left-side">
-								<h2>Contact Info</h2>
+        
+          
+          
+      </div>
+    </section><!-- End Skills Section -->
 
-								<ul>
-									<li>
-										<div class="icon tran3s round-border p-color-bg"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-										<h6>Address</h6>
-										<p>Punyamati Mahadev Marga, Banepa-8, Kavre, Nepal</p>
-									</li>
-									<li>
-										<div class="icon tran3s round-border p-color-bg"><i class="fa fa-phone" aria-hidden="true"></i></div>
-										<h6>Phone</h6>
-										<p>+977 9862258534</p>
-									</li>
-									<li>
-										<div class="icon tran3s round-border p-color-bg"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
-										<h6>Email</h6>
-										<p>rabinatwayana123@gmail.com</p>
-									</li>
-								</ul>
-							</div> <!-- /.left-side -->
-						</div> <!-- /.col- -->
+    <!-- ======= Testimonials Section ======= -->
+    <!-- <section id="testimonials" class="testimonials section-bg">
+      <div class="container" data-aos="fade-up">
 
+        <div class="section-title">
+          <h2>Testimonials</h2>
+        </div>
 
-						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-							<div class="map-area">
-								<h2>Location Map</h2>
-								<div id="googleMap" style="height:400px;width:100%;"></div>
-		<script>
-function myMap() {
-var myCenter = new google.maps.LatLng(27.3747,85.3116);
-var mapProp = {center:myCenter, zoom:12, scrollwheel:true, draggable:true, mapTypeId:google.maps.MapTypeId.ROADMAP};
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-var marker = new google.maps.Marker({position:myCenter});
-marker.setMap(map);
-}
-</script>
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2a8QtzSaEPLeybBaPZpudLLxZq56hcCo&callback=myMap"></script> <!-- Gmap Helper -->
-		
-		<script src="vendor/gmaps.min.js"></script>
-		
-		
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
 
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <h3>Saul Goodman</h3>
+                <h4>Ceo &amp; Founder</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+                <h4>Designer</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <h4>Store Owner</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <h4>Freelancer</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+                <h4>Entrepreneur</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section> -->
+    
+    <!-- End Testimonials Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <!-- <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+        </div>
+
+        <div class="row mt-1">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>Salzburg, Austria</p>
+
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>rabinatwayana123@gmail.com</p>
+                <p>rabina.twayana@stud.plus.ac.at</p>
+
+              </div>
+ 
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+43 67762816148</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+
+          </div> 
+
+        </div>
+
+      </div>
+    </section> -->
+    
+    <!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>Rabina Twayana</h3>
+      <!-- <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p> -->
+      <div class="social-links">
+        <a href="https://linktr.ee/rabinatwayana" target="_blank" class="linktree">
+          <img src="assets/img/icons/linktree_white.png" alt="Linktree" style="width: 16px; height: 16px; margin-bottom: 5px;">
+      </a>
+        <a href="https://www.linkedin.com/in/rabina-twayana-0a9420189/"  target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100008143213677"  target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/rabina_twayana/"  target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="https://github.com/rabinatwayana"  target="_blank" class="linkedin"><i class="bx bxl-github"></i></a>
+        <a href="https://twitter.com/RabinaTwayana"  target="_blank" class="linkedin"><i class="bx bxl-gitlab"></i></a>
+        <a href="https://twitter.com/RabinaTwayana"  target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="mailto:rabinatwayana123@gmail.com" class="email-link"><i class="bx bx-envelope"></i></a>
+
+        <!-- <a href="https://twitter.com/RabinaTwayana"  target="_blank" class="twitter"><i class="bx bxl-academia-sqare"></i></a> -->
+      </div>
+	  <div>
+		<img src="assets/img/footer/cde_1.png" width="250px" style="margin-right: 20px;">
+		<img src="assets/img/footer/eu.png" width="150px" style="margin-right: 20px;">
+		<img src="assets/img/footer/plus_1.png" width="125px" style="margin-right: 20px;">
+		<img src="assets/img/footer/ubs1.png" width="75px" style="margin-right: 20px;">
+	  </div>
+
+      <div class="copyright" style="font-size: 6px;">
+        &copy; Copyright <span >Rabina Twayana</span>. All Rights Reserved
+      </div>
+      <div class="credits" style="font-size: 6px;">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: [license-url] -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  
 <script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links in navbar + footer link
-  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
+    const skillsArray = [
+        {
+            category: "tech",
+            name: "GIS",
+            icon: "assets/img/icons/gis.png"
+        },
+        {
+            category: "tech",
+            name: "Remote Sensing",
+            icon: "assets/img/icons/remotesensing.png"
+        },
+        {
+            category: "tech",
+            name: "WebGIS",
+            icon: "assets/img/icons/webgis.png"
+        },
+        {
+            category: "tech",
+            name: "Google Earth Engine",
+            icon: "assets/img/icons/gee.png"
+        },
+        {
+            category: "soft",
+            name: "ArcGIS",
+            icon: "assets/img/icons/gis.png"
+        },
+        {
+            category: "soft",
+            name: "QGIS",
+            icon: "assets/img/icons/qgis.png"
+        },
+        {
+            category: "soft",
+            name: "ENVI",
+            icon: "assets/img/icons/webgis.png"
+        },
+        {
+            category: "soft",
+            name: "Pix4D",
+            icon: "assets/img/icons/webgis.png"
+        },
+        {
+            category: "soft",
+            name: "Metashape Agisoft",
+            icon: "assets/img/icons/webgis.png"
+        },
+        {
+            category: "soft",
+            name: "PgAdmin",
+            icon: "assets/img/icons/webgis.png"
+        },
+        {
+            category: "pro",
+            name: "HTML",
+            icon: "assets/img/icons/html.png"
+        },
+        {
+            category: "pro",
+            name: "CSS",
+            icon: "assets/img/icons/css.png"
+        },
+        {
+            category: "pro",
+            name: "JavaScript",
+            icon: "assets/img/icons/javascript.png"
+        },
+        {
+            category: "pro",
+            name: "ReactJS",
+            icon: "assets/img/icons/reactjs.png"
+        },
+        {
+            category: "pro",
+            name: "Django",
+            icon: "assets/img/icons/django.png"
+        },
+        {
+            category: "pro",
+            name: "SQL",
+            icon: "assets/img/icons/sql.png"
+        },
+        {
+            category: "lib",
+            name: "OpenLayers",
+            icon: "assets/img/icons/openlayers.png"
+        },
+        {
+            category: "lib",
+            name: "Leaflet",
+            icon: "assets/img/icons/leaflet.png"
+        },
+        {
+            category: "lib",
+            name: "GeoPandas",
+            icon: "assets/img/icons/geopandas.png"
+        },
+        {
+            category: "lib",
+            name: "Pandas",
+            icon: "assets/img/icons/pandas.png"
+        },
+        {
+            category: "lib",
+            name: "GeoServer",
+            icon: "assets/img/icons/openlayers.png"
+        },
+        {
+            category: "lib",
+            name: "CesiumJS",
+            icon: "assets/img/icons/cesium.png"
+        },
+        {
+            category: "others",
+            name: "Google Cloud Platform",
+            icon: "assets/img/icons/gcp.png"
+        },
+        {
+            category: "others",
+            name: "Operating System",
+            icon: "assets/img/icons/openlayers.png"
+        },
+        {
+            category: "others",
+            name: "Git",
+            icon: "assets/img/icons/git.png"
+        },
+        {
+            category: "others",
+            name: "Github",
+            icon: "assets/img/icons/github.png"
+        },
+        {
+            category: "others",
+            name: "Gitlab",
+            icon: "assets/img/icons/gitlab.png"
+        },
+        {
+            category: "others",
+            name: "Docker",
+            icon: "assets/img/icons/docker.png"
+        },
+        {
+            category: "others",
+            name: "Postgres",
+            icon: "assets/img/icons/postgresql.png"
+        },
+    ];
 
-      // Store hash
-      var hash = this.hash;
+    const skillsContainer = document.getElementById('skillsContainer');
 
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 900, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-  
-  $(window).scroll(function() {
-    $(".slideanim").each(function(){
-      var pos = $(this).offset().top;
+    skillsArray.forEach(skill => {
+        const skillDiv = document.createElement('div');
+        skillDiv.className = `col-lg-2 col-md-2 skills-item filter-${skill.category}`;
 
-      var winTop = $(window).scrollTop();
-        if (pos < winTop + 600) {
-          $(this).addClass("slide");
+        const iconBoxDiv = document.createElement('div');
+        iconBoxDiv.className = 'icon-box iconbox-blue';
+
+        const iconDiv = document.createElement('div');
+        iconDiv.className = 'icon';
+
+        if (skill.icon) {
+            const img = document.createElement('img');
+            img.width = 70;
+            img.height = 70;
+            img.src = skill.icon;
+            iconDiv.appendChild(img);
         }
+
+        const skillName = document.createElement('h6');
+        skillName.textContent = skill.name;
+
+        iconBoxDiv.appendChild(iconDiv);
+        iconBoxDiv.appendChild(skillName);
+        skillDiv.appendChild(iconBoxDiv);
+        skillsContainer.appendChild(skillDiv);
     });
-  });
-})
 </script>
-								
-							</div> <!-- /.map-area -->
-						</div> <!-- /.col- -->
-					</div> <!-- /.contact-address-content -->
 
+</body>
 
-
-					<!-- Contact Form -->
-					<!-- <div class="send-message">
-						<h2>Send Message</h2>
-
-						<form action="inc/sendemail.php" class="form-validation" autocomplete="off" method="post">
-							<div class="row">
-								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-									<div class="single-input">
-										<input type="text" placeholder="First Name*" name="Fname">
-									</div> 
-								</div>
-								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-									<div class="single-input">
-										<input type="text" placeholder="Last Name*" name="Lname">
-									</div> 
-								</div>
-								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-									<div class="single-input">
-										<input type="email" placeholder="Your Email*" name="email">
-									</div> 
-								</div>
-							</div> 
-							<div class="single-input">
-								<input type="text" placeholder="Subject" name="sub">
-							</div> 
-							<textarea placeholder="Write Message" name="message"></textarea>
-
-
-							<button class="tran3s p-color-bg">Send Message</button>
-						</form> -->
-
-
-						<!-- Contact Form Validation Markup -->
-						<!-- Contact alert -->
-						<div class="alert-wrapper" id="alert-success">
-							<div id="success">
-								<button class="closeAlert"><i class="fa fa-times" aria-hidden="true"></i></button>
-								<div class="wrapper">
-					               	<p>Your message was sent successfully.</p>
-					             </div>
-					        </div>
-					    </div> <!-- End of .alert_wrapper -->
-					    <div class="alert-wrapper" id="alert-error">
-					        <div id="error">
-					           	<button class="closeAlert"><i class="fa fa-times" aria-hidden="true"></i></button>
-					           	<div class="wrapper">
-					               	<p>Sorry!Something Went Wrong.</p>
-					            </div>
-					        </div>
-					    </div> <!-- End of .alert_wrapper -->
-					</div> <!-- /.send-message -->
-				</div> <!-- /.container -->
-			</div> <!-- /#contact-section -->
-			
-
-			<!--
-			=====================================================
-				Footer
-			=====================================================
-			-->
-			<footer>
-				<div class="container">
-					<!-- <a href="index.html" class="logo"><img src="images/logo/logo.png" alt="Logo"></a> -->
-
-					<ul>
-						<li><a href="https://www.facebook.com/profile.php?id=100008143213677" target="_blank" class="tran3s round-border"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-						<li><a href="https://www.instagram.com/rabina_twayana/" target="_blank" class="tran3s round-border"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-						<li><a href="https://www.linkedin.com/in/rabina-twayana-0a9420189/" target="_blank" class="tran3s round-border"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-						<li><a href="https://github.com/rabinatwayana" target="_blank" class="tran3s round-border"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-						<li><a href="https://gitlab.com/rabinatwayana" target="_blank" class="tran3s round-border"><i class="fa fa-gitlab" aria-hidden="true"></i></a></li>
-						<li><a href="https://independent.academia.edu/RabinaTwayana" target="_blank" class="tran3s round-border"><i class="fa fa-book" aria-hidden="true"></i></a></li>
-						
-					</ul>
-					<!-- <p>Copyright @2018 All rights reserved | This template is made  by <a href="https://colorlib.com" target="_blank">Rabina Twayana</a></p> -->
-				</div>
-			</footer>	
-
-			<!-- =============================================
-				Loading Transition
-			============================================== -->
-			<div id="loader-wrapper">
-				<div id="preloader_1">
-	                <span></span>
-	                <span></span>
-	                <span></span>
-	                <span></span>
-	                <span></span>
-	            </div>
-			</div>
-
-			
-	        <!-- Scroll Top Button -->
-			<button class="scroll-top tran3s p-color-bg">
-				<i class="fa fa-long-arrow-up" aria-hidden="true"></i>
-			</button>
-
-
-
-
-		<!-- Js File_________________________________ -->
-
-		<!-- j Query -->
-		<script type="text/javascript" src="vendor/jquery.2.2.3.min.js"></script>
-
-		<!-- Bootstrap JS -->
-		<script type="text/javascript" src="vendor/bootstrap/bootstrap.min.js"></script>
-
-		<!-- Vendor js _________ -->
-		
-		<!-- revolution -->
-		<script src="vendor/revolution/jquery.themepunch.tools.min.js"></script>
-		<script src="vendor/revolution/jquery.themepunch.revolution.min.js"></script>
-		<script type="text/javascript" src="vendor/revolution/revolution.extension.slideanims.min.js"></script>
-		<script type="text/javascript" src="vendor/revolution/revolution.extension.layeranimation.min.js"></script>
-		<script type="text/javascript" src="vendor/revolution/revolution.extension.navigation.min.js"></script>
-		<script type="text/javascript" src="vendor/revolution/revolution.extension.kenburn.min.js"></script>
-		<script type="text/javascript" src="vendor/revolution/revolution.extension.actions.min.js"></script>
-		<script type="text/javascript" src="vendor/revolution/revolution.extension.video.min.js"></script>
-
-		<!-- Google map js -->
-		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZ8VrXgGZ3QSC-0XubNhuB2uKKCwqVaD0&callback=goMap" type="text/javascript"></script> <!-- Gmap Helper -->
-		<script src="vendor/gmaps.min.js"></script>
-		<!-- owl.carousel -->
-		<script type="text/javascript" src="vendor/owl-carousel/owl.carousel.min.js"></script>
-		<!-- mixitUp -->
-		<script type="text/javascript" src="vendor/jquery.mixitup.min.js"></script>
-		<!-- Progress Bar js -->
-		<script type="text/javascript" src="vendor/skills-master/jquery.skills.js"></script>
-		<!-- Validation -->
-		<script type="text/javascript" src="vendor/contact-form/validate.js"></script>
-		<script type="text/javascript" src="vendor/contact-form/jquery.form.js"></script>
-
-
-		<!-- Theme js -->
-		<script type="text/javascript" src="js/theme.js"></script>
-		<script type="text/javascript" src="js/map-script.js"></script>
-		<script type="text/javascript" src="js/accrodion.js"></script>
-		<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
-
-    
-		</div> <!-- /.main-page-wrapper -->
-	</body>
 </html>
