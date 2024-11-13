@@ -1593,6 +1593,7 @@ section {
   font-size: 13px;
 }
 
+/* Manual */
 .card-title {
   font-weight: bold;    
   margin-top: 10px;    
@@ -1602,4 +1603,17 @@ section {
 .card-description {
   text-align: center;
   color: #939aa1;
+}
+
+.detail-main {
+  margin-bottom: 30px;
+  margin-left: 0px;
+  margin-right: 30px;
+  margin-top: 20px;
+
+}
+
+.detail-container {
+  max-width: 1800px;
+  /* margin-left: 10px; */
 }

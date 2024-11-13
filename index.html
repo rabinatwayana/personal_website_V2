@@ -723,6 +723,7 @@
       <div
         class="container"
         data-aos="fade-up"
+        
       >
         <div class="section-title">
           <h2>
@@ -759,182 +760,113 @@
         </div>
 
         <div
+        id="cdeContainer"
           class="row cde-masters-container"
           data-aos="fade-up"
           data-aos-delay="200"
         >
-          <div class="col-lg-4 col-md-6 portfolio-item filter-cde-sem1">
-            <div class="portfolio-wrap">
-              <img
-                src="assets/img/projects/riskchanges.png"
-                class="img-fluid"
-                alt=""
-              >
-
-              <div class="portfolio-info">
-                <!-- <h4>RiskChanges</h4> -->
-                <!-- <p>App</p> -->
-
-                <div class="portfolio-links">
-                  <a
-                    href="assets/img/projects/riskchanges.png"
-                    data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
-                    title="RiskChanges"
-                  >
-                    <i class="bx bx-plus"></i>
-                  </a>
-
-                  <a
-                    href="project-riskchanges.html"
-                    class="portfolio-details-lightbox"
-                    data-glightbox="type: external"
-                    title="Portfolio Details"
-                  >
-                    <i class="bx bx-link"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <h6 class="card-title">
-              Career development and eportfolio
-            </h6>
-
-            <p class="card-description">
-              A web map application for biking in Olomouc developed in Web Cartography course.
-            </p>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-cde-sem1">
-            <div class="portfolio-wrap">
-              <img
-                src="assets/img/projects/cleanup_nepal.jpeg"
-                class="img-fluid"
-                alt=""
-              >
-
-              <div class="portfolio-info">
-                <!-- <h4>RiskChanges</h4> -->
-                <!-- <p>App</p> -->
-
-                <div class="portfolio-links">
-                  <a
-                    href="assets/img/projects/riskchanges.png"
-                    data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
-                    title="RiskChanges"
-                  >
-                    <i class="bx bx-plus"></i>
-                  </a>
-
-                  <a
-                    href="project-riskchanges.html"
-                    class="portfolio-details-lightbox"
-                    data-glightbox="type: external"
-                    title="Portfolio Details"
-                  >
-                    <i class="bx bx-link"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <h6 class="card-title">
-              Career development and eportfolio
-            </h6>
-
-            <p class="card-description">
-              A web map application for biking in Olomouc developed in Web Cartography course.
-            </p>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-cde-sem1">
-            <div class="portfolio-wrap">
-              <img
-                src="assets/img/projects/riskchanges.png"
-                class="img-fluid"
-                alt=""
-              >
-
-              <div class="portfolio-info">
-                <!-- <h4>RiskChanges</h4> -->
-                <!-- <p>App</p> -->
-
-                <div class="portfolio-links">
-                  <a
-                    href="assets/img/projects/riskchanges.png"
-                    data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
-                    title="RiskChanges"
-                  >
-                    <i class="bx bx-plus"></i>
-                  </a>
-
-                  <a
-                    href="project-riskchanges.html"
-                    class="portfolio-details-lightbox"
-                    data-glightbox="type: external"
-                    title="Portfolio Details"
-                  >
-                    <i class="bx bx-link"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <h6 class="card-title">
-              Career development and eportfolio
-            </h6>
-
-            <p class="card-description">
-              A web map application for biking in Olomouc developed in Web Cartography course.
-            </p>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-cde-sem1">
-            <div class="portfolio-wrap">
-              <img
-                src="assets/img/projects/riskchanges.png"
-                class="img-fluid"
-                alt=""
-              >
-
-              <div class="portfolio-info">
-                <!-- <h4>RiskChanges</h4> -->
-                <!-- <p>App</p> -->
-
-                <div class="portfolio-links">
-                  <a
-                    href="assets/img/projects/riskchanges.png"
-                    data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
-                    title="RiskChanges"
-                  >
-                    <i class="bx bx-plus"></i>
-                  </a>
-
-                  <a
-                    href="project-riskchanges.html"
-                    class="portfolio-details-lightbox"
-                    data-glightbox="type: external"
-                    title="Portfolio Details"
-                  >
-                    <i class="bx bx-link"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <h6 class="card-title">
-              Career development and eportfolio
-            </h6>
-
-            <p class="card-description">
-              A web map application for biking in Olomouc developed in Web Cartography course.
-            </p>
-          </div>
+        <!-- remove this -->
+          
+<!-- remove this -->
         </div>
+        <script>
+ const cdeItems = [
+  {
+    // imgSrc: "assets/img/projects/riskchanges.png",
+    cardTitle: "Business Strategy and Model",
+    // cardDesc:"An online certification course offered by EU Space Academy Learning Platform",
+    thumbnailLink: "assets/img/cde_sem1/1_EUSPA_business_badge.png",
+    thumbnailDesc:"An online certification course offered by EU Space Academy Learning Platform",
+    detailsLink: "msc_detail_content/1_EUSPA_business_model.html",
+    category: "filter-cde-sem1", // Added category
+    
+  },]
+
+  // Run this code after the DOM has fully loaded
+  document.addEventListener('DOMContentLoaded', () => {
+      const cdeContainer = document.getElementById('cdeContainer');
+      
+      if (cdeContainer) {
+        cdeItems.forEach(item => {
+          // Create the outer div for each portfolio item
+          const cdeDiv = document.createElement('div');
+          cdeDiv.className = `col-lg-4 col-md-6 portfolio-item ${item.category}`;
+          
+          const cdeWrapDiv = document.createElement('div');
+          cdeWrapDiv.className = 'portfolio-wrap';
+          
+          const img = document.createElement('img');
+          img.src = item.thumbnailLink;
+          img.className = 'img-fluid';
+          img.alt = item.title;
+          
+          const cdeInfoDiv = document.createElement('div');
+          cdeInfoDiv.className = 'portfolio-info';
+          
+          const title = document.createElement('h4');
+          title.className = 'card-title';
+          title.textContent = item.cardTitle;
+
+          const cardDesc = document.createElement('p');
+          cardDesc.className = 'card-description';
+          cardDesc.textContent = item.thumbnailDesc;
+          
+          const cdeLinksDiv = document.createElement('div');
+          cdeLinksDiv.className = 'portfolio-links';
+          
+          const lightboxLink = document.createElement('a');
+          lightboxLink.href = item.thumbnailLink;
+          lightboxLink.className = 'portfolio-lightbox';
+          lightboxLink.setAttribute('data-gallery', 'portfolioGallery');
+          lightboxLink.title =item.thumbnailDesc? item.thumbnailDesc: item.cardTitle;
+
+          // <a href="assets/img/awards/pabson.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Letter of Appretiation by Private and Boarding School's organization Nepal (PABSON), Kavrepalanchowk, Nepal"><i class="bx bx-plus"></i></a>
+
+          
+          const lightboxIcon = document.createElement('i');
+          lightboxIcon.className = 'bx bx-plus';
+          lightboxLink.appendChild(lightboxIcon);
+          
+          
+          const detailsLink = document.createElement('a');
+      detailsLink.href = item.detailsLink;
+      detailsLink.className = 'portfolio-details-lightbox';
+      detailsLink.title = 'Portfolio Details';
+      detailsLink.setAttribute('data-glightbox', 'type: external'); // GLightbox external link
+      
+      const detailsIcon = document.createElement('i');
+      detailsIcon.className = 'bx bx-link';
+      detailsLink.appendChild(detailsIcon);
+
+          
+          cdeLinksDiv.appendChild(lightboxLink);
+          if (item.detailsLink){
+            cdeLinksDiv.appendChild(detailsLink);
+          }
+          
+          // cdeInfoDiv.appendChild(title);
+          // cdeInfoDiv.appendChild(cardDesc);
+          cdeInfoDiv.appendChild(cdeLinksDiv);
+          
+          cdeWrapDiv.appendChild(img);
+          cdeWrapDiv.appendChild(cdeInfoDiv);
+         
+          
+          cdeDiv.appendChild(cdeWrapDiv);
+          cdeDiv.appendChild(title);
+          cdeDiv.appendChild(cardDesc);
+          
+          cdeContainer.appendChild(cdeDiv);
+        });
+      }
+   
+   // Initialize GLightbox after appending to the DOM
+  const portfolioLightbox = GLightbox({ selector: ".portfolio-lightbox" });
+  const portfolioDetailsLightbox = GLightbox({ selector: ".portfolio-details-lightbox", width:"75%",height:"75vh" });
+
+    });
+
+        </script>
       </div>
     </section>
 
@@ -1367,7 +1299,7 @@
    
    // Initialize GLightbox after appending to the DOM
   const portfolioLightbox = GLightbox({ selector: ".portfolio-lightbox" });
-  const portfolioDetailsLightbox = GLightbox({ selector: ".portfolio-details-lightbox", width:"80%",height:"90vh" });
+  const portfolioDetailsLightbox = GLightbox({ selector: ".portfolio-details-lightbox", width:"75%",height:"75vh" });
 
     });
         </script>

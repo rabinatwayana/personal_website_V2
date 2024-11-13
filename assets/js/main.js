@@ -353,8 +353,8 @@
     selector: ".portfolio-details-lightbox",
     // iframeMaxWidth: '90%', //added
     // iframeMaxHeight: '90vh', //added
-    width: "90%", //original
-    height: "90vh", //orihinal
+    // width: "90%", //original
+    // height: "90vh", //orihinal
     // type:'iframe' //added
   });
 
