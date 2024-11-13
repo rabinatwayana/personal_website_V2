@@ -351,8 +351,11 @@
    */
   const portfolioDetailsLightbox = GLightbox({
     selector: ".portfolio-details-lightbox",
-    width: "90%",
-    height: "90vh",
+    // iframeMaxWidth: '90%', //added
+    // iframeMaxHeight: '90vh', //added
+    // width: "90%", //original
+    // height: "90vh", //orihinal
+    // type:'iframe' //added
   });
 
   /**
