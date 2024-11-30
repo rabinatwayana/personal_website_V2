@@ -141,7 +141,7 @@
           >
             <i class="bx bx-user"></i>
 
-            <span>About</span>
+            <span>About Me</span>
           </a>
         </li>
 
@@ -163,7 +163,7 @@
           >
             <i class="fas fa-graduation-cap"></i>
 
-            <span>CDE</span>
+            <span>CDE ePortfolio</span>
           </a>
         </li>
 
@@ -174,7 +174,7 @@
           >
             <i class="bx bx-book-content"></i>
 
-            <span>Portfolio</span>
+            <span>Pre-CDE ePortfolio</span>
           </a>
         </li>
 
@@ -188,6 +188,8 @@
             <span>Skills</span>
           </a>
         </li>
+        <li><a href="assets/pdf/CV_Rabina_2024.pdf" class="nav-link scrollto" target="_blank"><i class="bx bx-download"></i> <span>Download CV</span></a></li>
+
 
         <!-- <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li> -->
       </ul>
@@ -214,7 +216,7 @@
       <!-- Researcher, WebGIS Developer, Geomatics Engineer -->
 
       <p>
-        I'm a
+        <!-- I'm a -->
 
         <span
           class="typed"
@@ -323,7 +325,7 @@
       </div>
     </div>
 
-    <h6 style="position: absolute; bottom: 10px; right: 20px;">Updated on: 13 July 2024</h6>
+    <h6 style="position: absolute; bottom: 10px; right: 20px;">Updated on: 30 Nov 2024</h6>
   </section>
 
   <!-- End Hero -->
@@ -347,7 +349,7 @@
         data-aos="fade-up"
       >
         <div class="section-title">
-          <h2>About</h2>
+          <h2>About Me</h2>
 
           <!-- <p> I am a certified geomatics engineer registered in Nepal Engineering Council, holding a four-year
             academic degree in Bachelor of Engineering in Geomatics from the Kathmandu University, Nepal.
@@ -372,6 +374,7 @@
               src="assets/img/profile-img.jpg"
               class="img-fluid"
               alt=""
+              style="border-radius: 50%;"
             >
           </div>
 
@@ -675,12 +678,12 @@
               </p>
 
               <ul>
-                <li>
+<!--                <li>
                   Participate in the overall application development lifecycle.
-                </li>
+                </li>-->
 
                 <li>
-                  Develop the server-side logic as well as the development and maintenance of the central database ensuring high responsiveness and performance to requests from the frontend.
+                  Develop and maintain server-side logic and database management for optimal performance and responsiveness
                 </li>
 
                 <li>
@@ -699,15 +702,42 @@
                   Carry out preliminary testing and quality assurance of the developed system before forwarding to QA team.
                 </li>
 
-                <li>
+<!--                <li>
                   Coordinate with business analysts, team members and client representatives in smooth development of the systems
                 </li>
 
                 <li>
                   Engage in knowledge sharing and co-learning among team members in the company.
-                </li>
+                </li>-->
               </ul>
             </div>
+            
+            <div class="resume-item">
+              <h4>Frontend/WebGIS Developer Intern</h4>
+
+              <h5>Jun 2020 - Aug 2020</h5>
+
+              <p>
+                <em>
+                  Naxa Pvt. Ltd., Kathmandu, Nepal
+                </em>
+              </p>
+
+              <ul>
+                <li>
+                  <span style= "font-weight: bold;"> Project: </span> Headquarter Mapping (“An Open Spatial Data Initiative to Locate and Map 753 Local
+Governments and their Ward Offices in Nepal”)
+                </li>
+
+                <li>
+                
+                  Responsible for developing the frontend (UI) using ReactJS library and interactive/dynamic map interface using
+Openlayers (JavaScript mapping library).
+                </li>
+
+              </ul>
+            </div>
+            
           </div>
         </div>
       </div>
@@ -727,10 +757,10 @@
       >
         <div class="section-title">
           <h2>
-            Copernicus Masters in Digital Earth
+            CDE e-PORTFOLIO
           </h2>
 
-          <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
+           <p>This is the collection of learnings, achievements, projects and additional activities carried out during the Copernicus Master in Digital Earth (CDE) journey</p> 
         </div>
 
         <div class="row">
@@ -748,13 +778,13 @@
 
               <li data-filter=".filter-cde-sem4">SEMESTER IV</li>
 
-              <li data-filter=".filter-cde-summer-school">Summer School</li>
+<!--              <li data-filter=".filter-cde-summer-school">Summer School</li>
 
               <li data-filter=".filter-cde-internship">INTERNSHIP</li>
 
               <li data-filter=".filter-cde-thesis">THESIS</li>
 
-              <li data-filter=".filter-cde-others">OTHERS</li>
+              <li data-filter=".filter-cde-others">OTHERS</li>-->
             </ul>
           </div>
         </div>
@@ -779,8 +809,20 @@
     thumbnailDesc:"An online certification course offered by EU Space Academy Learning Platform",
     detailsLink: "msc_detail_content/1_EUSPA_business_model.html",
     category: "filter-cde-sem1", // Added category
+    published_date: "18 Nov 2024",
     
-  },]
+  },
+   {
+    cardTitle: "CDE Introduction Presentation",
+    thumbnailLink: "assets/img/cde_sem1/0_cde_presentation.png",
+    thumbnailDesc:"An introductory presentation in CDE orientation week",
+    detailsLink: "msc_detail_content/0_cde_presentation.html",
+    category: "filter-cde-sem1", // Added category
+    published_date: "2 Oct 2024",
+    
+  },
+  
+  ]
 
   // Run this code after the DOM has fully loaded
   document.addEventListener('DOMContentLoaded', () => {
@@ -803,13 +845,17 @@
           const cdeInfoDiv = document.createElement('div');
           cdeInfoDiv.className = 'portfolio-info';
           
-          const title = document.createElement('h4');
+          const title = document.createElement('h5');
           title.className = 'card-title';
           title.textContent = item.cardTitle;
 
           const cardDesc = document.createElement('p');
           cardDesc.className = 'card-description';
           cardDesc.textContent = item.thumbnailDesc;
+          
+          const cardPublishedDate = document.createElement('p');
+          cardPublishedDate.className = 'card-description';
+          cardPublishedDate.textContent = item.published_date;
           
           const cdeLinksDiv = document.createElement('div');
           cdeLinksDiv.className = 'portfolio-links';
@@ -855,6 +901,7 @@
           cdeDiv.appendChild(cdeWrapDiv);
           cdeDiv.appendChild(title);
           cdeDiv.appendChild(cardDesc);
+          cdeDiv.appendChild(cardPublishedDate);
           
           cdeContainer.appendChild(cdeDiv);
         });
@@ -882,9 +929,8 @@
         data-aos="fade-up"
       >
         <div class="section-title">
-          <h2>Portfolio</h2>
-
-          <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
+          <h2>pre-cde e-Portfolio</h2>
+          <p>This section is the collection of projects, publications, experiences, and achievements from my Bachelor's degree and professional journey.</p>
         </div>
 
         <div class="row">
@@ -1340,7 +1386,7 @@
 
               <li data-filter=".filter-pro">Programming</li>
 
-              <li data-filter=".filter-lib">Libraries and package</li>
+              <li data-filter=".filter-lib">Libraries and packages</li>
 
               <li data-filter=".filter-others">Others</li>
             </ul>

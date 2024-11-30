@@ -1593,7 +1593,7 @@ section {
   font-size: 13px;
 }
 
-/* Manual */
+/*************************** Manual **************************************/
 .card-title {
   font-weight: bold;    
   margin-top: 10px;    
@@ -1615,5 +1615,26 @@ section {
 
 .detail-container {
   max-width: 1800px;
+  /* max-height: 100vh; */
   /* margin-left: 10px; */
+}
+
+.detail-main-pdf-view {
+  margin-bottom: 5px;
+  margin-left: 5px; 
+  margin-right: 5px;
+  margin-top: 5px; 
+
+
+}
+
+.pdf-view {
+  width: 100%;
+  height: 100vh;
+}
+
+.swiper-slide-image {
+  display: flex;
+  justify-content: center; 
+  align-items: center"
 }
