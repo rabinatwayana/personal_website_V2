@@ -1600,6 +1600,11 @@ section {
   text-align: center;   
 }
 
+.card-title:hover {
+  color: #0563bb; 
+  /* text-decoration: underline; Ensure underline on hover */
+}
+
 .card-description {
   text-align: center;
   color: #939aa1;
@@ -1638,3 +1643,20 @@ section {
   justify-content: center; 
   align-items: center"
 }
+
+/* .top-right-tag {
+  position: absolute;
+  top: 10px; 
+  left: 10px;
+  left: 50%; 
+  transform: translateX(-50%);
+    
+  background-color: #0563bb; 
+  color: white; 
+  font-size: 10px; 
+  padding: 5px 10px; 
+  border-radius: 8px; 
+  font-weight: bold;
+  z-index: 1; 
+  pointer-events: none; 
+} */
