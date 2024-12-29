@@ -927,6 +927,37 @@ Openlayers (JavaScript mapping library).
         </div>
         <script>
  const cdeItems = [
+ {
+    cardTitle: "Case Study: Volcanic Eruption in Ulawun, Papua New Guinea",
+    thumbnailLink: "assets/img/cde_sem1/2_ars_radar_volcano_th.webp",
+    thumbnailDesc:"An analysis of volcanic eruption using SAR data with the help of the displacement map",
+    detailsLink: "msc_cde/2_ars_radar_volcanic_eruption.html",
+    category: "filter-cde-sem1", // Added category
+    published_date: "18 Dec 2024",
+    course_category: "ARS"
+    
+  },
+  {
+    cardTitle: "Temporal Analysis of Bushfire in Northern Australia 2023 using GEE",
+    thumbnailLink: "assets/img/cde_sem1/4_bed_gee_bushfire_th.webp",
+    thumbnailDesc:"A GEE dashboard to visualize temporal changes of bushfire",
+    detailsLink: "msc_cde/4_bed_bushfire_analysis_gee.html",
+    category: "filter-cde-sem1", // Added category
+    published_date: "30 Nov 2024",
+    course_category: "BED"
+    
+  },
+ {
+    cardTitle: "Understanding Sentinel-hub Simple Water Bodies Mapping (SWBM) Script",
+    thumbnailLink: "assets/img/cde_sem1/3_bed_sentinel_script_SWBM_th.webp",
+    thumbnailDesc:"Understanding the logic behind the scripts and interpret the output from the script",
+    detailsLink: "msc_cde/3_bed_sentinel_hub_swbm_script.html",
+    category: "filter-cde-sem1", // Added category
+    published_date: "18 Nov 2024",
+    course_category: "BED"
+    
+  },
+
   {
     // imgSrc: "assets/img/projects/riskchanges.png",
     cardTitle: "Business Strategy and Model",
@@ -949,7 +980,7 @@ Openlayers (JavaScript mapping library).
     course_category: "Orienatation"
     
   },
-  
+
   ]
 
 
@@ -1016,7 +1047,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detailsLink.className = ''; // Remove GLightbox class
             detailsLink.title = 'Full Detail';
             
-            const title = document.createElement('h5');
+            const title = document.createElement('h6');
             title.className = 'card-title';
             title.textContent = item.cardTitle;
 
