@@ -740,9 +740,6 @@
                 </div>
                 
               </div>
-
-             
-
            <p>
             <span style= "font-weight: bold;"> Project: </span> RiskChanges Application Development
            </p>
@@ -900,9 +897,11 @@ Openlayers (JavaScript mapping library).
 
               <li data-filter=".filter-cde-sem2">SEMESTER II</li>
 
-              <li data-filter=".filter-cde-sem3">SEMESTER III</li>
+              <!-- <li data-filter=".filter-cde-sem3">SEMESTER III</li> -->
 
-              <li data-filter=".filter-cde-sem4">SEMESTER IV</li>
+              <!-- <li data-filter=".filter-cde-sem4">SEMESTER IV</li> -->
+
+              <li data-filter=".filter-cde-others">Others</li>
 
 <!--              <li data-filter=".filter-cde-summer-school">Summer School</li>
 
@@ -928,6 +927,15 @@ Openlayers (JavaScript mapping library).
         <script>
  const cdeItems = [
  {
+    cardTitle: "Introduction to remote sensing and hands on disaster management course",
+    thumbnailLink: "assets/img/cde_sem1/7_spacesuite_radar_th.webp",
+    thumbnailDesc:"Flood mapping using radar data",
+    detailsLink: "msc_cde/7_spacesuite_flood_mapping_course.html",
+    category: "filter-cde-others", // Added category
+    published_date: "18 Dec 2024",
+    course_category: "others"
+  },
+ {
     cardTitle: "Case Study: Volcanic Eruption in Ulawun, Papua New Guinea",
     thumbnailLink: "assets/img/cde_sem1/2_ars_radar_volcano_th.webp",
     thumbnailDesc:"An analysis of volcanic eruption using SAR data with the help of the displacement map",
@@ -935,7 +943,6 @@ Openlayers (JavaScript mapping library).
     category: "filter-cde-sem1", // Added category
     published_date: "18 Dec 2024",
     course_category: "ARS"
-    
   },
   {
     cardTitle: "Temporal Analysis of Bushfire in Northern Australia 2023 using GEE",
@@ -957,8 +964,6 @@ Openlayers (JavaScript mapping library).
     course_category: "BED"
     
   },
-  
-
   {
     // imgSrc: "assets/img/projects/riskchanges.png",
     cardTitle: "Business Strategy and Model",
@@ -981,7 +986,6 @@ Openlayers (JavaScript mapping library).
     category: "filter-cde-sem1", // Added category
     published_date: "29 Oct 2024",
     course_category: "BED"
-    
   },
    {
     cardTitle: "CDE Introduction Presentation",
@@ -990,10 +994,8 @@ Openlayers (JavaScript mapping library).
     detailsLink: "msc_cde/0_cde_presentation.html",
     category: "filter-cde-sem1", // Added category
     published_date: "2 Oct 2024",
-    course_category: "Orienatation"
-    
+    course_category: "Orienatation" 
   },
-
   ]
 
 
