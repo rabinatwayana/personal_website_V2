@@ -740,9 +740,6 @@
                 </div>
                 
               </div>
-
-             
-
            <p>
             <span style= "font-weight: bold;"> Project: </span> RiskChanges Application Development
            </p>
@@ -900,9 +897,11 @@ Openlayers (JavaScript mapping library).
 
               <li data-filter=".filter-cde-sem2">SEMESTER II</li>
 
-              <li data-filter=".filter-cde-sem3">SEMESTER III</li>
+              <!-- <li data-filter=".filter-cde-sem3">SEMESTER III</li> -->
 
-              <li data-filter=".filter-cde-sem4">SEMESTER IV</li>
+              <!-- <li data-filter=".filter-cde-sem4">SEMESTER IV</li> -->
+
+              <li data-filter=".filter-cde-others">Others</li>
 
 <!--              <li data-filter=".filter-cde-summer-school">Summer School</li>
 
@@ -927,6 +926,53 @@ Openlayers (JavaScript mapping library).
         </div>
         <script>
  const cdeItems = [
+ {
+    cardTitle: "Flood Mapping of Valencia, Spain using SAR Data",
+    thumbnailLink: "assets/img/cde_sem1/8_17_th.webp",
+    thumbnailDesc:"Flood mapping using radar data",
+    detailsLink: "msc_cde/8_spacesuite_valencia_flood_mapping.html",
+    category: "filter-cde-others", // Added category
+    published_date: "30 Dec 2024",
+    course_category: "others"
+  },
+ {
+    cardTitle: "Introduction to remote sensing and hands on disaster management course",
+    thumbnailLink: "assets/img/cde_sem1/7_spacesuite_radar_th.webp",
+    thumbnailDesc:"Flood mapping using radar data",
+    detailsLink: "msc_cde/7_spacesuite_flood_mapping_course.html",
+    category: "filter-cde-others", // Added category
+    published_date: "18 Dec 2024",
+    course_category: "others"
+  },
+ {
+    cardTitle: "Case Study: Volcanic Eruption in Ulawun, Papua New Guinea",
+    thumbnailLink: "assets/img/cde_sem1/2_ars_radar_volcano_th.webp",
+    thumbnailDesc:"An analysis of volcanic eruption using SAR data with the help of the displacement map",
+    detailsLink: "msc_cde/2_ars_radar_volcanic_eruption.html",
+    category: "filter-cde-sem1", // Added category
+    published_date: "18 Dec 2024",
+    course_category: "ARS"
+  },
+  {
+    cardTitle: "Temporal Analysis of Bushfire in Northern Australia 2023 using GEE",
+    thumbnailLink: "assets/img/cde_sem1/4_bed_gee_bushfire_th.webp",
+    thumbnailDesc:"A GEE dashboard to visualize temporal changes of bushfire",
+    detailsLink: "msc_cde/4_bed_bushfire_analysis_gee.html",
+    category: "filter-cde-sem1", // Added category
+    published_date: "30 Nov 2024",
+    course_category: "BED"
+    
+  },
+ {
+    cardTitle: "Understanding Sentinel-hub Simple Water Bodies Mapping (SWBM) Script",
+    thumbnailLink: "assets/img/cde_sem1/3_bed_sentinel_script_SWBM_th.webp",
+    thumbnailDesc:"Understanding the logic behind the scripts and interpret the output from the script",
+    detailsLink: "msc_cde/3_bed_sentinel_hub_swbm_script.html",
+    category: "filter-cde-sem1", // Added category
+    published_date: "18 Nov 2024",
+    course_category: "BED"
+    
+  },
   {
     // imgSrc: "assets/img/projects/riskchanges.png",
     cardTitle: "Business Strategy and Model",
@@ -939,6 +985,17 @@ Openlayers (JavaScript mapping library).
     course_category: "Career Development"
     
   },
+  {
+    // imgSrc: "assets/img/projects/riskchanges.png",
+    cardTitle: "Analysis Ready Data and Level 2A Data",
+    // cardDesc:"An online certification course offered by EU Space Academy Learning Platform",
+    thumbnailLink: "assets/img/cde_sem1/5_bed_ARD_th.webp",
+    thumbnailDesc:"Characteristics of analysis ready data and Level 2A Processing Chain by Sen2Cor and MAJA",
+    detailsLink: "msc_cde/5_bed_ARD.html",
+    category: "filter-cde-sem1", // Added category
+    published_date: "29 Oct 2024",
+    course_category: "BED"
+  },
    {
     cardTitle: "CDE Introduction Presentation",
     thumbnailLink: "assets/img/cde_sem1/0_cde_presentation_th.webp",
@@ -946,10 +1003,8 @@ Openlayers (JavaScript mapping library).
     detailsLink: "msc_cde/0_cde_presentation.html",
     category: "filter-cde-sem1", // Added category
     published_date: "2 Oct 2024",
-    course_category: "Orienatation"
-    
+    course_category: "Orienatation" 
   },
-  
   ]
 
 
@@ -1016,7 +1071,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detailsLink.className = ''; // Remove GLightbox class
             detailsLink.title = 'Full Detail';
             
-            const title = document.createElement('h5');
+            const title = document.createElement('h6');
             title.className = 'card-title';
             title.textContent = item.cardTitle;
 

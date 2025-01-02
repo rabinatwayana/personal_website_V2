@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Portfolio Details - Personal Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+></link>
+
+  <!-- =======================================================
+  * Template Name: MyResume
+  * Updated: Nov 17 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <main id="main" class="detail-main" style="margin-left: 10%; margin-right: 10%;">
+    
+    <div id="header-placeholder"></div>
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <!-- style="margin-left: 50px;" -->
+      <div class="container detail-container">
+        <!-- <div style="text-align: left; margin-top: 20px;">
+          <button onclick="goBack()" class="btn btn-icon" aria-label="Go back">
+            <i class="bx bx-arrow-back">Back</i> 
+          </button>
+        </div> -->
+
+        <div class="row gy-4">
+          <div class="col-lg-12">
+            <h2 style="text-align: center; position: sticky;  color: #0563bb;">Flood Mapping of Valencia, France using SAR Data</h2>
+            
+            <!-- <div class="portfolio-info" >
+              
+              <ul>
+                <li><strong>Platform Link</strong>: <a target="_blank" href="https://www.euspa.europa.eu/spaceacademy/">https://www.euspa.europa.eu/spaceacademy/</a></li>
+                
+                <li><strong>Course Link</strong>: <a target="_blank" href="https://spaceacademy.getlearnworlds.com/course/business">https://spaceacademy.getlearnworlds.com/course/business</a></li>
+
+                <li><strong>Issued on</strong>: 17 Nov 2024</li>
+                <li><strong>Credential ID</strong>: 62b05d81549c07743802dcda</li>
+              </ul>
+            </div> -->
+         
+            <div class="portfolio-description">
+
+              <p style="text-align: justify;"> 
+                In late October 2024, Spain faced one of its most catastrophic floods in decades, severely affecting the Valencia region and surrounding areas. The disaster claimed over 200 lives, displaced thousands, and caused widespread destruction to infrastructure and livelihoods.
+              <br/> <br/> 
+              I am sharing the results obtained from hands-on training provided by SpaceSUITE. 
+              <br/><br/> 
+              Following are the steps carried out in SNAP tool to do flood mapping. 
+            </p>
+              <span class="detail-sub-heading">1. Import GRD SAR Image </span>
+              <p style="text-align: justify;"> 
+                Pre-event (2024-10-07), During-event (2024-10-19) and post-event (2024-10-31) images were provided for the study area. But the Sentinel-1 images can be easily downloaded from 
+                <a href="https://dataspace.copernicus.eu/explore-data" target="_blank" style="text-decoration: none; color: #007bff;">https://dataspace.copernicus.eu/explore-data</a> or <a href="https://search.asf.alaska.edu/" target="_blank" style="text-decoration: none; color: #007bff;">https://search.asf.alaska.edu/</a>
+
+              </p>
+              <div style="text-align: center;">
+                <img width="40%" src="../assets/img/cde_sem1/8_0.png">
+                <p style="margin-top: 10px; font-size: 14px; color: #333;">
+                  Figure 1: Pre, during and post flood event SAR images Load in SNAP
+                </i>
+                </p>
+                </div>
+              <br/> <br/>
+
+              <span class="detail-sub-heading">2. Subsetting</span>
+              <p style="text-align: justify;"> 
+                For flood mapping, VV polarization is more critical than VH, which is primarily used for vegetation analysis.  Therefore, this process is done to save only VV bands. 
+                <br/> <br/>
+                <span> Tool: Raster >> Subset </span> 
+              </p>
+              <div style="display: flex; justify-content: center; align-items: flex-start; gap: 20px; text-align: center;">
+                <div>
+                  <img width="100%" src="../assets/img/cde_sem1/8_20.png">
+                  <p style="margin-top: 10px; font-size: 14px; color: #333;">
+                    Figure 2: Band Subset
+                  </p>
+                </div>
+                <div>
+                  <img width="100%" src="../assets/img/cde_sem1/8_1.png">
+                  <p style="margin-top: 10px; font-size: 14px; color: #333;">
+                    Figure 3: Subset Image
+                  </p>
+                </div>
+                
+              </div>
+
+
+               <div style="text-align: center;">
+               
+                <img width="100%" src="../assets/img/cde_sem1/8_2.png">
+                <p style="margin-top: 10px; font-size: 14px; color: #333;">
+                  Figure 4: Amplitude_VV Image Visualization
+                </i>
+                </p>
+                </div>
+              <br/> <br/>
+
+              <span class="detail-sub-heading">3. Orbit File Application </span>
+
+              <p style="text-align: justify;"> 
+                In this step, an orbit file is applied to SAR products to establish a connection between the image coordinates and their corresponding ground locations.
+              <br/> <br/>
+            Tool: Radar>> Apply orbit file
+            </p>
+              <div style="display: flex; justify-content: center; align-items: flex-start; gap: 20px; text-align: center;">
+                <div>
+                  <img width="100%" src="../assets/img/cde_sem1/8_18.png">
+                  <p style="margin-top: 10px; font-size: 14px; color: #333;">
+                    Figure 5: Orbit File IO Parameters
+                  </p>
+                </div>
+                <div>
+                  <img width="100%" src="../assets/img/cde_sem1/8_19.png">
+                  <p style="margin-top: 10px; font-size: 14px; color: #333;">
+                    Figure 6: Orbit File Processing Parameters
+                  </p>
+                </div>
+                
+              </div>
+              <br/> <br/>
+
+              <span class="detail-sub-heading">4. Radiometric Calibration </span>
+              <p style="text-align: justify;"> 
+              In this process, the original image pixel values, which are derived as digital numbers (DNs) are converted into actual radar backscatter. This means, that the data is manipulated in a way that provides imagery with pixel values that can be directly related to the radar backscatter of the scene.
+              <br/> <br/>
+              Tool: Radar>Radiometric>Calibrate
+            </p>
+               <div style="text-align: center;">
+                <img width="100%" src="../assets/img/cde_sem1/8_3.png">
+                <p style="margin-top: 10px; font-size: 14px; color: #333;">
+                  Figure 7: Radiomentric Calibration Result
+                </i>
+                </p>
+                </div>
+              <br/> <br/>
+
+              <span class="detail-sub-heading">5. Speckle Filtering</span>
+              <p style="text-align: justify;"> 
+              Speckle filtering is a very important step in the preprocessing chain of SAR imagery. The choice of the type of filter that is used to remove speckle effects strongly depends on the application and the study site. 
+              For this study area, Lee filter was selected. 
+              
+              The SigmaO_VV bands were then converted into the decibel by right clicking in the layer and selecting the Liner to/from db option. The decibel values are logarithmic and it leads to more contrast in the resulting image, as stronger backscatter values shift towards the mean and darker values get stretched stronger.
+              <br/> <br/>
+              Radar>> Speckle Filtering>> Single product speckle filter
+            </p>
+              <div style="display: flex; justify-content: center; align-items: flex-start; gap: 20px; text-align: center;">
+                <div>
+                  <img width="100%" src="../assets/img/cde_sem1/8_5.png">
+                  <p style="margin-top: 10px; font-size: 14px; color: #333;">
+                    Figure 8: Speckle Filtering IO Parameters
+                  </p>
+                </div>
+                <div>
+                  <img width="100%" src="../assets/img/cde_sem1/8_6.png">
+                  <p style="margin-top: 10px; font-size: 14px; color: #333;">
+                    Figure 2: Speckle Filtering Processing Parameters
+                  </p>
+                </div>
+                
+              </div>
+               <div style="text-align: center;">
+                
+                <img width="100%" src="../assets/img/cde_sem1/8_4.png">
+                <p style="margin-top: 10px; font-size: 14px; color: #333;">
+                  Figure 9: Speckle Filtering Result
+                </i>
+                </p>
+                </div>
+              <br/> <br/>
+
+              <span class="detail-sub-heading">6. Terrain Correction</span>
+              <p style="text-align: justify;"> 
+                This process is carried out to map the image into a desired coordinate system. In this case study, default WGS84 was selected. If we comapare the output to the Figure 9, the image has been flipped upside down.
+                The bands were then converted into the decibel and visualize the output.
+                <br/> <br/>
+                Tool: Radar >> geometric >> terrain correction >> range doppler terrain correction
+                </p>
+               
+              <div style="display: flex; justify-content: center; align-items: flex-start; gap: 20px; text-align: center;">
+                <div>
+                  <img width="100%" src="../assets/img/cde_sem1/8_8.png">
+                  <p style="margin-top: 10px; font-size: 14px; color: #333;">
+                    10: Terrain Correction IO Parameters
+                  </p>
+                </div>
+                <div>
+                  <img width="100%" src="../assets/img/cde_sem1/8_7.png">
+                  <p style="margin-top: 10px; font-size: 14px; color: #333;">
+                    Figure 2: Terrain Correction Processing Parameters
+                  </p>
+                </div>
+                
+              </div>
+
+                <div style="text-align: center;">
+                <img width="100%" src="../assets/img/cde_sem1/8_10.png">
+                <p style="margin-top: 10px; font-size: 14px; color: #333;">
+                  Figure 11: Terrain Correction Result
+                </i>
+                </p>
+                </div>
+              <br/> <br/>
+
+              <span class="detail-sub-heading">7. Stacking</span>
+
+              <p style="text-align: justify;"> 
+                This process is carried out to stack bands of different time in one image.
+
+                The bands were then again converted into the decibel.
+                <br/> <br/>
+
+                Tool: Radar >> coregistration >> stack tool >> create stack
+                </p>
+              <div style="display: flex; justify-content: center; align-items: flex-start; gap: 20px; text-align: center;">
+                <div>
+                  <img width="100%" src="../assets/img/cde_sem1/8_11.png">
+                  <p style="margin-top: 10px; font-size: 14px; color: #333;">
+                    Figure 12: Product-set Stack Parameter
+                  </p>
+                </div>
+                <div>
+                  <img width="100%" src="../assets/img/cde_sem1/8_12.png">
+                  <p style="margin-top: 10px; font-size: 14px; color: #333;">
+                    Figure 2: CreateStack Parameter
+                  </p>
+                </div>
+                
+              </div>
+              <div style="text-align: center;">
+                <img width="60%" src="../assets/img/cde_sem1/8_13.png">
+                <p style="margin-top: 10px; font-size: 14px; color: #333;">
+                  Figure 3: Image Stacking Result
+                </p>
+              </div>
+              <br/> <br/>
+
+              <span class="detail-sub-heading">8. Spatial Subset</span>
+              <p style="text-align: justify;">
+                Spatial subset is carried out to extract area of interest. For this, adjust and resize the blue bounding box to fit the study area.
+                <br/> <br/>
+                Tool: Raster >> Subset
+              </p>
+              <div style="text-align: center;">
+                <img width="40%" src="../assets/img/cde_sem1/8_21.png">
+                <p style="margin-top: 10px; font-size: 14px; color: #333;">
+                  Figure 13: Spatial subset selection
+                </i>
+                </p>
+               
+                </div>
+
+              
+
+              <span class="detail-sub-heading">9. RGB Composite</span>
+
+              <p style="text-align: justify;">
+                Tool: window>>open RGB Image
+                <br/> <br/>
+                Select the Red, Green and Blue bands as shown in figure below and run it.
+              </p>
+               <div style="text-align: center;">
+                <img width="40%" src="../assets/img/cde_sem1/8_14.png">
+                <p style="margin-top: 10px; font-size: 14px; color: #333;">
+                  Figure 14: RGB Image Composite Parameters 
+                </i>
+                </p>
+                <img width="100%" src="../assets/img/cde_sem1/8_15.png">
+                <p style="margin-top: 10px; font-size: 14px; color: #333;">
+                  Figure 15: RGB Composite Result 
+                </i>
+                </p>
+                </div>
+              <br/> <br/>
+
+              <span class="detail-sub-heading">10. Export Image</span>
+
+              <p style="text-align: justify;">
+                Right click in the RGB composite image in map display window and select "Export view as Google Earth KMZ". Load the kmz file and visualize in google earth map.
+              </p>
+
+               <div style="text-align: center;">
+                <img width="100%" src="../assets/img/cde_sem1/8_16.png">
+                <p style="margin-top: 10px; font-size: 14px; color: #333;">
+                  Figure 16: Flood map load in google earth map 
+                </i>
+                </p>
+                </div>
+              <br/> <br/>
+
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+    <div id="footer-placeholder"></div> 
+  </main><!-- End #main -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("../header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        });
+    });
+  </script>
+
+  <!-- <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script> -->
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("../footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        });
+    });
+  </script>
+
+<!-- <script>
+  function changeUrl(event,sectionId) {
+    event.preventDefault();
+    // Update the URL without reloading the page
+    window.history.pushState(null, null, sectionId);
+    
+    // Scroll smoothly to the section
+    const section = document.querySelector(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+</script> -->
+
+</body>
+
+</html>
