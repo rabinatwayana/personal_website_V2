@@ -394,11 +394,12 @@
             leveraging the potential of emerging geospatial technologies, including digital twin, 3DGIS, and
             geospatial programming, within the field of urban infrastructure and disaster management.</p> -->
         </div>
-
+ <!-- src="assets/img/profile-img.jpg" -->
         <div class="row">
           <div class="col-lg-4">
             <img
-              src="assets/img/profile-img.jpg"
+              src="assets/img/profile_1_th.webp"
+             
               class="img-fluid"
               alt=""
               style="border-radius: 50%;"
@@ -1067,9 +1068,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Create details link (no GLightbox, just normal link behavior)
             const detailsLink = document.createElement('a');
+            detailsLink.target = '_blank';
             detailsLink.href = item.detailsLink;  // Directly use the link (no GLightbox)
             detailsLink.className = ''; // Remove GLightbox class
             detailsLink.title = 'Full Detail';
+
             
             const title = document.createElement('h6');
             title.className = 'card-title';
@@ -1079,8 +1082,9 @@ document.addEventListener('DOMContentLoaded', () => {
           
            
             title.addEventListener('click', () => {
-              window.location.href=item.detailsLink
+              // window.location.href=item.detailsLink
               //  window.open(item.detailsLink);  // Opens the link in a new tab
+               window.open(item.detailsLink, '_blank');
             });
 
             // detailsLink.appendChild(title);
