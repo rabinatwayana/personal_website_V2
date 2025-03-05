@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"></meta>
+
+  <meta
+    content="width=device-width, initial-scale=1.0"
+    name="viewport"
+  ></meta>
+
+  <title>
+    Portfolio Details - Personal Bootstrap Template
+  </title>
+
+  <meta
+    content=""
+    name="description"
+  ></meta>
+
+  <meta
+    content=""
+    name="keywords"
+  ></meta>
+
+  <!-- Favicons -->
+
+  <link
+    href="../assets/img/favicon.png"
+    rel="icon"
+  ></link>
+
+  <link
+    href="../assets/img/apple-touch-icon.png"
+    rel="apple-touch-icon"
+  ></link>
+
+  <!-- Google Fonts -->
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet"
+  ></link>
+
+  <!-- Vendor CSS Files -->
+
+  <link
+    href="../assets/vendor/aos/aos.css"
+    rel="stylesheet"
+  ></link>
+
+  <link
+    href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+    rel="stylesheet"
+  ></link>
+
+  <link
+    href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"
+    rel="stylesheet"
+  ></link>
+
+  <link
+    href="../assets/vendor/boxicons/css/boxicons.min.css"
+    rel="stylesheet"
+  ></link>
+
+  <link
+    href="../assets/vendor/glightbox/css/glightbox.min.css"
+    rel="stylesheet"
+  ></link>
+
+  <link
+    href="../assets/vendor/swiper/swiper-bundle.min.css"
+    rel="stylesheet"
+  ></link>
+
+  <!-- Template Main CSS File -->
+
+  <link
+    href="../assets/css/style.css"
+    rel="stylesheet"
+  ></link>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  ></link>
+</head>
+
+<body>
+  <main
+    id="main"
+    class="detail-main"
+  >
+    <div id="header-placeholder"></div>
+
+    <section
+      id="portfolio-details"
+      class="portfolio-details"
+    >
+      <div class="container detail-container">
+        <div class="row gy-4">
+          <div class="col-lg-1"></div>
+
+          <div class="col-lg-10">
+            <h2 style="text-align: center; position: sticky;">
+              Geographical Agent-Based Modeling for Rainfall-Runoff Simulation:
+            </h2>
+
+            <h3 style="text-align: center; position: sticky;">
+              A Case Study of the Small Catchment Area of Bagmati River, Nepal
+            </h3>
+
+            <div class="portfolio-info">
+              <ul>
+                <li>
+                  <strong>Presentation</strong>
+
+                  :
+
+                  <a
+                    target="_blank"
+                    href="https://github.com/rabinatwayana/rainfall_runoff_simulation/blob/master/presentation.pdf"
+                  >
+                    https://github.com/rabinatwayana/rainfall_runoff_simulation/blob/master/presentation.pdf
+                  </a>
+                </li>
+
+                <li>
+                  <strong>Code</strong>
+
+                  :
+
+                  <a
+                    target="_blank"
+                    href="https://github.com/rabinatwayana/rainfall_runoff_simulation"
+                  >
+                    https://github.com/rabinatwayana/rainfall_runoff_simulation
+                  </a>
+                </li>
+
+                <li>
+                  <strong>Course</strong>
+
+                  : Spatial Simulation
+                </li>
+
+                <li>
+                  <strong>Project Members</strong>
+
+                  : Upendra Oli and Rabina Twayana
+                </li>
+              </ul>
+            </div>
+
+            <div class="portfolio-description">
+              <h4>Introduction</h4>
+
+              <p style="text-align: justify;">
+                In recent years, Nepal has experienced increasing rainfall in many regions, leading to flooding even in areas with traditionally low precipitation. Understanding streamflow and runoff patterns is crucial to anticipate the peak river overflows that cause such flooding. The Bagmati River, a key contributor to urban flooding in Kathmandu during the monsoon, highlights the need to study the relationship between rainfall and water levels. This project focuses on a portion of the Bagmati catchment area to develop and validate a runoff model that examines this critical relationship. Using precipitation sensor data and river water level measurements, the research aims to address the question: How accurately can a runoff model simulate real-world hydrological dynamics through an agent-based modelling approach? The primary objective is to create an agent-based model capable of simulating runoff dynamics for the Bagmati River and validate its accuracy by comparing simulated outcomes with observed data. This work seeks to advance our understanding of flood dynamics and improve predictive capabilities in similar contexts.
+              </p>
+
+              <h4>Study Area</h4>
+
+              <p style="text-align: justify;">
+                Bagmati River lies in the northern path of Nepal, and a catchment area of approximately 38 km² was delineated to analyze rainfall runoff processes. The catchment includes two main streams, Bagmati and Nagmati, with Nagmati merging into the Bagmati River at a central point within the study area.
+              </p>
+
+              <h4>Methods</h4>
+
+              <p style="text-align: justify;">
+                Figure 1 represents the UML diagram for the rainfall runoff simulation process. The model is initialized by loading DEM, rainfall, and river stations and river networks. The rainfall station agent is responsible for retrieving and providing the rainfall data at regular intervals and distributes it to the cell agents, and the water level station agent is responsible for measuring the water level. These agents serve as input sources for the simulation, influencing the water height within the grid cells and the water flow direction. The cell agents then go through infiltration, where a portion of the water infiltrates into the soil, and the remainder contributes to runoff, which is transferred to neighboring cell agents based on topographic elevation. These cell agents update their water height based on the flow calculations, ensuring that water moves from higher to lower elevation cells. Finally, the water level station agent periodically measures the water levels at specific locations, capturing the changes in water height throughout the simulation. This cycle occurs at each time step, continuously simulating the hydrological processes of rainfall, infiltration, runoff, and water level changes in the environment.
+              </p>
+
+              <div class="swiper-wrapper align-items-center">
+                <div
+                  class="swiper-slide swiper-slide-image"
+                  style="text-align: center; display: flex; flex-direction: column; align-items: center;"
+                >
+                  <img
+                    style="width:80%;"
+                    src="../assets/img/cde_sem1/11_uml.png"
+                    alt=""
+                  >
+
+                  <p style="margin-top: 10px; font-size: 14px; color: #333;">
+                    Figure 1: UML Diagram for rainfall runoff simulation
+                  </p>
+                </div>
+              </div>
+
+              <br>
+              <br>
+
+              <h4>Results</h4>
+
+              <div class="portfolio-details-slider swiper">
+                <div class="swiper-wrapper align-items-center">
+                  <div
+                    class="swiper-slide"
+                    style="text-align: center; display: flex; flex-direction: column; align-items: center;"
+                  >
+                    <img
+                      src="../assets/img/cde_sem1/11_model.png"
+                      alt=""
+                    >
+
+                    <p style="margin-top: 10px; font-size: 18px; color: #333;">
+                      Figure 2: GAMA Model Environment
+                    </p>
+                  </div>
+
+                  <div
+                    class="swiper-slide"
+                    style="text-align: center; display: flex; flex-direction: column; align-items: center;"
+                  >
+                    <img
+                      src="../assets/img/cde_sem1/11_0.png"
+                      alt=""
+                    >
+
+                    <p style="margin-top: 10px; font-size: 18px; color: #333;">Figure 3: Model Calibration</p>
+                  </div>
+
+                  <div
+                    class="swiper-slide"
+                    style="text-align: center; display: flex; flex-direction: column; align-items: center;"
+                  >
+                    <img
+                      src="../assets/img/cde_sem1/11_1.png"
+                      alt=""
+                    >
+
+                    <p style="margin-top: 10px; font-size: 18px; color: #333;">Figure 4: Model validation</p>
+                  </div>
+
+                  <div
+                    class="swiper-slide"
+                    style="text-align: center; display: flex; flex-direction: column; align-items: center;"
+                  >
+                    <img
+                      src="../assets/img/cde_sem1/11_2.png"
+                      alt=""
+                    >
+
+                    <p style="margin-top: 10px; font-size: 18px; color: #333;">
+                      Figure 5: Simulation for Extreme Rainfall Event Scenario
+                    </p>
+                  </div>
+
+                  <div
+                    class="swiper-slide"
+                    style="text-align: center; display: flex; flex-direction: column; align-items: center;"
+                  >
+                    <img
+                      src="../assets/img/cde_sem1/11_3.png"
+                      alt=""
+                    >
+
+                    <p style="margin-top: 10px; font-size: 18px; color: #333;">
+                      Simulation for Medium Rainfall Event Scenario
+                    </p>
+                  </div>
+
+                  <div
+                    class="swiper-slide"
+                    style="text-align: center; display: flex; flex-direction: column; align-items: center;"
+                  >
+                    <img
+                      src="../assets/img/cde_sem1/11_4.png"
+                      alt=""
+                    >
+
+                    <p style="margin-top: 10px; font-size: 18px; color: #333;">
+                      Simulation for Low Rainfall Event Scenario
+                    </p>
+                  </div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+              </div>
+
+              <h4>Discussion</h4>
+
+              <p style="text-align: justify;">
+                The simulation effectively provided insights into the complex interactions between rainfall and terrain, demonstrating how precipitation contributes to streamflow dynamics. By incorporating a spatial perspective, the model successfully identified rainfall flow patterns and terrain-specific behaviors, enhancing its contextual relevance. The results are generally plausible, as they align with expected hydrological behaviors, but certain limitations affected accuracy. The use of a low-resolution DEM may have led to less precise terrain representation, while the limited number of ground precipitation stations restricted the model’s ability to capture spatial variability in rainfall. Additionally, factors such as infiltration, evapotranspiration, land cover types, and human-made structures like dams introduced uncertainties that could influence the accuracy of predictions. The study reinforced the importance of terrain characteristics in shaping water flow and highlighted how spatial data analysis helps reveal hydrological patterns that might otherwise go unnoticed. Despite these insights, some questions remain open. The extent to which these limitations impact the final model accuracy is not fully quantified, and future work could explore how integrating higher-resolution datasets and additional hydrological factors such as soil moisture and vegetation cover—would enhance model performance. Furthermore, refining calibration and validation steps could improve the reliability of predictions. Addressing these challenges will be crucial for advancing hydrological modeling techniques and ensuring more accurate assessments of rainfall-driven streamflow dynamics.
+              </p>
+            </div>
+
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- End Portfolio Details Section -->
+    <div id="footer-placeholder"></div>
+  </main>
+
+  <!-- End #main -->
+  <div id="preloader"></div>
+
+  <a
+    href="#"
+    class="back-to-top d-flex align-items-center justify-content-center"
+  >
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("../header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        });
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("../footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        });
+    });
+  </script>
+</body>
+</html>
