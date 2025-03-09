@@ -1,4 +1,14 @@
 [
+  {
+    "cardTitle": "Going Places with Spatial Analysis",
+    "thumbnailLink": "assets/img/cde_sem1/12_mooc_spatial_analysis_th.webp",
+    "thumbnailDesc":"Understanding of spatial data analysis and techniques in ArcGIS Online",
+    "detailsLink": "msc_cde/12_mooc_spatial_analysis.html",
+    "category": "filter-cde-sem2", 
+    "published_date": "6 March 2025",
+    "course_category": "MOOC"
+    
+  },
     {
        "cardTitle": "Geographical Agent-Based Modeling for Rainfall-Runoff Simulation",
        "thumbnailLink": "assets/img/cde_sem1/11_rainfall_simulation_th.webp",
