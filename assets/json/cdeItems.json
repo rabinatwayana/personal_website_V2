@@ -41,8 +41,8 @@
      {
        "cardTitle": "Calculus for Machine Learning and Data Science",
        "thumbnailLink": "assets/img/cde_sem1/9_coursera_calculus_for_ml_th.webp",
-       "thumbnailDesc":"Calculus for Machine Learning and Data Science",
-       "detailsLink": "msc_cde/9_coursera_calculus_for_ml.html",
+       "thumbnailDesc":"An online course offered by DeepLearningAI",
+       "detailsLink": "https://www.coursera.org/learn/machine-learning-calculus",
        "category": "filter-cde-others", 
        "published_date": "3 Feb 2025",
        "course_category": "Personal"
