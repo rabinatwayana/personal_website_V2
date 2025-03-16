@@ -50,6 +50,16 @@
         "icon": "assets/img/icons/webgis.png"
     },
     {
+        "category": "soft",
+        "name": "GAMA",
+        "icon": "assets/img/icons/gama.png"
+    },
+    {
+        "category": "soft",
+        "name": "Ecognition",
+        "icon": "assets/img/icons/ecognition1.png"
+    },
+    {
         "category": "pro",
         "name": "HTML",
         "icon": "assets/img/icons/html.png"
