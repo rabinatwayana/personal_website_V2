@@ -266,6 +266,15 @@
       "img_loading": ""
     },
     {
+      "imgSrc": "assets/img/others/boundary_parcel_th.webp",
+      "title": "Finding Boundry Parcel using Python",
+      "thumbnailLink": "assets/img/others/boundary_parcel_th.webp",
+      "detailsLink": "detail_content/others-boundary-parcel.html",
+      "category": "filter-others",
+      "date": null,
+      "img_loading": ""
+    },
+    {
       "imgSrc": "assets/img/others/spatial_data_vizn.png",
       "title": "Spatial Data Visualization in SDI",
       "thumbnailLink": "assets/img/others/spatial_data_vizn.png",
