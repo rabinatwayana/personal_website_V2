@@ -12,13 +12,23 @@
     {
        "cardTitle": "Geographical Agent-Based Modeling for Rainfall-Runoff Simulation",
        "thumbnailLink": "assets/img/cde_sem1/11_rainfall_simulation_th.webp",
-       "thumbnailDesc":"A Case Study of the Small Catchment Area of Bagmati River, Nepal",
+       "thumbnailDesc":"A Study of Catchment Area of Bagmati River",
        "detailsLink": "msc_cde/11_rainfall_simulation.html",
        "category": "filter-cde-sem1", 
        "published_date": "28 Feb 2025",
        "course_category": "Spatial Simulation"
        
      },
+     {
+      "cardTitle": "Hyperspectral Remote Sensing",
+      "thumbnailLink": "assets/img/cde_sem1/12_hyperspectral_th.webp",
+      "thumbnailDesc":"Exploring Earth observation realms beyond the visible spectrum of light",
+      "detailsLink": "https://storymaps.arcgis.com/stories/a421563d625c4ad386b7f1962be37667",
+      "category": "filter-cde-sem1", 
+      "published_date": "24 Jan 2025",
+      "course_category": "Spatial Thinking and Modelling"
+      
+    },
     {
        "cardTitle": "Semantic Model Development in Sen2Cube",
        "thumbnailLink": "assets/img/cde_sem1/10_sen2cube_th.webp",
