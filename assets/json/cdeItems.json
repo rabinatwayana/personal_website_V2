@@ -1,5 +1,15 @@
 [
   {
+    "cardTitle": "Make an Impact with Modern Geo Apps",
+    "thumbnailLink": "assets/img/cde_sem2/13_mooc_geoapps_th.webp",
+    "thumbnailDesc":"Using modern, no-code technologies, to build useful and engaging geo apps",
+    "detailsLink": "msc_cde/13_mooc_geoapps.html",
+    "category": "filter-cde-sem2", 
+    "published_date": "2 May 2025",
+    "course_category": "MOOC"
+    
+  },
+  {
     "cardTitle": "Going Places with Spatial Analysis",
     "thumbnailLink": "assets/img/cde_sem2/12_mooc_spatial_analysis_th.webp",
     "thumbnailDesc":"Understanding of spatial data analysis and techniques in ArcGIS Online",
