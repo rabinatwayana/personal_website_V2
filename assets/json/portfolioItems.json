@@ -259,7 +259,7 @@
     {
       "imgSrc": "assets/img/others/geopy.png",
       "title": "GeoPy Python Module",
-      "thumbnailLink": "assets/img/others/geopy_th.webp",
+      "thumbnailLink": "assets/img/others/geopy_c_th.webp",
       "detailsLink": "detail_content/others-geopy.html",
       "category": "filter-others",
       "date": null,
@@ -268,16 +268,16 @@
     {
       "imgSrc": "assets/img/others/boundary_parcel_th.webp",
       "title": "Finding Boundry Parcel using Python",
-      "thumbnailLink": "assets/img/others/boundary_parcel_th.webp",
+      "thumbnailLink": "assets/img/others/boundary_parcel_c_th.webp",
       "detailsLink": "detail_content/others-boundary-parcel.html",
       "category": "filter-others",
       "date": null,
       "img_loading": ""
     },
     {
-      "imgSrc": "assets/img/others/spatial_data_vizn.png",
+      "imgSrc": "assets/img/others/spatial_data_vizn_o.png",
       "title": "Spatial Data Visualization in SDI",
-      "thumbnailLink": "assets/img/others/spatial_data_vizn.png",
+      "thumbnailLink": "assets/img/others/spatial_data_vizn_c_th.webp",
       "detailsLink": "detail_content/others-spatial-data-viz.html",
       "category": "filter-others",
       "date": null,
@@ -286,7 +286,7 @@
     {
       "imgSrc": "assets/img/others/uav-potato.png",
       "title": "MOTITORING GROWTH PATTERNS THROUGH MULTI-TEMPORAL UAV DATASETS: A CASE STUDY OF POTATO PLANT",
-      "thumbnailLink": "assets/img/others/uav-potato_th.webp",
+      "thumbnailLink": "assets/img/others/uav-potato_c_th.webp",
       "detailsLink": "detail_content/others-uav-potato.html",
       "category": "filter-others",
       "date": null,
@@ -296,7 +296,7 @@
     {
       "imgSrc": "assets/img/others/land_tenure_system.png",
       "title": "Land Tenure System in Ethiopia",
-      "thumbnailLink": "assets/img/others/land_tenure_system.png",
+      "thumbnailLink": "assets/img/others/land_tenure_system_c_th.webp",
       "detailsLink": "detail_content/others-land-tenure.html",
       "category": "filter-others",
       "date": null,
@@ -306,7 +306,7 @@
     {
       "imgSrc": "assets/img/others/builtup_index.png",
       "title": "Change Detection of Built-up Areas Applying Built-up Index for Kathmandu District",
-      "thumbnailLink": "assets/img/others/builtup_index.png",
+      "thumbnailLink": "assets/img/others/builtup_index_c_th.webp",
       "detailsLink": "detail_content/others_builtup.html",
       "category": "filter-others",
       "date": null,
@@ -315,7 +315,7 @@
     {
       "imgSrc": "assets/img/others/landlaw.png",
       "title": "Land Law in Nepal",
-      "thumbnailLink": "assets/img/others/landlaw_th.webp",
+      "thumbnailLink": "assets/img/others/landlaw_c_th.webp",
       "detailsLink": "detail_content/others-land-law.html",
       "category": "filter-others",
       "date": null,
@@ -324,7 +324,7 @@
     {
       "imgSrc": "assets/img/others/project_control.png",
       "title": "Importance of Project Control and its Possible Issues, Challenges and Opportunities",
-      "thumbnailLink": "assets/img/others/project_control.png",
+      "thumbnailLink": "assets/img/others/project_control_c_th.webp",
       "detailsLink": "detail_content/others-project-control.html",
       "category": "filter-others",
       "date": null,
@@ -333,7 +333,7 @@
     {
       "imgSrc": "assets/img/others/space.png",
       "title": "Space as a Tool to Address Climate Challenges: Examples from Local Communities",
-      "thumbnailLink": "assets/img/others/space.png",
+      "thumbnailLink": "assets/img/others/space_c_th.webp",
       "detailsLink": "detail_content/othes-space.html",
       "category": "filter-others",
       "date": null,

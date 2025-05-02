@@ -352,7 +352,7 @@
       </div>
     </div>
 
-    <h6 style="position: absolute; bottom: 10px; right: 20px;">Updated on: 9 March 2025</h6>
+    <h6 style="position: absolute; bottom: 10px; right: 20px;">Updated on: 02 May 2025</h6>
   </section>
 
   <!-- End Hero -->
@@ -931,6 +931,17 @@ Openlayers (JavaScript mapping library).
           </div>
         </div>
 
+        <!-- <div
+          id="loader"
+          style="text-align:center; padding: 50px;"
+        >
+          <img
+            src="https://i.gifer.com/ZZ5H.gif"
+            alt="Loading..."
+            width="60"
+          >
+        </div> -->
+
         <div
           id="cdeContainer"
           class="row cde-masters-container"
@@ -943,16 +954,41 @@ Openlayers (JavaScript mapping library).
 
         <script>
           document.addEventListener('DOMContentLoaded', () => {
-    const cdeContainer = document.getElementById('cdeContainer');
+            // const fetchStartTime = Date.now(); 
+            // const loader = document.getElementById('loader');
 
-    fetch('assets/json/cdeItems.json')
-    .then(response => response.json()) // Parse JSON
-    .then(cdeItems => {
-      console.log(cdeItems,"response")
+            const cdeContainer = document.getElementById('cdeContainer');
+
+            function fetchWithTimeout(url, timeout = 5000) { // timeout in milliseconds
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => {
+      reject(new Error('Request timed out after ' + timeout + 'ms'));
+    }, timeout);
+
+    fetch(url)
+      .then(response => {
+        clearTimeout(timer); // clear timeout if fetch succeeds
+        if (!response.ok) {
+          reject(new Error(`HTTP error! Status: ${response.status}`));
+        } else {
+          resolve(response.json()); // Resolve directly with the JSON data
+        }
+      })
+      .catch(err => {
+        clearTimeout(timer); // clear timeout if fetch fails
+        reject(err);
+      });
+  });
+}
+
+    // fetch('assets/json/cdeItems.json')
+    // .then(response => response.json()) // Parse JSON
+    // .then(cdeItems => {
+    //   console.log(cdeItems,"response")
     
-
-    console.log(cdeItems,"response11")
-
+      fetchWithTimeout('assets/json/cdeItems.json', 1000) // 5 seconds timeout
+      .then(cdeItems => {
+       
     
     if (cdeContainer) {
       const semesters = {
@@ -1014,14 +1050,12 @@ Openlayers (JavaScript mapping library).
             detailsLink.href = item.detailsLink;  // Directly use the link (no GLightbox)
             detailsLink.className = ''; // Remove GLightbox class
             detailsLink.title = 'Full Detail';
-
             
             const title = document.createElement('h6');
             title.className = 'card-title';
             title.textContent = item.cardTitle;
 
             title.style.cursor = 'pointer';
-          
            
             title.addEventListener('click', () => {
               // window.location.href=item.detailsLink
@@ -1030,7 +1064,6 @@ Openlayers (JavaScript mapping library).
             });
 
             // detailsLink.appendChild(title);
-
 
             const cardDesc = document.createElement('p');
             cardDesc.className = 'card-description';
@@ -1057,8 +1090,6 @@ Openlayers (JavaScript mapping library).
             lightboxIcon.className = 'bx bx-plus';
             lightboxLink.appendChild(lightboxIcon);
             
-            
-
             const detailsIcon = document.createElement('i');
             detailsIcon.className = 'bx bx-link';
             detailsLink.appendChild(detailsIcon);
@@ -1089,11 +1120,28 @@ Openlayers (JavaScript mapping library).
             cdeContainer.appendChild(cdeDiv);
         });
     }
+    // if (loader) {
+    //       loader.style.display = 'none';
+    //   }
 
     // Initialize GLightbox only for image lightboxes
     const portfolioLightbox = GLightbox({ selector: ".portfolio-lightbox" });
-    // window.scrollTo(0, currentScrollPosition);
-});
+
+    // // Calculate how much time passed
+    // const fetchEndTime = Date.now();
+    //   const elapsed = fetchEndTime - fetchStartTime;
+
+    //   const minimumLoaderTime = 3000; // 1 second
+
+    //   const remainingTime = minimumLoaderTime - elapsed;
+
+    //   // Wait if needed before showing content
+    //   setTimeout(() => {
+    //     loader.style.display = 'none';
+    //     cdeContainer.style.display = 'block';
+    //   }, remainingTime > 0 ? remainingTime : 0);
+    })
+
 })
         </script>
       </div>
