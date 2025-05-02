@@ -20,9 +20,9 @@
     
   },
     {
-       "cardTitle": "Geographical Agent-Based Modeling for Rainfall-Runoff Simulation",
+       "cardTitle": "Rainfall-Runoff Simulation",
        "thumbnailLink": "assets/img/cde_sem1/11_rainfall_simulation_th.webp",
-       "thumbnailDesc":"A Study of Catchment Area of Bagmati River",
+       "thumbnailDesc":"Geographical Agent-Based Modeling: A Study of Catchment Area of Bagmati River",
        "detailsLink": "msc_cde/11_rainfall_simulation.html",
        "category": "filter-cde-sem1", 
        "published_date": "28 Feb 2025",
@@ -99,9 +99,9 @@
        
      },
     {
-       "cardTitle": "Understanding Sentinel-hub Simple Water Bodies Mapping (SWBM) Script",
+       "cardTitle": "Sentinel-hub Simple Water Bodies Mapping (SWBM)",
        "thumbnailLink": "assets/img/cde_sem1/3_bed_sentinel_script_SWBM_th.webp",
-       "thumbnailDesc":"Understanding the logic behind the scripts and interpret the output from the script",
+       "thumbnailDesc":"Understanding logic behind the SWBM scripts and implementation",
        "detailsLink": "msc_cde/3_bed_sentinel_hub_swbm_script.html",
        "category": "filter-cde-sem1", 
        "published_date": "18 Nov 2024",
