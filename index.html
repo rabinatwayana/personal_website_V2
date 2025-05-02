@@ -1028,7 +1028,7 @@ Openlayers (JavaScript mapping library).
             
             const img = document.createElement('img');
             img.src = item.thumbnailLink;
-            img.className = 'img-fluid';
+            // img.className = 'fixed-size-img';
             img.alt = item.title;
             // img.loading="lazy";
             // img.style.outline = '2px solid red'; // Add outline
@@ -1074,7 +1074,7 @@ Openlayers (JavaScript mapping library).
             // courseCategory.textContent = item.course_category;
 
             const cardPublishedDate = document.createElement('p');
-            cardPublishedDate.className = 'card-description';
+            cardPublishedDate.className = 'card-date';
             cardPublishedDate.textContent = item.published_date;
             
             const cdeLinksDiv = document.createElement('div');
