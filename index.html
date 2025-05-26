@@ -953,7 +953,7 @@ Openlayers (JavaScript mapping library).
           <!-- remove this -->
         </div>
 
-        <script>
+        <!-- <script>
           document.addEventListener('DOMContentLoaded', () => {
             // const fetchStartTime = Date.now(); 
             // const loader = document.getElementById('loader');
@@ -1144,8 +1144,163 @@ Openlayers (JavaScript mapping library).
     })
 
 })
-        </script>
-      </div>
+        </script> -->
+      
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            const cdeContainer = document.getElementById('cdeContainer');
+          
+            function fetchWithTimeout(url, timeout = 5000) {
+              return new Promise((resolve, reject) => {
+                const timer = setTimeout(() => {
+                  reject(new Error('Request timed out after ' + timeout + 'ms'));
+                }, timeout);
+          
+                fetch(url)
+                  .then(response => {
+                    clearTimeout(timer);
+                    if (!response.ok) {
+                      reject(new Error(`HTTP error! Status: ${response.status}`));
+                    } else {
+                      resolve(response.json());
+                    }
+                  })
+                  .catch(err => {
+                    clearTimeout(timer);
+                    reject(err);
+                  });
+              });
+            }
+          
+            fetchWithTimeout('assets/json/cdeItems.json', 5000)
+              .then(cdeItems => {
+                if (!cdeContainer) return;
+          
+                const semesters = {
+                  "filter-cde-sem1": "Semester I",
+                  "filter-cde-sem2": "Semester II",
+                  "filter-cde-sem3": "Semester III",
+                  "filter-cde-sem4": "Semester IV"
+                };
+          
+                // Handle upcoming message for empty semesters
+                Object.keys(semesters).forEach(semester => {
+                  const semesterItems = cdeItems.filter(item => item.category === semester);
+                  if (semesterItems.length === 0) {
+                    const semesterElement = document.createElement('div');
+                    semesterElement.className = `portfolio-item ${semester}`;
+          
+                    const upcomingMessage = document.createElement('p');
+                    upcomingMessage.textContent = "Upcoming!";
+                    upcomingMessage.style.textAlign = 'center';
+                    upcomingMessage.style.fontSize = '18px';
+                    upcomingMessage.style.fontWeight = 'bold';
+                    upcomingMessage.style.color = 'gray';
+          
+                    semesterElement.appendChild(upcomingMessage);
+                    cdeContainer.appendChild(semesterElement);
+                  }
+                });
+          
+                const fragment = document.createDocumentFragment(); // Use fragment for batching
+          
+                cdeItems.forEach(item => {
+                  const cdeDiv = document.createElement('div');
+                  cdeDiv.className = `col-lg-4 col-md-6 portfolio-item ${item.category}`;
+          
+                  const cdeWrapDiv = document.createElement('div');
+                  cdeWrapDiv.className = 'portfolio-wrap';
+          
+                  const img = document.createElement('img');
+                  img.src = item.thumbnailLink;
+                  img.alt = item.title;
+                  img.loading = 'lazy'; // Lazy loading
+          
+                  const cdeInfoDiv = document.createElement('div');
+                  cdeInfoDiv.className = 'portfolio-info';
+          
+                  const courseCategory = document.createElement('h4');
+                  courseCategory.textContent = item.course_category;
+          
+                  const detailsLink = document.createElement('a');
+                  detailsLink.target = '_blank';
+                  detailsLink.href = item.detailsLink || '#';
+                  detailsLink.title = 'Full Detail';
+          
+                  const title = document.createElement('h6');
+                  title.className = 'card-title';
+                  title.textContent = item.cardTitle;
+                  title.style.cursor = 'pointer';
+          
+                  title.addEventListener('click', () => {
+                    if (item.detailsLink) {
+                      window.open(item.detailsLink, '_blank');
+                    }
+                  });
+          
+                  const cardDesc = document.createElement('p');
+                  cardDesc.className = 'card-description';
+                  cardDesc.textContent = item.thumbnailDesc;
+          
+                  const cardPublishedDate = document.createElement('p');
+                  cardPublishedDate.className = 'card-date';
+                  cardPublishedDate.textContent = item.published_date;
+          
+                  const cdeLinksDiv = document.createElement('div');
+                  cdeLinksDiv.className = 'portfolio-links';
+          
+                  const lightboxLink = document.createElement('a');
+                  lightboxLink.href = item.thumbnailLink;
+                  lightboxLink.className = 'portfolio-lightbox';
+                  lightboxLink.setAttribute('data-gallery', 'portfolioGallery');
+                  lightboxLink.title = item.thumbnailDesc || item.cardTitle;
+          
+                  const lightboxIcon = document.createElement('i');
+                  lightboxIcon.className = 'bx bx-plus';
+                  lightboxLink.appendChild(lightboxIcon);
+          
+                  const detailsIcon = document.createElement('i');
+                  detailsIcon.className = 'bx bx-link';
+                  detailsLink.appendChild(detailsIcon);
+          
+                  cdeLinksDiv.appendChild(courseCategory);
+                  cdeLinksDiv.appendChild(lightboxLink);
+                  if (item.detailsLink) {
+                    cdeLinksDiv.appendChild(detailsLink);
+                  }
+          
+                  cdeInfoDiv.appendChild(cdeLinksDiv);
+          
+                  cdeWrapDiv.appendChild(img);
+                  cdeWrapDiv.appendChild(cdeInfoDiv);
+          
+                  cdeDiv.appendChild(cdeWrapDiv);
+                  cdeDiv.appendChild(title);
+                  cdeDiv.appendChild(cardDesc);
+                  cdeDiv.appendChild(cardPublishedDate);
+          
+                  fragment.appendChild(cdeDiv);
+                });
+          
+                cdeContainer.appendChild(fragment); // Append all at once
+          
+                // Initialize GLightbox after rendering
+                const portfolioLightbox = GLightbox({ selector: ".portfolio-lightbox" });
+              })
+              .catch(err => {
+                console.error("Failed to load CDE items:", err);
+                if (cdeContainer) {
+                  const errorMsg = document.createElement('p');
+                  errorMsg.textContent = "Failed to load items.";
+                  errorMsg.style.textAlign = 'center';
+                  errorMsg.style.color = 'red';
+                  cdeContainer.appendChild(errorMsg);
+                }
+              });
+          });
+          </script>
+          
+    </div>
     </section>
 
     <!-- End CDE Section -->
