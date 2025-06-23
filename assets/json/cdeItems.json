@@ -1,5 +1,15 @@
 [
   {
+       "cardTitle": "Copernicus Hubs and Institutions",
+       "thumbnailLink": "assets/img/cde_sem2/14_EODC_th.webp",
+       "thumbnailDesc":"A report on Excursion to Earth Observation Data Center (EODC) and Environment Agency Austria",
+       "detailsLink": "msc_cde/14_chi_excursion_report.html",
+       "category": "filter-cde-sem2", 
+       "published_date": "23 Jun 2025",
+       "course_category": "Copernicus Hubs and Institutions"
+       
+     },
+  {
     "cardTitle": "Make an Impact with Modern Geo Apps",
     "thumbnailLink": "assets/img/cde_sem2/13_mooc_geoapps_th.webp",
     "thumbnailDesc":"Using modern, no-code technologies, to build useful and engaging geo apps",
