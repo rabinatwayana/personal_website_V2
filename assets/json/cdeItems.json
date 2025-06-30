@@ -1,4 +1,14 @@
 [
+  {
+      "cardTitle": "Object Based Image Classification",
+      "thumbnailLink": "assets/img/cde_sem1/13_obia_python_th.webp",
+      "thumbnailDesc":"OBIA using Random Forest (RF) and Support Vector Machine (SVM)",
+      "detailsLink": "https://github.com/rabinatwayana/object_based_image_analysis",
+      "category": "filter-cde-sem1", 
+      "published_date": "28 Feb 2025",
+      "course_category": "OBIA"
+      
+    },
    {
       "cardTitle": "Using Drones in Environmental Sciences",
       "thumbnailLink": "assets/img/cde_sem2/15_bip_th.webp",
