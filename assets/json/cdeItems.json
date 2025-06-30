@@ -1,4 +1,14 @@
 [
+   {
+      "cardTitle": "Using Drones in Environmental Sciences",
+      "thumbnailLink": "assets/img/cde_sem2/15_bip_th.webp",
+      "thumbnailDesc":"Mastering the use of drones to revolutionize environmental monitoring and urban planning",
+      "detailsLink": "https://storymaps.arcgis.com/stories/c63962d3745f45bfac70f3860681c698",
+      "category": "filter-cde-sem2", 
+      "published_date": "30 Jun 2025",
+      "course_category": "BIP"
+      
+    },
   {
        "cardTitle": "Copernicus Hubs and Institutions",
        "thumbnailLink": "assets/img/cde_sem2/14_EODC_th.webp",
