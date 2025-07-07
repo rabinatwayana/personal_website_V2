@@ -1532,6 +1532,7 @@ Openlayers (JavaScript mapping library).
         </div>
         
         <!-- JavaScript Code -->
+         
 
         <script>
           document.addEventListener('DOMContentLoaded', () => {
@@ -1616,8 +1617,18 @@ Openlayers (JavaScript mapping library).
   const portfolioLightbox = GLightbox({ selector: ".portfolio-lightbox" });
   const portfolioDetailsLightbox = GLightbox({ selector: ".portfolio-details-lightbox", width:"75%",height:"75vh" });
 
-    });        
+          
   })
+  .catch(error => {
+    console.error('Error fetching or parsing JSON:', error);
+    // Optionally, show a user-friendly message in the UI
+    if (portfolioContainer) {
+      portfolioContainer.innerHTML = "<p>Failed to load portfolio items.</p>";
+    }
+     })
+
+     });  
+
         </script>
 
         <!-- this is removed part -->
