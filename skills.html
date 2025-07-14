@@ -202,10 +202,168 @@
 ></link> -->
 
   <script>
+    skillsArray=[
+    {
+        "category": "tech",
+        "name": "GIS",
+        "icon": "assets/img/icons/gis.png"
+    },
+    {
+        "category": "tech",
+        "name": "Remote Sensing",
+        "icon": "assets/img/icons/remotesensing.png"
+    },
+    {
+        "category": "tech",
+        "name": "WebGIS",
+        "icon": "assets/img/icons/webgis.png"
+    },
+    {
+        "category": "tech",
+        "name": "Google Earth Engine",
+        "icon": "assets/img/icons/gee.png"
+    },
+    {
+        "category": "soft",
+        "name": "ArcGIS",
+        "icon": "assets/img/icons/gis.png"
+    },
+    {
+        "category": "soft",
+        "name": "QGIS",
+        "icon": "assets/img/icons/qgis.png"
+    },
+    {
+        "category": "soft",
+        "name": "ENVI",
+        "icon": "assets/img/icons/webgis.png"
+    },
+    {
+        "category": "soft",
+        "name": "Pix4D",
+        "icon": "assets/img/icons/webgis.png"
+    },
+    {
+        "category": "soft",
+        "name": "Metashape Agisoft",
+        "icon": "assets/img/icons/webgis.png"
+    },
+    {
+        "category": "soft",
+        "name": "PgAdmin",
+        "icon": "assets/img/icons/webgis.png"
+    },
+    {
+        "category": "soft",
+        "name": "GAMA",
+        "icon": "assets/img/icons/gama.png"
+    },
+    {
+        "category": "soft",
+        "name": "Ecognition",
+        "icon": "assets/img/icons/ecognition.png"
+    },
+    {
+        "category": "pro",
+        "name": "HTML",
+        "icon": "assets/img/icons/html.png"
+    },
+    {
+        "category": "pro",
+        "name": "CSS",
+        "icon": "assets/img/icons/css.png"
+    },
+    {
+        "category": "pro",
+        "name": "JavaScript",
+        "icon": "assets/img/icons/javascript.png"
+    },
+    {
+        "category": "pro",
+        "name": "ReactJS",
+        "icon": "assets/img/icons/reactjs.png"
+    },
+    {
+        "category": "pro",
+        "name": "Django",
+        "icon": "assets/img/icons/django.png"
+    },
+    {
+        "category": "pro",
+        "name": "SQL",
+        "icon": "assets/img/icons/sql.png"
+    },
+    {
+        "category": "lib",
+        "name": "OpenLayers",
+        "icon": "assets/img/icons/openlayers.png"
+    },
+    {
+        "category": "lib",
+        "name": "Leaflet",
+        "icon": "assets/img/icons/leaflet.png"
+    },
+    {
+        "category": "lib",
+        "name": "GeoPandas",
+        "icon": "assets/img/icons/geopandas.png"
+    },
+    {
+        "category": "lib",
+        "name": "Pandas",
+        "icon": "assets/img/icons/pandas.png"
+    },
+    {
+        "category": "lib",
+        "name": "GeoServer",
+        "icon": "assets/img/icons/openlayers.png"
+    },
+    {
+        "category": "lib",
+        "name": "CesiumJS",
+        "icon": "assets/img/icons/cesium.png"
+    },
+    {
+        "category": "others",
+        "name": "Google Cloud Platform",
+        "icon": "assets/img/icons/gcp.png"
+    },
+    {
+        "category": "others",
+        "name": "Operating System",
+        "icon": "assets/img/icons/openlayers.png"
+    },
+    {
+        "category": "others",
+        "name": "Git",
+        "icon": "assets/img/icons/git.png"
+    },
+    {
+        "category": "others",
+        "name": "Github",
+        "icon": "assets/img/icons/github.png"
+    },
+    {
+        "category": "others",
+        "name": "Gitlab",
+        "icon": "assets/img/icons/gitlab.png"
+    },
+    {
+        "category": "others",
+        "name": "Docker",
+        "icon": "assets/img/icons/docker.png"
+    },
+    {
+        "category": "others",
+        "name": "Postgres",
+        "icon": "assets/img/icons/postgresql.png"
+    }
+]
+
     const skillsContainer = document.getElementById('skillsContainer');
-    fetch('assets/json/skills.json')
-    .then(response => response.json()) // Parse JSON
-    .then(skillsArray => {
+    // fetch('assets/json/skills.json')
+    // .then(response => response.json()) // Parse JSON
+    // .then(skillsArray => {
 
     skillsArray.forEach(skill => {
         const skillDiv = document.createElement('div');
@@ -234,7 +392,7 @@
         skillDiv.appendChild(iconBoxDiv);
         skillsContainer.appendChild(skillDiv);
     });
-  })
+  // })
   </script>
 
   <script>
