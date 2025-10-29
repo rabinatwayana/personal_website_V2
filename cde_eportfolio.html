@@ -98,7 +98,7 @@
     href="path-to-glightbox.css"
     rel="stylesheet"
   ></link> -->
-  
+
 
   <!-- =======================================================
   * Template Name: MyResume
@@ -120,7 +120,7 @@
   <!-- End Header -->
   <!-- ======= Hero Section ======= -->
 
- 
+
   <!-- End Hero -->
   <!-- updated-on {
     position: absolute;
@@ -133,8 +133,8 @@
   <main id="main">
     <!-- ======= About Section ======= -->
 
- 
- 
+
+
     <!-- End Resume Section -->
     <!-- ======= CDE Section ======= -->
 
@@ -208,7 +208,7 @@
 
         <!-- <script>
           document.addEventListener('DOMContentLoaded', () => {
-            // const fetchStartTime = Date.now(); 
+            // const fetchStartTime = Date.now();
             // const loader = document.getElementById('loader');
 
             const cdeContainer = document.getElementById('cdeContainer');
@@ -239,11 +239,11 @@
     // .then(response => response.json()) // Parse JSON
     // .then(cdeItems => {
     //   console.log(cdeItems,"response")
-    
+
       fetchWithTimeout('assets/json/cdeItems.json', 1000) // 5 seconds timeout
       .then(cdeItems => {
-       
-    
+
+
     if (cdeContainer) {
       const semesters = {
         "filter-cde-sem1": "Semester I",
@@ -276,10 +276,10 @@
             // Create the outer div for each portfolio item
             const cdeDiv = document.createElement('div');
             cdeDiv.className = `col-lg-4 col-md-6 portfolio-item ${item.category}`;
-            
+
             const cdeWrapDiv = document.createElement('div');
             cdeWrapDiv.className = 'portfolio-wrap';
-            
+
             const img = document.createElement('img');
             img.src = item.thumbnailLink;
             // img.className = 'fixed-size-img';
@@ -291,7 +291,7 @@
             // const tag = document.createElement('span');
             // tag.className = 'top-right-tag';
             // tag.textContent = item.course_category;
-            
+
             const cdeInfoDiv = document.createElement('div');
             cdeInfoDiv.className = 'portfolio-info';
 
@@ -304,13 +304,13 @@
             detailsLink.href = item.detailsLink;  // Directly use the link (no GLightbox)
             detailsLink.className = ''; // Remove GLightbox class
             detailsLink.title = 'Full Detail';
-            
+
             const title = document.createElement('h6');
             title.className = 'card-title';
             title.textContent = item.cardTitle;
 
             title.style.cursor = 'pointer';
-           
+
             title.addEventListener('click', () => {
               // window.location.href=item.detailsLink
               //  window.open(item.detailsLink);  // Opens the link in a new tab
@@ -322,7 +322,7 @@
             const cardDesc = document.createElement('p');
             cardDesc.className = 'card-description';
             cardDesc.textContent = item.thumbnailDesc;
-            
+
             // const courseCategory = document.createElement('span');
             // courseCategory.className = 'card-description';
             // courseCategory.textContent = item.course_category;
@@ -330,10 +330,10 @@
             const cardPublishedDate = document.createElement('p');
             cardPublishedDate.className = 'card-date';
             cardPublishedDate.textContent = item.published_date;
-            
+
             const cdeLinksDiv = document.createElement('div');
             cdeLinksDiv.className = 'portfolio-links';
-            
+
             const lightboxLink = document.createElement('a');
             lightboxLink.href = item.thumbnailLink;
             lightboxLink.className = 'portfolio-lightbox';
@@ -343,11 +343,11 @@
             const lightboxIcon = document.createElement('i');
             lightboxIcon.className = 'bx bx-plus';
             lightboxLink.appendChild(lightboxIcon);
-            
+
             const detailsIcon = document.createElement('i');
             detailsIcon.className = 'bx bx-link';
             detailsLink.appendChild(detailsIcon);
-            
+
             cdeLinksDiv.appendChild(courseCategory);
             cdeLinksDiv.appendChild(lightboxLink);
             if (item.detailsLink) {
@@ -356,21 +356,21 @@
 
             cdeInfoDiv.appendChild(cdeLinksDiv);
             cdeWrapDiv.appendChild(img);
-            
-            
+
+
             // cdeWrapDiv.appendChild(tag);
 
             cdeWrapDiv.appendChild(cdeInfoDiv);
-            
+
             cdeDiv.appendChild(cdeWrapDiv);
             cdeDiv.appendChild(title);
             // cdeDiv.appendChild(detailsLink);
 
-            
+
             cdeDiv.appendChild(cardDesc);
             // cdeDiv.appendChild(courseCategory);
             cdeDiv.appendChild(cardPublishedDate);
-            
+
             cdeContainer.appendChild(cdeDiv);
         });
     }
@@ -398,19 +398,19 @@
 
 })
         </script> -->
-      
-        
-          
+
+
+
 
           <!-- <script>
             document.addEventListener('DOMContentLoaded', () => {
               const cdeContainer = document.getElementById('cdeContainer');
               const loader = document.getElementById('cdeLoader');
-            
+
               function showLoader() {
                 if (loader) loader.style.display = 'block';
               }
-            
+
               function hideLoader() {
                 if (loader) loader.style.display = 'none';
               }
@@ -419,7 +419,7 @@
                   const timer = setTimeout(() => {
                     reject(new Error('Request timed out after ' + timeout + 'ms'));
                   }, timeout);
-            
+
                   fetch(url)
                     .then(response => {
                       clearTimeout(timer);
@@ -435,28 +435,28 @@
                     });
                 });
               }
-            
+
               showLoader(); // Show loader before fetch
-            
+
               fetchWithTimeout('assets/json/cdeItems.json', 5000)
                 .then(cdeItems => {
                   hideLoader(); // Hide loader after data is ready
-            
+
                   if (!cdeContainer) return;
-            
+
                   const semesters = {
                     "filter-cde-sem1": "Semester I",
                     "filter-cde-sem2": "Semester II",
                     "filter-cde-sem3": "Semester III",
                     "filter-cde-sem4": "Semester IV"
                   };
-            
+
                   Object.keys(semesters).forEach(semester => {
                     const semesterItems = cdeItems.filter(item => item.category === semester);
                     if (semesterItems.length === 0) {
                       const semesterElement = document.createElement('div');
                       semesterElement.className = `portfolio-item ${semester}`;
-            
+
                       const upcomingMessage = document.createElement('p');
                       upcomingMessage.textContent = "Upcoming!";
                       upcomingMessage.style.textAlign = 'center';
@@ -467,32 +467,32 @@
                       cdeContainer.appendChild(semesterElement);
                     }
                   });
-            
+
                   const fragment = document.createDocumentFragment();
-            
+
                   cdeItems.forEach(item => {
                     const cdeDiv = document.createElement('div');
                     cdeDiv.className = `col-lg-4 col-md-6 portfolio-item ${item.category}`;
-            
+
                     const cdeWrapDiv = document.createElement('div');
                     cdeWrapDiv.className = 'portfolio-wrap';
-            
+
                     const img = document.createElement('img');
                     img.src = item.thumbnailLink;
                     img.alt = item.title;
                     img.loading = 'lazy';
-            
+
                     const cdeInfoDiv = document.createElement('div');
                     cdeInfoDiv.className = 'portfolio-info';
-            
+
                     const courseCategory = document.createElement('h4');
                     courseCategory.textContent = item.course_category;
-            
+
                     const detailsLink = document.createElement('a');
                     detailsLink.target = '_blank';
                     detailsLink.href = item.detailsLink || '#';
                     detailsLink.title = 'Full Detail';
-            
+
                     const title = document.createElement('h6');
                     title.className = 'card-title';
                     title.textContent = item.cardTitle;
@@ -502,55 +502,55 @@
                         window.open(item.detailsLink, '_blank');
                       }
                     });
-            
+
                     const cardDesc = document.createElement('p');
                     cardDesc.className = 'card-description';
                     cardDesc.textContent = item.thumbnailDesc;
-            
+
                     const cardPublishedDate = document.createElement('p');
                     cardPublishedDate.className = 'card-date';
                     cardPublishedDate.textContent = item.published_date;
-            
+
                     const cdeLinksDiv = document.createElement('div');
                     cdeLinksDiv.className = 'portfolio-links';
-            
+
                     const lightboxLink = document.createElement('a');
                     lightboxLink.href = item.thumbnailLink;
                     lightboxLink.className = 'portfolio-lightbox';
                     lightboxLink.setAttribute('data-gallery', 'portfolioGallery');
                     lightboxLink.title = item.thumbnailDesc || item.cardTitle;
-            
+
                     const lightboxIcon = document.createElement('i');
                     lightboxIcon.className = 'bx bx-plus';
                     lightboxLink.appendChild(lightboxIcon);
-            
+
                     const detailsIcon = document.createElement('i');
                     detailsIcon.className = 'bx bx-link';
                     detailsLink.appendChild(detailsIcon);
-            
+
                     cdeLinksDiv.appendChild(courseCategory);
                     cdeLinksDiv.appendChild(lightboxLink);
                     if (item.detailsLink) cdeLinksDiv.appendChild(detailsLink);
-            
+
                     cdeInfoDiv.appendChild(cdeLinksDiv);
                     cdeWrapDiv.appendChild(img);
                     cdeWrapDiv.appendChild(cdeInfoDiv);
-            
+
                     cdeDiv.appendChild(cdeWrapDiv);
                     cdeDiv.appendChild(title);
                     cdeDiv.appendChild(cardDesc);
                     cdeDiv.appendChild(cardPublishedDate);
-            
+
                     fragment.appendChild(cdeDiv);
                   });
-            
+
                   cdeContainer.appendChild(fragment);
-            
+
                   const portfolioLightbox = GLightbox({ selector: ".portfolio-lightbox" });
                 })
                 .catch(err => {
                   hideLoader(); // Hide loader if error occurs
-            
+
                   console.error("Failed to load CDE items:", err);
                   if (cdeContainer) {
                     const errorMsg = document.createElement('p');
@@ -562,7 +562,7 @@
                 });
             });
             </script> -->
-            
+
     </div>
     </section>
 
@@ -571,7 +571,7 @@
   <!-- End #main -->
   <!-- ======= Footer ======= -->
 
-<div id="footer-placeholder"></div> 
+<div id="footer-placeholder"></div>
 
   <!-- End Footer -->
   <div id="preloader"></div>
@@ -634,12 +634,21 @@
   </script>
   <script>
     cdeItems= [
+      {
+        "cardTitle": "Machine Learning in Python with Scikit-Learn",
+        "thumbnailLink": "assets/img/cde_sem3/21_mooc.png",
+        "thumbnailDesc":"Scikit-learn MOOC by France Universite Numerique (FUN)",
+        "detailsLink": "msc_cde/21_mooc.html",
+        "category": "filter-cde-sem3",
+        "published_date": "28 Oct2025",
+        "course_category": "Machine Learning"
+      },
     {
       "cardTitle": "AI4EO Symposium 2025",
       "thumbnailLink": "assets/img/cde_sem3/20_ai4eo.png",
       "thumbnailDesc":"Advancing the Integration of Artificial Intelligence in Earth Observation,",
       "detailsLink": "msc_cde/20_ai4eo.html",
-      "category": "filter-cde-sem3", 
+      "category": "filter-cde-sem3",
       "published_date": "20 Sept 2025",
       "course_category": "SIP"
     },
@@ -648,7 +657,7 @@
       "thumbnailLink": "assets/img/cde_sem2/19_internship.png",
       "thumbnailDesc":"Development of RAG-based web application and Contribution to CLIMADA Python Tool",
       "detailsLink": "msc_cde/17_internship.html",
-      "category": "filter-cde-sem2", 
+      "category": "filter-cde-sem2",
       "published_date": "04 Aug 2025",
       "course_category": "Internship"
     },
@@ -658,117 +667,117 @@
       "thumbnailLink": "assets/img/cde_sem2/17_pysarflow_th.webp",
       "thumbnailDesc":"An open-source python library for SAR data pre-processing and application",
       "detailsLink": "https://pypi.org/project/pysarflow/",
-      "category": "filter-cde-sem2", 
+      "category": "filter-cde-sem2",
       "published_date": "22 Aug 2025",
       "course_category": "Software Development"
-      
+
     },
        {
       "cardTitle": "NickySpatial",
       "thumbnailLink": "assets/img/cde_sem2/18_nickyspatial_th.webp",
       "thumbnailDesc":"An open-source object-based image analysis library for remote sensing.",
       "detailsLink": "https://pypi.org/project/nickyspatial/",
-      "category": "filter-cde-sem2", 
+      "category": "filter-cde-sem2",
       "published_date": "15 Aug 2025",
       "course_category": "Application Development"
-      
+
     },
       {
       "cardTitle": "Volunteering Living Planet Symposium 2025",
       "thumbnailLink": "assets/img/cde_sem2/16_0_th.webp",
       "thumbnailDesc":"Supported in poster presentation and agora sessions",
       "detailsLink": "msc_cde/16_LPS.html",
-      "category": "filter-cde-others", 
+      "category": "filter-cde-others",
       "published_date": "14 July 2025",
       "course_category": "Others"
-      
+
     },
   {
       "cardTitle": "Object Based Image Classification",
       "thumbnailLink": "assets/img/cde_sem1/13_obia_python_th.webp",
       "thumbnailDesc":"OBIA using Random Forest (RF) and Support Vector Machine (SVM)",
       "detailsLink": "https://github.com/rabinatwayana/object_based_image_analysis",
-      "category": "filter-cde-sem1", 
+      "category": "filter-cde-sem1",
       "published_date": "28 Feb 2025",
       "course_category": "OBIA"
-      
+
     },
    {
       "cardTitle": "Using Drones in Environmental Sciences",
       "thumbnailLink": "assets/img/cde_sem2/15_bip_th.webp",
       "thumbnailDesc":"Mastering the use of drones to revolutionize environmental monitoring and urban planning",
       "detailsLink": "https://storymaps.arcgis.com/stories/c63962d3745f45bfac70f3860681c698",
-      "category": "filter-cde-sem2", 
+      "category": "filter-cde-sem2",
       "published_date": "30 Jun 2025",
       "course_category": "BIP"
-      
+
     },
   {
        "cardTitle": "Copernicus Hubs and Institutions",
        "thumbnailLink": "assets/img/cde_sem2/14_EODC_th.webp",
        "thumbnailDesc":"A report on Excursion to Earth Observation Data Center (EODC) and Environment Agency Austria",
        "detailsLink": "msc_cde/14_chi_excursion_report.html",
-       "category": "filter-cde-sem2", 
+       "category": "filter-cde-sem2",
        "published_date": "23 Jun 2025",
        "course_category": "Copernicus Hubs and Institutions"
-       
+
      },
   {
     "cardTitle": "Make an Impact with Modern Geo Apps",
     "thumbnailLink": "assets/img/cde_sem2/13_mooc_geoapps_th.webp",
     "thumbnailDesc":"Using modern, no-code technologies, to build useful and engaging geo apps",
     "detailsLink": "msc_cde/13_mooc_geoapps.html",
-    "category": "filter-cde-others", 
+    "category": "filter-cde-others",
     "published_date": "2 May 2025",
     "course_category": "MOOC"
-    
+
   },
   {
     "cardTitle": "Going Places with Spatial Analysis",
     "thumbnailLink": "assets/img/cde_sem2/12_mooc_spatial_analysis_th.webp",
     "thumbnailDesc":"Understanding of spatial data analysis and techniques in ArcGIS Online",
     "detailsLink": "msc_cde/12_mooc_spatial_analysis.html",
-    "category": "filter-cde-others", 
+    "category": "filter-cde-others",
     "published_date": "6 March 2025",
     "course_category": "MOOC"
-    
+
   },
     {
        "cardTitle": "Rainfall-Runoff Simulation",
        "thumbnailLink": "assets/img/cde_sem1/11_rainfall_simulation_th.webp",
        "thumbnailDesc":"Geographical Agent-Based Modeling: A Study of Catchment Area of Bagmati River",
        "detailsLink": "msc_cde/11_rainfall_simulation.html",
-       "category": "filter-cde-sem1", 
+       "category": "filter-cde-sem1",
        "published_date": "28 Feb 2025",
        "course_category": "Spatial Simulation"
-       
+
      },
      {
       "cardTitle": "Hyperspectral Remote Sensing",
       "thumbnailLink": "assets/img/cde_sem1/12_hyperspectral_th.webp",
       "thumbnailDesc":"Exploring Earth observation realms beyond the visible spectrum of light",
       "detailsLink": "https://storymaps.arcgis.com/stories/a421563d625c4ad386b7f1962be37667",
-      "category": "filter-cde-sem1", 
+      "category": "filter-cde-sem1",
       "published_date": "24 Jan 2025",
       "course_category": "Spatial Thinking and Modelling"
-      
+
     },
     {
        "cardTitle": "Semantic Model Development in Sen2Cube",
        "thumbnailLink": "assets/img/cde_sem1/10_sen2cube_th.webp",
        "thumbnailDesc":"Analysis of cloud, snow/ice coverage and water content in different lakes of Austria",
        "detailsLink": "msc_cde/10_bed_sen2cube.html",
-       "category": "filter-cde-sem1", 
+       "category": "filter-cde-sem1",
        "published_date": "06 Jan 2025",
        "course_category": "Big Earth Data"
-       
+
      },
     {
        "cardTitle": "Flood Mapping of Valencia, Spain",
        "thumbnailLink": "assets/img/cde_sem1/8_flood_mapping_cover_th.webp",
        "thumbnailDesc":"An analysis of flood event in Valencia in October 2024 using SAR data",
        "detailsLink": "msc_cde/8_spacesuite_valencia_flood_mapping.html",
-       "category": "filter-cde-sem1", 
+       "category": "filter-cde-sem1",
        "published_date": "30 Dec 2024",
        "course_category": "Personal"
      },
@@ -777,7 +786,7 @@
        "thumbnailLink": "assets/img/cde_sem1/9_coursera_calculus_for_ml_th.webp",
        "thumbnailDesc":"An online course offered by DeepLearningAI",
        "detailsLink": "https://www.coursera.org/learn/machine-learning-calculus",
-       "category": "filter-cde-others", 
+       "category": "filter-cde-others",
        "published_date": "3 Feb 2025",
        "course_category": "Personal"
      },
@@ -786,49 +795,49 @@
        "thumbnailLink": "assets/img/cde_sem1/7_spacesuite_radar_th.webp",
        "thumbnailDesc":"Flood mapping using radar data",
        "detailsLink": "msc_cde/7_spacesuite_flood_mapping_course.html",
-       "category": "filter-cde-others", 
+       "category": "filter-cde-others",
        "published_date": "18 Dec 2024",
        "course_category": "Personal"
      },
-     
-   
+
+
     {
        "cardTitle": "Volcanic Eruption in Ulawun, Papua New Guinea",
        "thumbnailLink": "assets/img/cde_sem1/2_ars_radar_volcano_th.webp",
        "thumbnailDesc":"An analysis of volcanic eruption using SAR data with the help of the displacement map",
        "detailsLink": "msc_cde/2_ars_radar_volcanic_eruption.html",
-       "category": "filter-cde-sem1", 
+       "category": "filter-cde-sem1",
        "published_date": "18 Dec 2024",
        "course_category": "Advanced Remote Sensing"
      },
-     
+
      {
        "cardTitle": "Temporal Analysis of Bushfire in Northern Australia ",
        "thumbnailLink": "assets/img/cde_sem1/4_bed_gee_bushfire_th.webp",
        "thumbnailDesc":"A GEE dashboard to visualize temporal changes of bushfire in Australia 2023",
        "detailsLink": "msc_cde/4_bed_bushfire_analysis_gee.html",
-       "category": "filter-cde-sem1", 
+       "category": "filter-cde-sem1",
        "published_date": "30 Nov 2024",
        "course_category": "Big Earth Data"
-       
+
      },
     {
        "cardTitle": "Sentinel-hub Simple Water Bodies Mapping (SWBM)",
        "thumbnailLink": "assets/img/cde_sem1/3_bed_sentinel_script_SWBM_th.webp",
        "thumbnailDesc":"Understanding logic behind the SWBM scripts and implementation",
        "detailsLink": "msc_cde/3_bed_sentinel_hub_swbm_script.html",
-       "category": "filter-cde-sem1", 
+       "category": "filter-cde-sem1",
        "published_date": "18 Nov 2024",
        "course_category": "Big Earth Data"
-       
+
      },
-     
+
      {
        "cardTitle": "Analysis Ready Data and Level 2A Data",
        "thumbnailLink": "assets/img/cde_sem1/5_bed_ARD_th.webp",
        "thumbnailDesc":"Characteristics of analysis ready data and Level 2A Processing Chain by Sen2Cor and MAJA",
        "detailsLink": "msc_cde/5_bed_ARD.html",
-       "category": "filter-cde-sem1", 
+       "category": "filter-cde-sem1",
        "published_date": "29 Oct 2024",
        "course_category": "Big Earth Data"
      },
@@ -837,19 +846,19 @@
        "thumbnailLink": "assets/img/cde_sem1/1_EUSPA_business_badge.png",
        "thumbnailDesc":"An online certification course offered by EU Space Academy Learning Platform",
        "detailsLink": "msc_cde/1_EUSPA_business_model.html",
-       "category": "filter-cde-others", 
+       "category": "filter-cde-others",
        "published_date": "18 Nov 2024",
        "course_category": "Career Development"
-       
+
      },
       {
        "cardTitle": "CDE Introduction Presentation",
        "thumbnailLink": "assets/img/cde_sem1/0_cde_presentation_th.webp",
        "thumbnailDesc":"An introductory presentation in CDE orientation week",
        "detailsLink": "msc_cde/0_cde_presentation.html",
-       "category": "filter-cde-others", 
+       "category": "filter-cde-others",
        "published_date": "2 Oct 2024",
-       "course_category": "Orienatation" 
+       "course_category": "Orienatation"
      }
      ]
      document.addEventListener('DOMContentLoaded', () => {
@@ -965,17 +974,17 @@
   const portfolioLightbox = GLightbox({ selector: ".portfolio-lightbox" });
 });
 
-   
+
 
           // document.addEventListener('DOMContentLoaded', () => {
           //   const cdeContainer = document.getElementById('cdeContainer');
-          
+
           //   function fetchWithTimeout(url, timeout = 5000) {
           //     return new Promise((resolve, reject) => {
           //       const timer = setTimeout(() => {
           //         reject(new Error('Request timed out after ' + timeout + 'ms'));
           //       }, timeout);
-          
+
           //       fetch(url)
           //         .then(response => {
           //           clearTimeout(timer);
@@ -991,119 +1000,119 @@
           //         });
           //     });
           //   }
-          
+
           //   fetchWithTimeout('assets/json/cdeItems.json', 5000)
           //     .then(cdeItems => {
           //       if (!cdeContainer) return;
-          
+
           //       const semesters = {
           //         "filter-cde-sem1": "Semester I",
           //         "filter-cde-sem2": "Semester II",
           //         "filter-cde-sem3": "Semester III",
           //         "filter-cde-sem4": "Semester IV"
           //       };
-          
+
           //       // Handle upcoming message for empty semesters
           //       Object.keys(semesters).forEach(semester => {
           //         const semesterItems = cdeItems.filter(item => item.category === semester);
           //         if (semesterItems.length === 0) {
           //           const semesterElement = document.createElement('div');
           //           semesterElement.className = `portfolio-item ${semester}`;
-          
+
           //           const upcomingMessage = document.createElement('p');
           //           upcomingMessage.textContent = "Upcoming!";
           //           upcomingMessage.style.textAlign = 'center';
           //           upcomingMessage.style.fontSize = '18px';
           //           upcomingMessage.style.fontWeight = 'bold';
           //           upcomingMessage.style.color = 'gray';
-          
+
           //           semesterElement.appendChild(upcomingMessage);
           //           cdeContainer.appendChild(semesterElement);
           //         }
           //       });
-          
+
           //       const fragment = document.createDocumentFragment(); // Use fragment for batching
-          
+
           //       cdeItems.forEach(item => {
           //         const cdeDiv = document.createElement('div');
           //         cdeDiv.className = `col-lg-4 col-md-6 portfolio-item ${item.category}`;
-          
+
           //         const cdeWrapDiv = document.createElement('div');
           //         cdeWrapDiv.className = 'portfolio-wrap';
-          
+
           //         const img = document.createElement('img');
           //         img.src = item.thumbnailLink;
           //         img.alt = item.title;
           //         img.loading = 'lazy'; // Lazy loading
-          
+
           //         const cdeInfoDiv = document.createElement('div');
           //         cdeInfoDiv.className = 'portfolio-info';
-          
+
           //         const courseCategory = document.createElement('h4');
           //         courseCategory.textContent = item.course_category;
-          
+
           //         const detailsLink = document.createElement('a');
           //         detailsLink.target = '_blank';
           //         detailsLink.href = item.detailsLink || '#';
           //         detailsLink.title = 'Full Detail';
-          
+
           //         const title = document.createElement('h6');
           //         title.className = 'card-title';
           //         title.textContent = item.cardTitle;
           //         title.style.cursor = 'pointer';
-          
+
           //         title.addEventListener('click', () => {
           //           if (item.detailsLink) {
           //             window.open(item.detailsLink, '_blank');
           //           }
           //         });
-          
+
           //         const cardDesc = document.createElement('p');
           //         cardDesc.className = 'card-description';
           //         cardDesc.textContent = item.thumbnailDesc;
-          
+
           //         const cardPublishedDate = document.createElement('p');
           //         cardPublishedDate.className = 'card-date';
           //         cardPublishedDate.textContent = item.published_date;
-          
+
           //         const cdeLinksDiv = document.createElement('div');
           //         cdeLinksDiv.className = 'portfolio-links';
-          
+
           //         const lightboxLink = document.createElement('a');
           //         lightboxLink.href = item.thumbnailLink;
           //         lightboxLink.className = 'portfolio-lightbox';
           //         lightboxLink.setAttribute('data-gallery', 'portfolioGallery');
           //         lightboxLink.title = item.thumbnailDesc || item.cardTitle;
-          
+
           //         const lightboxIcon = document.createElement('i');
           //         lightboxIcon.className = 'bx bx-plus';
           //         lightboxLink.appendChild(lightboxIcon);
-          
+
           //         const detailsIcon = document.createElement('i');
           //         detailsIcon.className = 'bx bx-link';
           //         detailsLink.appendChild(detailsIcon);
-          
+
           //         cdeLinksDiv.appendChild(courseCategory);
           //         cdeLinksDiv.appendChild(lightboxLink);
           //         if (item.detailsLink) {
           //           cdeLinksDiv.appendChild(detailsLink);
           //         }
-          
+
           //         cdeInfoDiv.appendChild(cdeLinksDiv);
-          
+
           //         cdeWrapDiv.appendChild(img);
           //         cdeWrapDiv.appendChild(cdeInfoDiv);
-          
+
           //         cdeDiv.appendChild(cdeWrapDiv);
           //         cdeDiv.appendChild(title);
           //         cdeDiv.appendChild(cardDesc);
           //         cdeDiv.appendChild(cardPublishedDate);
-          
+
           //         fragment.appendChild(cdeDiv);
           //       });
-          
+
           //       cdeContainer.appendChild(fragment); // Append all at once
-          
+
           //       // Initialize GLightbox after rendering
           //       const portfolioLightbox = GLightbox({ selector: ".portfolio-lightbox" });
           //     })
@@ -1118,8 +1127,8 @@
           //       }
           //     });
           // });
-          
-          
+
+
           </script>
 </body>
 </html>
